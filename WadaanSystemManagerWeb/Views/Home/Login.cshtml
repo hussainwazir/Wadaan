@@ -1,0 +1,128 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Wadaan</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/dist/css/style.min.css" rel="stylesheet">
+    <link href="~/Content/Assets/css/styleLogin.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="~/JS/ScriptController.js"></script>
+    <style type="text/css">
+        .invalid {
+            background-color: #F7EACD !important;
+            border: 1px dotted red !important;
+        }
+
+        .passwordgroup {
+            direction: rtl !important;
+        }
+
+        .bg-transparent {
+            
+            border-right-style: groove;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+                <div class="row flex-grow">
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                        <div class="auth-form-transparent text-left p-3">
+                            <div class="brand-logo" style="text-align:center;">
+                                @*<h1>WADAAN</h1>*@
+                                <img src="~/images/wadaan-logo.png"alt="Wadaan" />
+                                @*<img src="~/images/logo.png" alt="RumanZovia" />*@
+                            </div>
+                            @*<h4>Welcome back!</h4>*@
+                            @*<h6 class="font-weight-light">Happy to see you again!</h6>*@
+                            <form class="pt-3" id="frmLogin" name="frmLogin" action="/services/Xtreme/multipart" method="post">
+                                <input type="hidden" name="type" id="type" value="login" />
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Username</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent" >
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-account-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg border-left-0" id="username" name="username" placeholder="Username" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent" >
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control form-control-lg border-left-0" id="password" name="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span style="color:red;" id="error_span" name="error_span"></span>
+                                </div>
+                                <div class="my-3">
+                                    <button type="button" id="btnLogin" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"><strong>LOGIN</strong></button>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-lg-6 login-half-bg d-flex flex-row">
+                        @*<img src="~/images/wadaan-splash.jpg" />*@
+                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2020  All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Content/assets/dist/js/custom.min.js"></script>
+    @*<script src="~/JS/scripts/login.js"></script>*@
+    <script src="~/Scripts/FunctionalityJs/login.js"></script>
+</body>
+
+</html>

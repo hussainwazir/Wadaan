@@ -1,0 +1,65 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_ProjectManagerLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/PROJECTMANAGERAREA/ProjectManager/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Meeting </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header"> <h5>MEETING(S)</h5> <span>All Meeting Record List</span>
+
+                        @*<button type="button" id="btn-add-meeting" class="btn btn-success" onclick="window.location.href='/PROJECTMANAGERAREA/ProjectManager/MMeetingSave'" style="float:left; color:white;">  Add Meeting</button>*@
+
+
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <button type="button" id="btn-add-meeting" class="btn btn-success" style="margin-left:20px; color:white" onclick="window.location.href='/PROJECTMANAGERAREA/ProjectManager/MMeetingSave'">  Add Meeting</button><br />
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="meeting-grid"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+ 
+<script src="~/Scripts/FunctionalityJs/ManagerArea/ManagerArea/meeting-list.js?wadaanv=5.1.8"></script>

@@ -1,0 +1,475 @@
+﻿
+@{
+    ViewBag.Title = "Save";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_ProjectManagerLayout.cshtml";
+}
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Project </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="card">
+
+                    <div class="card-header"><h5>PROJECT</h5>  </div>
+                    <div class="card-body">
+
+                        <form class="md-float-material" id="frmAddUpdateProject" name="frmAddUpdateProject" action="/services/Xtreme/multipart" method="post">
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="ProjectID" id="ProjectID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="Id" id="Id" value="0">
+                            <input type="hidden" name="type" id="type" value="Project_Save">
+
+
+                            @* =========================== PROJECT INFORMAION =========================== *@
+
+                            <div class="card">
+                                <div class="card-header"> <h5> Project Information</h5> </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Project Name:</label>
+                                                <input type="text" class="form-control pname" name="ProjectName" id="ProjectName" required value="">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Client Name:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="ClientID" name="ClientID" tabindex="2"></select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Priority:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="Priority" name="Priority"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Plot House Number:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="PlotHouseNo" id="PlotHouseNo" value="" required="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Street:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="Street" id="Street" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Town / Sector:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="TownSector" id="TownSector" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">City:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="CityID" name="CityID"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Province:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="ProvinceID" name="ProvinceID"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Project Attachments:</label>
+                                                <input type="file" multiple="true" class="form-control pname" name="ProjectAttachements" id="ProjectAttachements" value="">
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header"> <h5> Google Cordinates </h5> </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">GPS Cordinates:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="GPSCordinates" id="GPSCordinates" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Google Location:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="GoogleLocation" id="GoogleLocation" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">East:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="East" name="East"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">West:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="West" name="West"></select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">North:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="North" name="North"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">South:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="South" name="South"></select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="card">
+                                <div class="card-header"> <h5> Contract Type </h5> </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Contract Type:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="ContractType" name="ContractType"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Project Category:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="ProjectCategory" name="ProjectCategory" onchange="ShowHideControls()"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3" id="div-residential">
+                                            <div>
+                                                <label class="form-control-label"> Plot Size:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="ResidentialPlotSize" name="ResidentialPlotSize"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3" id="div-commercial">
+                                            <div>
+                                                <label class="form-control-label"> Plot Size:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="CommercialPlotSize" name="CommercialPlotSize"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="head">
+                                <div class="card-header"> <h5> Plot Information</h5> </div>
+                                <div class=" card-body border">
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Contractor Name:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="ContractorID" name="ContractorID"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Construction Status:</label>
+                                                <input type="text" class="form-control pname" name="ConstructionStatus" id="ConstructionStatus" required value="">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Start Date:<span style="color:red"></span></label><br />
+                                                <input type="text" class="form-control pname" name="StartDate" id="StartDate" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Sub Structure:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="SubStructure" name="SubStructure"></select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Super Structure:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="SuperStructure" name="SuperStructure"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Finishing:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="Finishing" name="Finishing"></select>
+                                            </div>
+                                        </div>
+
+                                        @*<div class="col-sm-3" id="div-residential">
+                                                <div>
+                                                    <label class="form-control-label">Residential Plot Size:<span style="color:red">*</span></label><br />
+                                                    <select class="form-control select2" id="ResidentialPlotSize" name="ResidentialPlotSize"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3" id="div-commercial">
+                                                <div>
+                                                    <label class="form-control-label">Commercial Plot Size:<span style="color:red">*</span></label><br />
+                                                    <select class="form-control select2" id="CommercialPlotSize" name="CommercialPlotSize"></select>
+                                                </div>
+                                            </div>*@
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <br />
+
+                            <div class="head" style="display:none">
+                                <div class="card-header"> <h5> Drawing Information </h5> </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Sketch:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="Sketch" name="Sketch"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Submission Drawing:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="SubmissionDrawing" name="SubmissionDrawing"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Architectural Drawing:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="ArchitecturalDrawing" name="ArchitecturalDrawing"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Structural Drawing:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="StructuralDrawing" name="StructuralDrawing"></select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Electrical Drawing:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="ElectricalDrawing" name="ElectricalDrawing"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Plumbing Drawing:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="PlumbingDrawing" name="PlumbingDrawing"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Estimation:<span style="color:red"></span></label><br />
+                                                <select class="form-control select2" id="Estimation" name="Estimation"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Type Of Supervision Services:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="TypeOfSupervisionServices" id="TypeOfSupervisionServices" value="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+
+
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                        <div class="border-top">
+
+                            <div class="modal-footer">
+                                <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+                                <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                @*<button type="reset" class="btn btn-danger text-white">Reset</button>*@
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+
+        /*colorpicker*/
+        $('.demo').each(function () {
+            //
+            // Dear reader, it's actually very easy to initialize MiniColors. For example:
+            //
+            //  $(selector).minicolors();
+            //
+            // The way I've done it below is just for the demo, so don't get confused
+            // by it. Also, data- attributes aren't supported at this time...they're
+            // only used for this demo.
+            //
+            $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function (value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+</body>
+
+
+
+
+
+<script src="~/Scripts/FunctionalityJs/ManagerArea/ManagerArea/project-save.js?wadaanv=5.1.8"></script>

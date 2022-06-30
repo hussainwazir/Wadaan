@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Shared/_ClientLayout.cshtml";
+}
+
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+         
+
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                   
+                    <!-- Column -->
+                    <div class="col-md-12 col-lg-12 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info">
+                                <h2 class="text-white" id="login-user-name">  </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-md-3 col-lg-3 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-danger text-center" style="height:330px">
+                                <h1 style=" padding-top:80px" class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
+                                <h1  class="text-white" id="total-number-of-projects"></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column -->
+                    <div class="col-md-3 col-lg-3 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan  text-center" style="height:330px;">
+                                <h1 style=" padding-top:80px" class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
+                                <h1   class="text-white" id="total-number-of-tasks"></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xlg-3">
+                        <label style="padding-left: 450px;"> Search Task on Date wise</label>
+                        <input  type="text" class="form-control pull-right" id="date-picker-for-search"/>
+                        <div class="card">
+                            <div class="box" style="height:300px;overflow:auto">
+                                <div id="load-tasks-of-current-day-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"><h5>Feedback on Projects</h5>  </div>
+                            <div class="card-body">
+                                <div class="col-md-12 col-lg-12 col-xlg-3">
+                                    <div class="card card-hover">
+                                        <div class="box" style="height:400px; overflow:scroll">
+                                            <ul class="media-list" id="LoadAllComents"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                </div>
+        
+        </div>
+  
+    </div>
+
+
+
+</body>
+ 
+   
+    <script src="~/Scripts/FunctionalityJs/ClientLoginArea/client-login-area-dashboard.js"></script>
+ 

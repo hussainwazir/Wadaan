@@ -1,0 +1,221 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Project </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" id="active-project"> <a class="nav-link active" data-bs-toggle="tab" href="#activeproject" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Projects</span></a> </li>
+                <li class="nav-item" id="in-active-projects"> <a class="nav-link" data-bs-toggle="tab" href="#InActiveProjects" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">In Active Projects</span></a> </li>
+                <li class="nav-item" id="all-projects"> <a class="nav-link" data-bs-toggle="tab" href="#AllProjects" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">All Projects</span></a> </li>
+
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="activeproject" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"> <h5>PROJECT(S)</h5> <span>All Project Record List</span> </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    <button type="button" id="btn-add-new-project" class="btn btn-success" style="margin-left:20px; color:white" onclick="window.location.href='/Project/Project/Save'">  Add Project</button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="project-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane  p-20" id="InActiveProjects" role="tabpanel">
+
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">    <h5>PROJECT(S)</h5> <span>In Active Poject Record List</span> </div>
+                                            <br />
+                                            <div class="card-body">
+                                                <div id="in-active-project-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane p-20" id="AllProjects" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header"><h5>PROJECT(S)</h5> <span>All Pojects Record List</span> </div>
+
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-5 col-lg-5 col-sm-4">
+                                                    <label style="margin-left:10px">Select Project Status </label>
+                                                    <select class="form-control select2" id="ddl-Project-Status" onchange="LoadProjectAgainstStatus()" name="ddl-Project-Status" style="width:150px">
+
+                                                        <option value="0">Select   Status</option>
+                                                        <option value="Active">Active</option>
+                                                        <option value="InProgress">In Progress</option>
+                                                        <option value="Completed">Completed</option>
+                                                        <option value="Rejected">Rejected</option>
+                                                        <option value="Pause">Pause</option>
+                                                        <option value="OverDue">OverDue</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <div class="box">
+                                                        <div id="all-projects-grid"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<style>
+
+    .Upcoming {
+        color: #43CEFF;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+    .Notstarted {
+        color: #43CEFF;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+    .Inprogress {
+        color: #43CEFF;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+    .Pending {
+        color: #43CEFF;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+    . Canceled {
+        color: #43CEFF;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+    . Completed {
+        color: #43CEFF;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+
+
+</style>
+
+<script src="~/Scripts/FunctionalityJs/ProjectArea/Project/project-list.js?wadaanv=5.1.8"></script>
+
+ 

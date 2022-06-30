@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>WADAAN</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/favicon.png">
+    <!--icon font-->
+    <link href="~/Content/Assets/icon/icofont/css/icofont.css" rel="stylesheet" />
+    <!--Material Design font-->
+    <link href="~/Content/Assets/icon/material-design/css/material-design-iconic-font.min.css" rel="stylesheet" />
+
+
+    <!-- Custom CSS -->
+    @*<link href="~/Content/Assets/css/style.css" rel="stylesheet" />*@
+    <link href="~/Content/Assets/libs/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/Assets/libs/jquery-minicolors/jquery.minicolors.css" rel="stylesheet" />
+
+    <link href="~/Content/Assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Assets/libs/quill/dist/quill.snow.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/dist/css/style.min.css" rel="stylesheet">
+
+    <!--Kendo Css-->
+    <link href="~/Content/Assets/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/Content/Assets/kendo/kendo.common.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
+    <!--Sweet Alert 2-->
+    <script src="~/Content/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!--jstree -->
+    <link href="~/Content/Assets/jstree/dist/style.min.css" rel="stylesheet" />
+    <link href="~/Content/Assets/jstree/dist/treeview.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="~/Content/Assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link href="~/Content/Assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
+    @*<link href="~/Content/Assets/css/fullcalendar.css" rel="stylesheet" />
+        <link href="~/Content/Assets/css/fullcalendar.print.css" rel="stylesheet" />*@
+    <style>
+        .k-filter-row .k-dropdown-operator {
+            display: none;
+        }
+
+        .k-filtercell, .k-filtercell .k-widget, .k-filtercell > span {
+            width: 100% !important;
+        }
+
+        .error, .invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="/PROJECTMANAGERAREA/ProjectManager/Dashboard">
+                        <!-- Logo icon -->
+                        <b class="logo-icon ps-2">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            @*<img src="~/Content/assets/images/logo-icon.png" alt="homepage" class="light-logo" />*@
+                            <h3>Wadaan</h3>
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        @*<span class="logo-text">
+
+                                <img src="~/Content/assets/images/logo-text.png" alt="homepage" class="light-logo" />
+
+                            </span>*@
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!-- <img src="~/Content/assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                        <i class="ti-menu ti-close"></i>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-start me-auto">
+
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+                                    <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>*@
+
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-end">
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        @*<li class="nav-item dropdown" hidden: true>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="mdi mdi-bell font-24"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>*@
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        @*<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="font-24 mdi mdi-comment-processing"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-success btn-circle">
+                                                        <i class="ti-calendar"></i>
+                                                    </span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Event today</h5>
+                                                        <span class="mail-desc">Just a reminder that event</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-info btn-circle">
+                                                        <i class="ti-settings"></i>
+                                                    </span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Settings</h5>
+                                                        <span class="mail-desc">You can customize this template</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-primary btn-circle">
+                                                        <i class="ti-user"></i>
+                                                    </span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Pavan kumar</h5>
+                                                        <span class="mail-desc">Just see the my admin!</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-danger btn-circle">
+                                                        <i class="fa fa-link"></i>
+                                                    </span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Luanch Admin</h5>
+                                                        <span class="mail-desc">Just see the my new admin!</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>*@
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Message -->
+                        <!-- ============================================================== -->
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="mdi mdi-account-key" style="zoom: 2.9;"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="">
+
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <a class="dropdown-item" href="~/Employee/Employee/Profile">
+                                                    <i class="ti-user me-1 ms-1"></i>
+                                                    My Profile
+                                                </a>
+
+                                                <a class="dropdown-item" href="#!" style="width:20px" id="testing">
+                                                    <i class="fa fa-power-off me-1 ms-1"></i>
+                                                    Logout
+                                                </a>
+                                            </a>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+
+                        <!-- ============================================================== -->
+                        <!-- End Message -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+
+
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4">
+
+                        <li class="sidebar-item" id="main-layout-employee-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/Dashboard" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" id="main-layout-employee-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/MEmployeeList" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Employee
+                                </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" id="main-layout-client-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/ClientList" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Client
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item" id="main-layout-contractor-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/MConractorList" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Contractor
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item" id="main-layout-project-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/MProjectList" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Project
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item" id="main-layout-meeting-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/MMeetingList" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Meeting
+                                </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" id="main-layout-task-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/MTaskList" class="sidebar-link" id="main-layout-employee-menu">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Task
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item" id="main-layout-supplier-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/MSupplierList" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Supplier
+                                </span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item" id="main-layout-calender-menu">
+                            <a href="/PROJECTMANAGERAREA/ProjectManager/Calender" class="sidebar-link">
+                                <i class="mdi mdi-account-box-outline"></i><span class="hide-menu">
+                                    Calender
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Sidebar navigation-->
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class=" ">
+            @RenderBody()
+
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved by Xtremessoft. Designed and Developed by <a href="https://www.Xtremessoft.com">Xtremes Software Services</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/Assets/libs/jquery/dist/jquery-ui.min.js"></script>
+
+    <script src="~/Scripts/jquery.form.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Content/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/assets/dist/js/waves.js"></script>
+
+    <!--Menu sidebar -->
+    <script src="~/Content/assets/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Content/assets/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    @*<script src="~/Content/Assets/dist/js/pages/mask/mask.init.js"></script>*@
+    <script src="~/Content/Assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="~/Content/Assets/libs/select2/dist/js/select2.min.js"></script>
+
+
+    <script src="~/Content/assets/libs/flot/excanvas.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="~/Content/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Content/assets/dist/js/pages/chart/chart-page-init.js"></script>
+
+    <script src="~/Content/Assets/jstree/dist/jstree.min.js"></script>
+
+    <script src="~/Content/Assets/js/kendo/kendo.all.min.js"></script>
+    <script src="~/Scripts/FunctionalityJs/KendojqueryController.js?id=6"></script>
+    <script src="~/Content/Assets/js/kendo/jszip.min.js"></script>
+
+
+
+    @*<script src="~/Content/Assets/fullCalendar/moment/min/moment.min.js"></script>
+        <script src="~/Content/Assets/fullCalendar/fullcalendar.min.js"></script>
+        <script src="~/Content/Assets/fullCalendar/calendar.js"></script>*@
+
+
+    <script src="~/Content/Assets/libs/moment/min/moment.min.js"></script>
+
+
+    <script src="~/Content/Assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+
+  
+    <script>
+        var roleID;
+        localStorage.setItem('IsReadEmployeeDetail', false);
+        localStorage.setItem('IsUpdateEmployeeDetail', false);
+        localStorage.setItem('IsDeleteEmployee', false);
+        localStorage.setItem('IsCreateEmployee', false);
+
+        localStorage.setItem('IsCreateClient', false);
+        localStorage.setItem('IsReadClient', false);
+        localStorage.setItem('IsUpdatedClient', false);
+        localStorage.setItem('IsDeleteClient', false);
+        localStorage.setItem('IsReadClientDetail', false);
+
+        localStorage.setItem('IsCreateContractor', false);
+        localStorage.setItem('IsReadContractor', false);
+        localStorage.setItem('IsUpdatedContractor', false);
+        localStorage.setItem('IsDeleteContractor', false);
+        localStorage.setItem('IsReadContractorDetail', false);
+
+
+        localStorage.setItem('IsCreateProject', false);
+        localStorage.setItem('IsReadProject', false);
+        localStorage.setItem('IsUpdatedProject', false);
+        localStorage.setItem('IsDeleteProject', false);
+        localStorage.setItem('IsReadProjectDetail', false);
+
+
+        localStorage.setItem('IsCreateMeeting', false);
+        localStorage.setItem('IsReadMeeting', false);
+        localStorage.setItem('IsUpdatedMeeting', false);
+        localStorage.setItem('IsDeleteMeeting', false);
+        localStorage.setItem('IsReadMeetingDetail', false);
+
+        localStorage.setItem('IsCreateTask', false);
+        localStorage.setItem('IsReadTask', false);
+        localStorage.setItem('IsUpdatedTask', false);
+        localStorage.setItem('IsDeleteTask', false);
+        localStorage.setItem('IsReadTaskDetail', false);
+
+
+        localStorage.setItem('IsCreateSupplier', false);
+        localStorage.setItem('IsReadSupplier', false);
+        localStorage.setItem('IsUpdatedSupplier', false);
+        localStorage.setItem('IsDeleteSupplier', false);
+        localStorage.setItem('IsReadSupplierDetail', false);
+        setTimeout(function () {
+
+            //***********************************//
+            // For select 2
+            //***********************************//
+            $(".select2").select2();
+        }, 100);
+        //   console.clear();
+
+        $(document).ready(function () {
+
+
+             roleID = window.localStorage.getItem("RoleId");
+
+            LoadPermissionAgainstRole(roleID);
+        });
+
+        $('#testing').click(function () {
+
+            fnLogout();
+        });
+
+        function fnLogout() {
+
+            localStorage.clear();
+            window.sessionStorage.clear();
+            window.location.href = '/Home/Login';
+
+        }
+
+        function LoadPermissionAgainstRole(roleID) {
+            KendoGlobalAjax({ commandName: 'Permissions_SelectRoleBase', values: { RoleID: roleID }, CallBack: fnLLoadPermissionAgainstRole });
+        }
+        var fnLLoadPermissionAgainstRole = function (d) {
+
+
+
+            for (var i = 0; i < JSON.parse(d.Value).length; i++) {
+                if (JSON.parse(d.Value)[i].moduleName == "Employee" && JSON.parse(d.Value)[i].formName == "Employee List " && JSON.parse(d.Value)[i].isRead == true) {
+                    $('#main-layout-employee-menu').show();
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Employee" && JSON.parse(d.Value)[i].formName == "Employee Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadEmployeeDetail', true);
+
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Employee" && JSON.parse(d.Value)[i].formName == "Employee List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdateEmployeeDetail', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Employee" && JSON.parse(d.Value)[i].formName == "Employee List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteEmployee', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Employee" && JSON.parse(d.Value)[i].formName == "Add Employee" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateEmployee', true);
+                }
+
+               
+                // For Client Area
+                if (JSON.parse(d.Value)[i].moduleName == "Client" && JSON.parse(d.Value)[i].formName == "Add Client" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateClient', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Client" && JSON.parse(d.Value)[i].formName == "Client List" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadClient', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Client" && JSON.parse(d.Value)[i].formName == "Client List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdatedClient', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Client" && JSON.parse(d.Value)[i].formName == "Client List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteClient', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Client" && JSON.parse(d.Value)[i].formName == "Client Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadClientDetail', true);
+                }
+
+                // For Contractor Area
+
+                if (JSON.parse(d.Value)[i].moduleName == "Contractor" && JSON.parse(d.Value)[i].formName == "Add Contractor" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateContractor', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Contractor" && JSON.parse(d.Value)[i].formName == "Contractor List" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadContractor', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Contractor" && JSON.parse(d.Value)[i].formName == "Contractor List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdatedContractor', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Contractor" && JSON.parse(d.Value)[i].formName == "Contractor List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteContractor', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Contractor" && JSON.parse(d.Value)[i].formName == "Contractor Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadContractorDetail', true);
+                }
+
+                // For Project Area
+
+                if (JSON.parse(d.Value)[i].moduleName == "Project" && JSON.parse(d.Value)[i].formName == "Add Project" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateProject', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Project" && JSON.parse(d.Value)[i].formName == "Project List" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadProject', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Project" && JSON.parse(d.Value)[i].formName == "Project List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdatedProject', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Project" && JSON.parse(d.Value)[i].formName == "Project List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteProject', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Project" && JSON.parse(d.Value)[i].formName == "Project Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadProjectDetail', true);
+                }
+
+                // For Meeting Area
+
+                if (JSON.parse(d.Value)[i].moduleName == "Meeting" && JSON.parse(d.Value)[i].formName == "Add Meeting" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateMeeting', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Meeting" && JSON.parse(d.Value)[i].formName == "Meeting List" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadMeeting', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Meeting" && JSON.parse(d.Value)[i].formName == "Meeting List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdatedMeeting', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Meeting" && JSON.parse(d.Value)[i].formName == "Meeting List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteMeeting', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Meeting" && JSON.parse(d.Value)[i].formName == "Meeting Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadMeetingDetail', true);
+                }
+
+
+                if (JSON.parse(d.Value)[i].moduleName == "Task" && JSON.parse(d.Value)[i].formName == "Add Task" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateTask', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Task" && JSON.parse(d.Value)[i].formName == "Task List" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadTask', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Task" && JSON.parse(d.Value)[i].formName == "Task List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdatedTask', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Task" && JSON.parse(d.Value)[i].formName == "Task List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteTask', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Task" && JSON.parse(d.Value)[i].formName == "Task Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadTaskDetail', true);
+                }
+
+
+           
+
+                if (JSON.parse(d.Value)[i].moduleName == "Supplier" && JSON.parse(d.Value)[i].formName == "Add Supplier" && JSON.parse(d.Value)[i].isCreate == true) {
+                    localStorage.setItem('IsCreateSupplier', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Supplier" && JSON.parse(d.Value)[i].formName == "Supplier List" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadSupplier', true);
+                }
+              
+                if (JSON.parse(d.Value)[i].moduleName == "Supplier" && JSON.parse(d.Value)[i].formName == "Supplier List" && JSON.parse(d.Value)[i].isUpdate == true) {
+                    localStorage.setItem('IsUpdatedSupplier', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Supplier" && JSON.parse(d.Value)[i].formName == "Supplier List" && JSON.parse(d.Value)[i].isDelete == true) {
+                    localStorage.setItem('IsDeleteSupplier', true);
+                }
+                if (JSON.parse(d.Value)[i].moduleName == "Supplier" && JSON.parse(d.Value)[i].formName == "Supplier Detail" && JSON.parse(d.Value)[i].isRead == true) {
+                    localStorage.setItem('IsReadSupplierDetail', true);
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

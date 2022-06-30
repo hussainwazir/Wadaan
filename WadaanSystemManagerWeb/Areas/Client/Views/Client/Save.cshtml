@@ -1,0 +1,596 @@
+﻿
+@{
+    ViewBag.Title = "Save";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Client </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="card">
+
+                    <div class="card-header"><h5>Client registration form</h5>  </div>
+                    <div class="card-body">
+
+                        <form class="md-float-material" id="frmAddUpdateClient" name="frmAddUpdateClient" action="/services/Xtreme/multipart" method="post">
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="ClientID" id="ClientID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="Id" id="Id" value="0">
+                            <input type="hidden" name="type" id="type" value="Client_Save">
+
+                            @*======================= Strating Row ============================*@
+
+                            <div class="card">
+                                <div class="card-header"><h5>Username & Password</h5>  </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">User Name: <span style="color: red">*</span></label>
+                                                <input type="text" class="form-control pname" name="UserName" id="UserName" required value="" onkeypress="return AvoidSpace(event)">
+
+                                                <script>
+                                                    function AvoidSpace(event) {
+                                                        var k = event ? event.which : window.event.keyCode;
+                                                        if (k == 32) return false;
+                                                    }
+
+                                                </script>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Password:<span style="color:red">*</span></label><br />
+                                                <input type="password" class="form-control pname" name="Password" id="Password" value="" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header"><h5>Personal Information</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Prefix:<span style="color:red">*</span></label>
+                                                <input type="text" class="form-control pname" name="Prefix" id="Prefix" required value="">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">First Name: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="FirstName" id="FirstName" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Last Name: </label>  <br />
+                                                <input type="text" class="form-control pname" name="LastName" id="LastName" value=""  onkeypress="return/[a-z]/i.test(event.key)">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Given Name: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="GivenName" id="GivenName" value="" required onkeypress="return/[a-z]/i.test(event.key)">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Mobile Phone: </label> <span style="color:red"> *</span> <br />
+                                                <input type="number" class="form-control pname" name="MobilePhone" id="MobilePhone" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">WhatsApp: </label>  <br />
+                                                <input type="number" class="form-control pname" name="WhatsApp" id="WhatsApp" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Email Address: </label>   <br />
+                                                <input type="email" class="form-control pname" name="EmailAddress" id="emailAddress" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Occupation: </label>   <br />
+                                                <input type="text" class="form-control pname" name="Occupation" id="Occupation" value=""  onkeypress="return/[a-z]/i.test(event.key)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Company: </label>   <br />
+                                                <input type="text" class="form-control pname" name="Company" id="Company" value=""  onkeypress="return/[a-z]/i.test(event.key)">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Marital Status: </label><br />
+                                                <select class="form-control select2" id="MaritalStatus" name="MaritalStatus" >
+                                                    <option value="0"> Select Marital Status</option>
+                                                    <option value="1"> Single</option>
+                                                    <option value="2"> Married</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Designation: </label> <br />
+                                                <select class="form-control select2" id="DesignationID" name="DesignationID"  ></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Client Photo:</label><br />
+                                                <input type="file" class="form-control pname" name="ProfilePicture" id="ProfilePicture" value="" style="margin-top: 15px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header"><h5>Current Address</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">House Number: </label><br />
+                                                <input type="text" class="form-control pname" name="CurHouseNo" id="CurHouseNo" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Street Number: </label><br />
+                                                <input type="text" class="form-control pname" name="CurStreetNo" id="curStreetNo" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Town / Sector: </label><br />
+                                                <input type="text" class="form-control pname" name="CurTownSector" id="curTownSector" value=""  >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">City: </label> <br />
+                                                <select class="form-control select2 " name="CurCity" id="CurCity"> </select>
+                                            </div>
+                                        </div>
+
+                                    </div> <br />
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Province:</label> 
+                                                <select class="form-control select2" id="CurProvince" name="CurProvince"> </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Postal Address: </label> <br />
+                                                <input type="text" class="form-control pname" name="CurPostalAddress" id="curPostalAddress" value=""  >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="card">
+                                <div class="card-header"><h5>Permanent Address</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">House Number: </label><br />
+                                                <input type="text" class="form-control pname" name="PerHouseNo" id="PerHouseNo" value=""  >
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Street Number: </label><br />
+                                                <input type="text" class="form-control pname" name="PerStreetNo" id="PerStreetNo" value=""  >
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Town / Sector: </label><br />
+                                                <input type="text" class="form-control pname" name="PerTownSector" id="PerTownSector" value=""  >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">City: </label>  <br />
+                                                <select class="form-control select2" name="PerCity" id="PerCity"></select>
+                                            </div>
+                                        </div>
+
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Province: </label> <br />
+                                                <select class="form-control select2" name="PerProvince" id="PerProvince"> </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header"><h5>Bussiness Address</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Business Phone: </label> <br />
+                                                <input type="text" class="form-control pname" name="BPhone" id="BPhone" value=""  >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Business Email: </label>  <br />
+                                                <input type="email" class="form-control pname" name="BEmail" id="BEmail" value=""  >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Business Postal Address: </label><br />
+                                                <input type="text" class="form-control pname" name="BPostalAddress" id="BPostalAddress" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Business Office: </label> <br />
+                                                <input type="text" class="form-control pname" name="BOffice" id="BOffice" value="" >
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Business Street: </label><br />
+                                                <input type="text" class="form-control pname" name="BStreet" id="BStreet" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Business Town / Sector: </label><br />
+                                                <input type="text" class="form-control pname" name="BTownSector" id="BTownSector" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Bussiness City: </label> <br />
+                                                <select class="form-control select2" name="BCity" id="BCity" value=""> </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Bussiness Province: <br />
+                                                <select class="form-control select2" name="BProvince" id="BProvince" value=""> </select>
+                                            </div>
+                                        </div>
+
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Bussiness Webpage: </label> <br />
+                                                <input type="text" class="form-control pname" name="BWebpage" id="BWebpage" value="" >
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Busniess Attachments:</label> 
+                                                <input type="file" class="form-control pname" name="BusniessAttachments" id="BusniessAttachments" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="card">
+                                <div class="card-header"><h5>Refree Detail</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Refree Name: </label><br />
+                                                <input type="text" class="form-control pname" name="RefreeName" id="RefreeName" value=""  >
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Refree Phone Number: </label><br />
+                                                <input type="number" class="form-control pname" name="RefreePhoneNo" id="RefreePhoneNo" value="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>*@
+
+                            <div class="card">
+                                <div class="card-header"><h5>Dispatch Address</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Dispatch House Number: </label><br />
+                                                <input type="text" class="form-control pname" name="DispatchHouseNo" id="DispatchHouseNo" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Dispatch Street: </label><br />
+                                                <input type="text" class="form-control pname" name="DispatchStreet" id="DispatchStreet" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Dispatch Town/Sector: </label><br />
+                                                <input type="text" class="form-control pname" name="DispatchTownSector" id="DispatchTownSector" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Dispatch City:  </label><br />
+                                                <select class="form-control select2" name="DispatchCity" id="DispatchCity" value=""> </select>
+                                            </div>
+                                        </div>
+
+                                    </div> <br />
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Dispatch Province: </label><br />
+                                                <select class="form-control select2" name="DispatchProvince" id="DispatchProvince" value=""> </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                                <div class="card">
+                                    <div class="card-header"><h5>Billing Address</h5>  </div>
+                                    <div class="card-body border">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label class="form-control-label">Bill House#: </label><br />
+                                                    <input type="text" class="form-control pname" name="BillHouseNo" id="BillHouseNo" value=""  >
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label class="form-control-label">Bill Street#: </label><br />
+                                                    <input type="text" class="form-control pname" name="BillStreetNo" id="BillStreetNo" value=""  >
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label class="form-control-label">Bill Town/Sector: </label><br />
+                                                    <input type="text" class="form-control pname" name="BillTownSector" id="BillTownSector" value=""  >
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label class="form-control-label">Bill City: </label><br />
+                                                    <select class="form-control select2" name="BillCity" id="BillCity" value=""  > </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label class="form-control-label">Bill Province: </label><br />
+                                                    <select class="form-control select2" name="BillProvince" id="BillProvince" value=""></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*====================== Row Tweleve 12 =============================*@
+
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header"><h5>Hobbies</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Gardening: </label><br />
+                                                <input type="checkbox" id="HobGardening" name="HobGardening" value="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Book Reading: </label><br />
+                                                <input type="checkbox" id="HobBookReading" name="HobBookReading" value="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Movies And Serials: </label><br />
+                                                <input type="checkbox" id="HobMoviesAndSerials" name="HobMoviesAndSerials" value="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> Cooking: </label><br />
+                                                <input type="checkbox" id="HobCoocking" name="HobCoocking" value="off">
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header"><h5>How did you know abut us</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">From Google: </label><br />
+                                                <input type="checkbox" id="KnowUsFromGoogle" name="KnowUsFromGoogle">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> From Facebook: </label><br />
+                                                <input type="checkbox" id="KnowUsFromFacebook" name="KnowUsFromFacebook">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> From Website: </label><br />
+                                                <input type="checkbox" id="KnowUsFromWebsite" name="KnowUsFromWebsite">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> From Instagram: </label><br />
+                                                <input type="checkbox" id="KnowUsFromInstagram" name="KnowUsFromInstagram">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> From Linkedin: </label><br />
+                                                <input type="checkbox" id="KnowUsFromLinkdin" name="KnowUsFromLinkdin">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label"> From Twitter: </label><br />
+                                                <input type="checkbox" id="KnowUsFromTwitter" name="KnowUsFromTwitter">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="card">
+                                            <div class="card-header"><h5>Refree Detail</h5>  </div>
+                                            <div class="card-body border">
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <div>
+                                                            <label class="form-control-label">Refree Name: </label><br />
+                                                            <input type="text" class="form-control pname" name="RefreeName" id="RefreeName" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <div>
+                                                            <label class="form-control-label">Refree Phone Number: </label><br />
+                                                            <input type="number" class="form-control pname" name="RefreePhoneNo" id="RefreePhoneNo" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border-top">
+
+                        <div class="modal-footer">
+                            <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                            @*<button type="reset" class="btn btn-danger text-white">Reset</button>*@
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    </div>
+
+   
+
+</body>
+
+
+
+<script src="~/Scripts/FunctionalityJs/ClientArea/Client/client-save.js?wadaanv=5.1.8"></script>
+ 
+ 

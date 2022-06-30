@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "ChartOfAccounts";
+    Layout = "~/Areas/Account/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Account/Account/Dashboard"> Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Chart Of Accounts</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-header"><h5>Account List</h5>  </div>
+
+                    <div class="card-body">
+
+                        <div id="account-grid"> </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+</div>
+<script src="~/Areas/Account/Scripts/Account/account.js"></script>

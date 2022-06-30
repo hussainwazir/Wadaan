@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Save";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+<style>
+
+    label {
+        margin-top: .5rem;
+    }
+
+    .error, .invalid {
+        border: 1px solid red;
+    }
+
+    .viewbutton {
+        font-size: 14px;
+        color: #0069ff !important;
+        cursor: pointer;
+        text-decoration: underline !important;
+    }
+</style>
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Employee </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="card">
+
+                    <div class="card-header"><h5 style="font-family: sans-serif; font-weight: bold; font-size: 15px;">Employee Assign To Manager</h5> </div>
+                    <div class="card-body">
+
+                        <form class="md-float-material" id="frmAddUpdateEmployeeAssignToManager" name="frmAddUpdateEmployeeAssignToManager" action="/services/Xtreme/multipart" method="post">
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="type" id="type" value="Employee_Save">
+                            <br />
+                   
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div>
+                                        <label class="form-control-label">Manager:<span style="color:red">*</span></label><br />
+                                        <select class="form-control select2" id="ManagerID" name="ManagerID" onchange="loadtesting(this)" required="required"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div>
+                                        <label class="form-control-label">Employee:</label>
+                                        <select class="form-control" multiple="multiple" required id="AssignEmployeeToManagerddl"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div>
+                                        <button type="button" id="btnSave" style="margin-top:35px;margin-left:30px" class="btn btn-success text-white   waves-effect  f-w-600 save_btn"> Save</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                     
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h5 style="font-family: sans-serif; font-weight: bold; font-size: 15px;">Employee List Assign to Manager</h5> </div>
+                    <div class="card-body">
+                        <button type="button" id="collapse" class="btn btn-sm btn-secondary waves-effect waves-light d-inline-block"><i class="fa fa-compress m-r-5"></i>Collapse </button>
+                        <div id="assign-employee-to-manager"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+                <script>
+                    //***********************************//
+                    // For select 2
+                    //***********************************//
+                    $(".select2").select2();
+
+                    /*colorpicker*/
+                    $('.demo').each(function () {
+                        //
+                        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                        //
+                        //  $(selector).minicolors();
+                        //
+                        // The way I've done it below is just for the demo, so don't get confused
+                        // by it. Also, data- attributes aren't supported at this time...they're
+                        // only used for this demo.
+                        //
+                        $(this).minicolors({
+                            control: $(this).attr('data-control') || 'hue',
+                            position: $(this).attr('data-position') || 'bottom left',
+
+                            change: function (value, opacity) {
+                                if (!value) return;
+                                if (opacity) value += ', ' + opacity;
+                                if (typeof console === 'object') {
+
+                                }
+                            },
+                            theme: 'bootstrap'
+                        });
+
+                    });
+                    /*datwpicker*/
+                    jQuery('.mydatepicker').datepicker();
+                    jQuery('#datepicker-autoclose').datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+                    var quill = new Quill('#editor', {
+                        theme: 'snow'
+                    });
+
+                </script>
+</body>
+
+ 
+
+<script src="~/Scripts/FunctionalityJs/ManagerArea/ManagerArea/manager-save.js?wadaanv=5.1.8"></script>

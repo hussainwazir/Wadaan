@@ -1,0 +1,1212 @@
+﻿
+@{
+
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+<head>
+
+    <style>
+
+        input[type=checkbox] {
+            transform: scale(1.1);
+        }
+
+    </style>
+
+    @*<link href="~/Content/Assets/css/fullcalendar.css" rel="stylesheet" />
+        <link href="~/Content/Assets/css/fullcalendar.print.css" rel="stylesheet" />*@
+
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/../../assets/images/favicon.png">
+
+    <!-- Custom CSS -->
+    @*<link href="~/Content/Assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+        <link href="~/Content/Assets/extra-libs/calendar/calendar.css" rel="stylesheet" />*@
+
+
+
+    @*<link href="~/Content/Assets/dist/css/style.min.css" rel="stylesheet" />*@
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Access Control </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div>
+                            <label class="form-control-label">Role:</label><br />
+                            <select class="form-control select2" id="Role" name="Role"  onchange="LoadPermissionAgainstSelectdRole('Employee', ''), fnShowHidePermissionDiv(this);"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                </div><br /> 
+                <div id="accordion">
+                    <div class="card employeediv">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" data-toggle="collapse" onclick="ShowHideModulesForms('Employee-access-control','Employee')" data-target="#Employee-access-control" aria-expanded="true" aria-controls="Employee-access-control">
+                                    <h5>  Employee </h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="Employee-access-control" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-employee-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="addemployee">
+                                                    Add Employee
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" value="1" id="chk-add-employee-create">
+
+                                                    </div>
+                                                </td>
+                                                <td class="read-hypen" style="display:none">
+                                                    <div class="text-center" id="" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="">
+                                                    <div class="text-center" id="" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="" value="1">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" value="1" id="chk-add-employee-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display:none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="" value="1" >
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    Employee List 
+                                                </td>
+
+                                                <td class="create-hypen" style="display: none;">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="" value="1">
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-lst-employee-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-list-employee-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" id="chk-list-employee-delete">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Employee Detail
+                                                </td>
+
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+
+                                                <td class="">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="" value="1">
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-detail-employee-read">
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="update-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="" value="1">
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none;">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="" value="1">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-Save-employee-permissions" onclick="savePersmissionsAgainstTheRole('tbl-employee-permissions tr','Employee');" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card clientdiv">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" data-toggle="collapse" onclick="ShowHideModulesForms('Client-access-control','Client')" data-target="#Client-access-control" aria-expanded="false" aria-controls="Client-access-control">
+                                    <h5>  Client </h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="Client-access-control" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-client-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    Add Client
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" id="chk-client-add-employee">
+
+                                                    </div>
+                                                </td>
+                                                <td class="read-hypen" style="display: none;">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="read-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="" >
+
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-client-add-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    Client List
+                                                </td>
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-list-client-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-list-client-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" id="chk-list-client-delete">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Client Detail
+                                                </td>
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="">
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-detail-client-read">
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="update-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="update-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="">
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" name="" class="">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-Save-client-permission" onclick=" savePersmissionsAgainstTheRole('tbl-client-permissions tr', 'Client');" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card contractordiv">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn" data-toggle="collapse" onclick="ShowHideModulesForms('Contractor-access-control','Contractor')" data-target="#Contractor-access-control" aria-expanded="false" aria-controls="Contractor-access-control">
+                                    <h5>  Contractor </h5>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="Contractor-access-control" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-contractor-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    Add Contractor
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" id="chk-add-contractor-create">
+
+                                                    </div>
+                                                </td>
+                                                <td class="read-hypen" style="display: none;">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="read-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-add-contractor-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    Contractor List
+                                                </td>
+
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-list-contractor-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-list-contractor-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" id="chk-list-contractor-delete">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Contractor Detail
+                                                </td>
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-detail-contractor-read">
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="update-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="update-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-save-contractor-permission" onclick=" savePersmissionsAgainstTheRole('tbl-contractor-permissions tr', 'Contractor');"  class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card projectdiv">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn" data-toggle="collapse" onclick="ShowHideModulesForms('project-access-control','Project')" data-target="#project-access-control" aria-expanded="false" aria-controls="project-access-control">
+                                    <h5>  Project </h5>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="project-access-control" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-project-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    Add Project
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" id="chk-add-project-create">
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="read-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="read-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-add-project-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                      Project List
+                                                </td>
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-list-project-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-list-project-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" id="chk-list-project-delete">
+
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Project Detail
+                                                </td>
+
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-detail-project-read">
+
+                                                    </div>
+                                                </td>
+                                                <td class="update-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="update-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-save-project-permission" onclick=" savePersmissionsAgainstTheRole('tbl-project-permissions tr', 'Project');" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card meetingdiv">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn" data-toggle="collapse" onclick="ShowHideModulesForms('meeting-access-control','Meeting')" data-target="#meeting-access-control" aria-expanded="false" aria-controls="meeting-access-control">
+                                    <h5>  Meeting </h5>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="meeting-access-control" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-meeting-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    Add Meeting
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" id="chk-add-meeting-create">
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="read-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="read-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" class="" name="">
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-add-meeting-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input  type="checkbox" class="" name=""/>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                      Meeting List
+                                                </td>
+                                                <td class="create-hypen"style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                       <input type="checkbox"/>
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-list-meeting-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-list-meeting-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" id="chk-list-meeting-delete">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Meeting Detail
+                                                </td>
+
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-detail-meeting-read">
+
+                                                    </div>
+                                                </td>
+                                                <td class="update-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="update-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox"/>
+                                                    </div>
+                                                </td>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-save-meeting-permission" onclick="savePersmissionsAgainstTheRole('tbl-meeting-permissions tr', 'Meeting');" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card taskdiv">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn" data-toggle="collapse" onclick="ShowHideModulesForms('task-access-control','Task')" data-target="#task-access-control" aria-expanded="false" aria-controls="task-access-control">
+                                    <h5>  Task </h5>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="task-access-control" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-task-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    Add Task
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" value="1" id="chk-add-task-create">
+
+                                                    </div>
+                                                </td>
+                                                <td style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" value="1" id="chk-add-task-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+                                                <td style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center" style="font-size:30px">
+                                                       <input type="checkbox"/>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                      Task List
+                                                </td>
+                                                <td style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox"/>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" value="1" id="chk-list-task-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" value="1" id="chk-list-task-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" value="" id="chk-list-task-delete">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Task Detail
+                                                </td>
+                                                <td style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" value="1" id="chk-detail-task-delete">
+
+                                                    </div>
+                                                </td>
+                                                <td style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center" style="font-size:30px">
+                                                       <input type="checkbox" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-save-task-permission" onclick=" savePersmissionsAgainstTheRole('tbl-task-permissions tr', 'Task');" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card supplierdiv">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn" data-toggle="collapse" onclick="ShowHideModulesForms('supplier-access-control','Supplier')" data-target="#supplier-access-control" aria-expanded="false" aria-controls="supplier-access-control">
+                                    <h5>  Supplier </h5>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="supplier-access-control" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                               
+                                                <th></th>
+                                                <th><strong>Form Name</strong></th>
+                                                <th style="padding-left:410px"><strong>Create</strong> </th>
+                                                <th><strong>Read</strong> </th>
+                                                <th><strong>Update</strong> </th>
+                                                <th><strong>Delete</strong> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl-supplier-permissions">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    Add Supplier
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" class="chk-create" name="" id="chk-add-supplier-create">
+
+                                                    </div>
+                                                </td>
+                                                <td class="read-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="read-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-add-supplier-update">
+                                                        <label for="update[0]0"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                       <input type="checkbox" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                      Supplier List
+                                                </td>
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox"/>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-list-supplier-read">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-update" id="chk-list-supplier-update">
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-delete" id="chk-list-supplier-delete">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    Supplier Detail
+                                                </td>
+                                                <td class="create-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="create-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="checkbox checkbox-success text-center">
+                                                        <input type="checkbox" name="" class="chk-read" id="chk-detail-supplier-read">
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="update-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="update-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen" style="display: none">
+                                                    <div class="text-center" style="font-size:30px">
+                                                        -
+                                                    </div>
+                                                </td>
+                                                <td class="delete-hypen">
+                                                    <div class="text-center" style="font-size:30px">
+                                                       <input type="checkbox"/>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2" style="padding-left:120px">
+                                            <button type="button" id="btn-save-supplier-permission" onclick=" savePersmissionsAgainstTheRole('tbl-supplier-permissions tr', 'Supplier');" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+
+
+<script src="~/Scripts/FunctionalityJs/AccessControlArea/AccessControl/access-control-save.js"></script>

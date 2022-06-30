@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Shared/_Employee_LoginLayout.cshtml";
+}
+
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+
+
+
+
+
+                <div class="row">
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-md-12 col-lg-12 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info">
+                                <h2 class="text-white" id="login-user-name">  </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    @*<div class="col-md-4 col-lg-4 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="box bg-danger text-center" style="height:250px">
+                                    <h1 style=" padding-top:80px" class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
+                                    <h1 class="text-white" id="total-num-of-project-edddmployee-involved"></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                         Column
+                        <div class="col-md-4 col-lg-4 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="box bg-cyan  text-center" style="height:250px;">
+                                    <h1 style=" padding-top:80px" class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
+                                    <h1 class="text-white" id="total-task-assign-to-employee"></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="box bg-cyan  text-center" style="height:250px;">
+                                    <h1 style=" padding-top:20px" class="font-light text-white"></h1>
+                                    <h2 class="text-white" id="total-completed-tasks"></h2>
+                                    <h2 class="text-white" id="total-pending-tasks"></h2>
+                                    <h2 class="text-white" id="total-paused-tasks"></h2>
+
+                                </div>
+                            </div>
+                        </div>*@
+
+                </div>
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan text-center" style="height:200px">
+                                <h1 class="font-light text-white" style=" padding-top:40px"><i class="me-2 mdi mdi-view-list"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-num-of-project-employee-involved"> </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-success text-center" style="height:200px">
+                                <h1 class="font-light text-white" style=" padding-top:40px"><i class="me-2 mdi mdi-view-list"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-task-assign-to-employee"> </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-warning text-center" style="height:200px">
+                                <h1 class="font-light text-white" style=" padding-top:40px"><i class="me-2 mdi mdi-checkbox-multiple-marked-outline"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-completed-tasks"> </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-danger text-center" style="height:200px">
+                                <h1 class="font-light text-white" style=" padding-top:40px"><i class="mdi mdi-border-outside"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-pending-tasks"> </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info text-center" style="height:200px">
+                                <h1 class="font-light text-white" style=" padding-top:40px"><i class="me-2 mdi mdi-pause"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-paused-tasks"> </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"><h5>Load Tasks By Status</h5>  </div>
+                            <div class="card-body">
+                                <div class="col-md-12 col-lg-12 col-xlg-3">
+                                    <div class="card">
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-lg-4 col-sm-4">
+
+                                                <select class="form-control select2" onchange="LoadStatusWiseTasks()" name="task-status" id="task-status">
+                                                    <option value="0">Select Task Status</option>
+                                                    <option value="NotStartedYet">Not Started Yet</option>
+                                                    <option value="InProgress">In Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                    <option value="Pause">Pause</option>
+                                                    <option value="Underreview">Under review</option>
+                                                    <option value="Approved">Approved</option>
+                                                    <option value="Rejected">Rejected</option>
+                                                    <option value="Accepted">Accepted</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-12">
+                                            <div class="card">
+                                                <div class="box">
+                                                    <div id="load-status-wise-tasks"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+
+<script src="~/Scripts/FunctionalityJs/EmployeeLoginArea/employee-login-area-dashboard.js"></script>

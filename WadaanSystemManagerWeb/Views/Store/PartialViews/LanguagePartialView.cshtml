@@ -1,0 +1,49 @@
+﻿
+@{
+
+    HttpCookie cookie = HttpContext.Current.Request.Cookies["Language"];
+    var Language = "";
+
+
+    if (cookie != null && cookie.Value != null)
+    {
+        Language = cookie.Value;
+    }
+    else
+    {
+        Language = "En";
+
+      
+    }
+}
+<select id="ddlLanguage" class="form-control" tabindex="-1">
+    <option value="En">English</option>
+    <option value="Ar">عربى</option>
+    <option value="Ur">اردو</option>
+</select>
+<script>
+        var Language = '@Language';
+        $("#ddlLanguage").val(Language);
+        $("#ddlLanguage").change(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "/Lang/Change",
+                data: JSON.stringify({ lang: $('#ddlLanguage').val() }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    location.reload();
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+
+</script>

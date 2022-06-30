@@ -1,0 +1,158 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<style>
+
+    .page-template .header {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        border-bottom: 1px solid #888;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .page-template .footer {
+        position: absolute;
+        bottom: 30px;
+        /*left: 30px;*/
+        right: 30px;
+        font-size: 12px !important;
+    }
+</style>
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Employee </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" id="active-employee"> <a class="nav-link active" data-bs-toggle="tab" href="#activeEmployee" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Employee</span></a> </li>
+                <li class="nav-item" id="in-active-employee"> <a class="nav-link" data-bs-toggle="tab" href="#InActiveEmployee" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">In Active Employee</span></a> </li>
+                <li class="nav-item" id="all-employee"> <a class="nav-link" data-bs-toggle="tab" href="#AllEmployee" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">All Employee</span></a> </li>
+
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="activeEmployee" role="tabpanel">
+                    <div class="">
+                        <div class="col-md-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header"><h5>EMPLOYEE(S)</h5> <span>Active Employee's Record List</span></div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    <button type="button" class="btn btn-success" id="btn-add-employee" onclick="window.location.href='/Employee/Employee/Save'" style="margin-left:20px; color:white">  Add Employee Form</button>
+                                                    <button type="button" class="btn btn-danger" id="btn-add-employee" onclick="window.location.href='/Employee/Employee/EmployeePrint'" style="margin-left:20px; color:white">  Print </button>
+                                                    <button type="button" class="btn btn-primary" id="btn-send-email" style="margin-left:20px; color:white">  Send Email</button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="employee-grid"> </div>
+                                                @*<div id="employee-grid-all-for-email" hidden> </div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+            <div class="tab-pane  p-20" id="InActiveEmployee" role="tabpanel">
+                <div class="">
+                    <div class="col-sm-12">
+                        <div class=" ">
+                            <div class="card-body">
+
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header"><h5>EMPLOYEE(S)</h5>   <span> In Active Employee's Record List</span></div>
+                                        <br />
+                                        <div class="card-body">
+                                            <div id="employee-grid-in-active"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane p-20" id="AllEmployee" role="tabpanel">
+                <div class="">
+                    <div class="col-sm-12">
+                        <div class=" ">
+                            <div class="card-body">
+
+                                <div class="col-md-12">
+
+                                    <div class="card">
+                                        <div class="card-header"><h5>EMPLOYEE(S)</h5>   <span>All Employee's Record List</span></div>
+                                        <br />
+
+
+                                        <div class="card-body">
+
+                                            <div id="employee-grid-all"> </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+         <div class="col-md-12">
+             @*@Html.Partial("~/Areas/Employee/Views/Employee/PartialViews/_employeePrintPartialView.cshtml")*@
+
+             <div id="employee-grid-all-for-email" hidden> </div>
+         </div>
+
+    </div> 
+
+
+</div>
+
+</div>
+
+<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/employee-list.js?wadaanv=5.1.8"></script>
+
+<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/sharing.js"></script>

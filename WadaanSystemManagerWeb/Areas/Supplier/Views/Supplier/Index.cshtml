@@ -1,0 +1,158 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+ }
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Supplier </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" id="active-supplier"> <a class="nav-link active" data-bs-toggle="tab" href="#activeSupplier" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Supplier</span></a> </li>
+                <li class="nav-item" id="in-active-supplier"> <a class="nav-link" data-bs-toggle="tab" href="#InActiveSupplier" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">In Active Supplier</span></a> </li>
+                <li class="nav-item" id="all-supplier"> <a class="nav-link" data-bs-toggle="tab" href="#AllSupplier" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">All Supplier</span></a> </li>
+
+            </ul>
+            <!-- Tab panes -->
+
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="activeSupplier" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"><h5>SUPPLIER(S)</h5> <span>All Active Supplier's Record List</span> </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    <button type="button" id="btn-add-contractor" class="btn btn-success" style="margin-left:20px; color:white" onclick="window.location.href='/S/Supplier/Save'">  Add Supplier</button><br />
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card-body">
+                                                <div id="supplier-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane  p-20" id="InActiveSupplier" role="tabpanel">
+
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"><h5>SUPPLIER(S)</h5> <span>All InActive Supplier's Record List</span> </div>
+                                            <br />
+                                          
+                                            <div class="card-body">
+
+                                                <div id="in-active-supplier-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane p-20" id="AllSupplier" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"><h5>SUPPLIER(S)</h5> <span>All Supplier's Record List</span> </div>
+                                            <br />
+
+
+                                            <div class="card-body">
+
+                                                <div id="all-supplier-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        @*<div class="row">
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-header"><h5>Suppliers(S)</h5> <span>All Supplier's Record</span>  </div>
+
+                <div class="col-md-1">
+                    <button type="button" id="btn-add-new-supplier" class="btn btn-success" onclick="window.location.href='/S/Supplier/Save'" style="float: right; margin-right: -1455px; margin-top: -40px; color:white;">  Add Supplier</button>
+                </div>
+
+                <div class="card-body">
+                    <div id="client-grid"> </div>
+                </div>
+            </div>
+        </div>*@
+
+    </div>
+
+
+    </div>
+
+
+</div>
+
+<script src="~/Scripts/FunctionalityJs/SupplierArea/Supplier/supplier-list.js?wadaanv=5.1.8"></script>

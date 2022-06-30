@@ -1,0 +1,252 @@
+﻿<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Account/Account/ChartOfAccounts">Chart Of Accounts</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class="card">
+                            <div class="card-header"><h5>Account Save</h5>  </div>
+
+                            <div class="card-body">
+
+
+                                <form class="md-float-material" id="frmAddUpdateAccount" name="frmAddUpdateAccount" action="/services/Xtreme/multipart" method="post">
+                                    <input type="hidden" name="Id" id="Id" value="0">
+                              
+                                    <input type="hidden" name="type" id="type" value="Account_Save">
+
+
+
+
+                                    <div class="row">
+
+                                        <div class="col-sm-4">
+                                            <div>
+                                                <label class="form-control-label">Account Type:<span style="color:red">*</span></label>
+                                                <select class="select2 form-select shadow-none" id="ddl-account" name="AccountTypeId" style="width: 100%; height:36px;">
+
+                                                    <option>Select Account</option>
+                                                                                  
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">  </div>
+
+                                    </div>
+                                    <div class="row"><div class="col-sm-12"><label class="form-control-label"></label></div></div>
+                                    <div class="row">
+
+                                        <div class="col-sm-8">
+                                            <div>
+                                                <label class="form-control-label">Code:<span style="color:red">*</span></label><br />
+                                                <span>A unique code/number for this account (limited to 10 characters)</span>
+                                                <input type="text" class="form-control pname" name="Code" id="Code" value="" required="">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        </div>
+                                    </div>
+                                    <div class="row"><div class="col-sm-12"><label class="form-control-label"></label></div></div>
+                                    <div class="row">
+
+                                        <div class="col-sm-8">
+                                            <div>
+                                                <label class="form-control-label">Name:<span style="color:red">*</span></label><br />
+                                                <span>A short title for this account (limited to 150 characters)</span>
+                                                <input type="text" class="form-control pname" name="Name" id="Name" value="" required="">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        </div>
+                                    </div>
+
+                                    <div class="row"><div class="col-sm-12"><label class="form-control-label"></label></div></div>
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-12">
+
+                                            <label class="form-control-label">Description :(Optional)</label><br />
+
+                                            <span>A description of how this account should be used)</span>
+
+                                            <div class="input-group">
+                                                <textarea rows="3" name="Detail" id="Detail" cols="5" class="form-control"></textarea>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row"><div class="col-sm-12"><label class="form-control-label"></label></div></div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-8">
+                                             
+                                            <div>
+                                                <label class="form-control-label">Tax :</label><br />
+                                                <span>The default tax setting for this account</span><br />
+                                                <select class="select2 form-select shadow-none" id="TaxID" name="TaxID"></select>
+                                                @*<input type="text" class="form-control pname" name="TaxID" id="TaxID" value="" required="">*@
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        </div>
+                                    </div>
+                                    <div class="row"><div class="col-sm-12"><label class="form-control-label"></label></div></div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-8">
+                                            <div class="field checkbox">
+                                                <div class="controls">
+                                                    <input type="checkbox" onclick="fnCheckBoxValue(this)" id="ShowDashboardAsWatchlist"  name="ShowDashboardAsWatchlist"   class="field "  value="0">
+                                                    <label   class="checkbox">Show on Dashboard Watchlist</label>
+                                                </div>
+                                                <div class="controls">
+                                                    <input type="checkbox" id="ShowInExpenseClaim"  onclick="fnCheckBoxValue(this)" name="ShowInExpenseClaim"   class="field "  value="0">
+                                                    <label  class="checkbox">Show in Expense Claims</label>
+                                                </div>
+                                                <div class="controls">
+                                                    <input type="checkbox" id="EnablePaymentToThisAccount"  onclick="fnCheckBoxValue(this)" name="EnablePaymentToThisAccount" class="field" value="0">
+                                                    <label  class="checkbox">Enable payments to this account</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        </div>
+                                    </div>
+
+
+
+                                    <br />
+
+
+
+
+                                </form>
+
+                                <div class="border-top">
+
+                                    <div class="modal-footer">
+                                        <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+                                        <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        @*<button type="reset" class="btn btn-danger text-white">Reset</button>*@
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header"><h5>How account types affect your reports</h5>  </div>
+
+                            <div class="card-body">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+    <script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+        /*colorpicker*/
+        $('.demo').each(function () {
+            //
+            // Dear reader, it's actually very easy to initialize MiniColors. For example:
+            //
+            //  $(selector).minicolors();
+            //
+            // The way I've done it below is just for the demo, so don't get confused
+            // by it. Also, data- attributes aren't supported at this time...they're
+            // only used for this demo.
+            //
+            $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function (value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                     
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+</body>

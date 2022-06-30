@@ -1,0 +1,60 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Meeting </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>MEETING(S)</h5> <span>All Meeting Record List</span>
+                    </div> 
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <button type="button" style="margin-left:20px; margin-top:10px; color:white" class="btn btn-success" onclick="window.location.href='/Meeting/Meeting/Save'">  Add Meeting</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+
+                        <div id="meeting-grid"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="~/Scripts/FunctionalityJs/MeetingArea/Meeting/meeting-list.js?wadaanv=5.1.8"></script>

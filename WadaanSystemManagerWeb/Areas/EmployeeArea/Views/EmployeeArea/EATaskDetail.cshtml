@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "CATaskDetail";
+    Layout = "~/Areas/Shared/_Employee_LoginLayout.cshtml";
+}
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/EmployeeArea/EmployeeArea/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Task </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Detail</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+
+                        <div class="card">
+                            <div class="card-header" style="background: #2c3e50;">
+                                @*<span style="color:white"> Project Name : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-danger project">   </span>*@
+                                <span style="color:white;padding-left:20px"> Task Name : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-success taskName">  </span>
+                                <span style="color:white;padding-left:20px"> Assign To : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-warning assign">  </span>
+                                <span style="color:white;padding-left:20px"> Task Status : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-danger taskstatus">  </span>
+                                <span style="color:white;padding-left:20px">      </span>
+                                <span style="color:white; padding-left:20px; font-weight:bold;font-size:20px" id="remmTime" class="label label-danger ">    </span>
+                            </div>
+
+                            <div class="card-body border">
+                                <div class="row">
+                                    <div style="height:200px">
+                                        <label class="form-control-label">Task Description </label><hr />
+                                        <div class="" id="task-description"></div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+
+                                    <div class="col-sm-3 pull-left">
+                                        <label>Change Assignee :</label>
+                                        <div class="d-inline-block">
+                                            <select class="select2" id="AssignTo" onchange="ChangeAssignee()" style="width:150px !important"> </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <label>Status</label>
+                                        <div class="d-inline-block">
+                                            <select class="select2" id="TaskStatus" onchange="ChangeStatusOfTaskByEmployee()" style="width:170px !important">
+                                                <option value="0">Select Task Status</option>
+                                                <option value="NotStartedYet">Not Started Yet</option>
+                                                <option value="InProgress">In Progress</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="OverDue">OverDue</option>
+                                                <option value="Approved">Approved</option>
+                                                <option value="Rejected">Rejected</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+
+                                        <label class="form-control-label">Reported Date: </label>
+                                        <span style="color:white; font-weight:bold;font-size:13px" class="label label-danger reportedDate">    </span>
+                                        <label class="form-control-label">Priority: </label>
+                                        <span style="color:white; font-weight:bold;font-size:13px; " class="label label-danger priority">   </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="">
+                                <div class="card-header" style="background: #2c3e50;">
+                                    <span style="color:white"> Task History : </span>
+                                </div>
+                                @*<div class="card-body border">
+                                    <div class="">
+                                        <div id="task-detail-historty-grid"></div>
+                                    </div>
+                                </div>*@
+
+                                <div class="row">
+                                    @Html.Partial("~/Areas/Task/Views/Task/PartialViews/_TaskVersionList.cshtml")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            @Html.Partial("~/Areas/Comment/Views/PartialViews/_LoadComment.cshtml")
+
+                        </div>
+
+                    </div>
+
+
+
+                    @*<div class="col-sm-3">
+                        <div class="card" style="height:600px">
+                            <div class="card-header" style="background: #2c3e50;">
+                                <span style="color:white"> Attachments : </span>
+                            </div>
+                            <div class="card-body border">
+                                <div class="card-block task-attachment" style="overflow-x: auto;height: 600px;">
+                                    <ul class="media-list appendAttachment"></ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="employee-task-progress" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">CheckList Detail</h5>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <form class="md-float-material" id="frmAddUpdateTaskProgress" name="frmAddUpdateTaskProgress" action="/services/Xtreme/multipart" method="post">
+                                <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                                <input type="hidden" name="TaskID" id="TaskID" value="00000000-0000-0000-0000-000000000000">
+                                <input type="hidden" name="NewStatus" id="NewStatus" value="">
+                                <input type="hidden" name="CheckList" id="CheckList" value="">
+                                <input type="hidden" name="type" id="type" value="Task_TaskStatusAndChecklist_Save">
+                                @*<input type="hidden" name="type" id="type" value="Task_TaskStatusAndChecklists_Save">*@
+                                <div id="div-rejected">
+                                    <div class="card">
+                                        <div class="card-header"> </div>
+                                        <div class="card-body border">
+                                            <div class="row">
+                                                <input type="checkbox" class="checklist">
+                                                <label for="vehicle1"> I have a bike</label><br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="div-completed">
+                                    <div class="card">
+                                        <div class="card-header"><h5>CheckList for Complete</h5>  </div>
+                                        <div class="card-body border">
+                                            <div class="row" id="div-completed-html">
+                                                <div class="col-sm-6">
+                                                    <input type="checkbox" class="checklist">
+                                                    <label for="vehicle1"> I have a bike</label><br>
+                                                    <input type="checkbox" class="checklist" value="Car">
+                                                    <label for="vehicle2"> I have a car</label><br>
+                                                    <input type="checkbox" class="checklist">
+                                                    <label for="vehicle3"> I have a boat</label><br><br>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="checkbox" class="checklist">
+                                                    <label for="vehicle1"> I have a bike</label><br>
+                                                    <input type="checkbox" class="checklist">
+                                                    <label for="vehicle2"> I have a car</label><br>
+                                                    <input type="checkbox" class="checklist">
+                                                    <label for="vehicle3"> I have a boat</label><br><br>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label class="form-control-label">Description:</label>
+                                        <textarea type="text" class="form-control pname" name="Description" id="Description" value=""></textarea>
+                                    </div> 
+                                    <div class="col-sm-8">
+                                        <label class="form-control-label" style="padding-top:15px">Task Attachments:</label>
+                                        <input type="file" class="form-control pname" name="TaskAttachmentFile" id="TaskAttachmentFile" value="">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" id="btnSaveAttachmentAndList" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+                            <button type="button" class="btn btn-danger waves-effect text-white " id="btn-close-modal">Close</button>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    
+
+
+
+
+        <script>
+            $("#Areatype").val("TaskDetail");
+        </script>
+
+
+
+
+</body>
+ 
+<script src="~/Scripts/FunctionalityJs/EmployeeLoginArea/employee-area-task-detail.js?wadaanv=5.1.8"></script>

@@ -1,0 +1,59 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_Employee_LoginLayout.cshtml";
+}
+
+ 
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/EmployeeArea/EmployeeArea/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Task </li>
+                            <li class="breadcrumb-item active" aria-current="page"> List</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        @*<button type="button" class="btn btn-success" onclick="window.location.href='/Task/Task/Save'" style="float:right; color:white;">  Add Task</button>*@
+
+                        <h5>Task(S)</h5> <span>All Tasks Record List</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div id="task-list-of-employee-grid"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+ 
+<script src="~/Scripts/FunctionalityJs/EmployeeLoginArea/employee-login-area-task-list.js?wadaanv=5.1.8"></script>

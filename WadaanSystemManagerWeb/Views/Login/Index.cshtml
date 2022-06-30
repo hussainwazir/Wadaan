@@ -1,0 +1,326 @@
+﻿
+@{
+    Layout = null;
+}
+ 
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Account System login</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="~/JS/ScriptController.js"></script>
+    <style type="text/css">
+        .invalid {
+            background-color: #F7EACD !important;
+            border: 1px dotted red !important;
+        }
+
+        .passwordgroup {
+            direction: rtl !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+                <div class="row flex-grow">
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                        <div class="auth-form-transparent text-left p-3">
+                            <div class="brand-logo" style="text-align:center;">
+                                <img src="~/images/logo.png" alt="RumanZovia" />
+                            </div>
+                            <h4>Welcome backss!</h4>
+                            <h6 class="font-weight-light">Happy to see you again!</h6>
+                            <form class="pt-3" id="frmLogin" name="frmLogin" action="/services/Xtreme/multipart" method="post">
+                                <input type="hidden" name="type" id="type" value="login" />
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Username</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-account-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg border-left-0" id="username" name="username" placeholder="Username" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control form-control-lg border-left-0" id="password" name="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span style="color:red;" id="error_span" name="error_span"></span>
+                                </div>
+                                <div class="my-3">
+                                    <button type="button" id="btnLogin" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"><strong>LOGIN</strong></button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div class="j-tabs-container">
+                            <!-- start tab #1 -->
+                            <input id="tab1" type="radio" name="tabs" checked>
+                            <label class="j-tabs-label" for="tab1" title="Login">
+                                <i class="fa fa-sign-in"></i>
+                                <span>Login</span>
+                            </label>
+                            <!-- end tab #1 -->
+                            <!-- start tab #2 -->
+                            <input id="tab2" type="radio" name="tabs">
+                            <label class="j-tabs-label" for="tab2" title="Registration">
+                                <i class="icofont icofont-ui-user"></i>
+                                <span>Registration</span>
+                            </label>
+                            <!-- end tab #2 -->
+                            <!-- start tab #3 -->
+                            <input id="tab3" type="radio" name="tabs">
+                            <label class="j-tabs-label" for="tab3" title="Reset password">
+                                <i class="icofont icofont-unlock"></i>
+                                <span>Reset password</span>
+                            </label>
+                            <!-- end tab #3 -->
+                            <!-- start form #1 -->
+                            <div id="tabs-section-1" class="j-tabs-section">
+                                <form action="#" method="post" class="j-forms" novalidate>
+                                    <div class="content">
+                                        <div class="j-row">
+                                            <div class="span6">
+                                                <div class="divider-text gap-top-20 gap-bottom-45">
+                                                    <span>Sign in with</span>
+                                                </div>
+                                                <!-- start social icons-->
+                                                <div class="unit">
+                                                    <div class="social-center">
+                                                        <div class="social-icon twitter">
+                                                            <i class="fa fa-twitter"></i>
+                                                            <button type="button"></button>
+                                                        </div>
+                                                        <div class="social-icon google-plus">
+                                                            <i class="fa fa-google-plus"></i>
+                                                            <button type="button"></button>
+                                                        </div>
+                                                        <div class="social-icon facebook">
+                                                            <i class="fa fa-facebook"></i>
+                                                            <button type="button"></button>
+                                                        </div>
+                                                        <div class="social-icon linkedin">
+                                                            <i class="fa fa-linkedin"></i>
+                                                            <button type="button"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end social icons-->
+                                            </div>
+                                            <!-- end /.span6 -->
+                                            <div class="span6">
+                                                <div class="divider-text gap-top-20 gap-bottom-45">
+                                                    <span>Or login</span>
+                                                </div>
+                                                <!-- start login -->
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <label class="icon-right" for="login">
+                                                            <i class="icofont icofont-ui-user"></i>
+                                                        </label>
+                                                        <input type="text" id="login" name="login" placeholder="your login...">
+                                                    </div>
+                                                </div>
+                                                <!-- end login -->
+                                                <!-- start password -->
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <label class="icon-right" for="password">
+                                                            <i class="icofont icofont-lock"></i>
+                                                        </label>
+                                                        <input type="password" id="password" name="password" placeholder="your password...">
+                                                    </div>
+                                                </div>
+                                                <!-- end password -->
+                                                <!-- start keep logged -->
+                                                <div class="unit">
+                                                    <div class="checkbox-fade fade-in-primary">
+                                                        <label>
+                                                            <input type="checkbox" value="true" checked="">
+                                                            <span class="cr">
+                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                            </span>
+                                                            <span>Keep me logged in</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- end keep logged -->
+                                            </div>
+                                            <!-- end /.span6 -->
+                                        </div>
+                                        <!-- end /.j-row -->
+                                        <button type="submit" class="btn btn-primary m-b-20 f-right">Sign in</button>
+                                    </div>
+                                    <!-- end /.content -->
+                                </form>
+                            </div>
+                            <!-- end form #1 -->
+                            <!-- start form #2 -->
+                            <div id="tabs-section-2" class="j-tabs-section">
+                                <form action="#" method="post" class="j-forms" novalidate>
+                                    <div class="content">
+                                        <div class="divider-text gap-top-20 gap-bottom-45">
+                                            <span>Registration</span>
+                                        </div>
+                                        <!-- start name email -->
+                                        <div class="j-row">
+                                            <div class="span6 unit">
+                                                <div class="input">
+                                                    <label class="icon-right" for="username">
+                                                        <i class="icofont icofont-ui-user"></i>
+                                                    </label>
+                                                    <input type="text" id="username" name="username" placeholder="username">
+                                                </div>
+                                            </div>
+                                            <div class="span6 unit">
+                                                <div class="input">
+                                                    <label class="icon-right" for="email">
+                                                        <i class="icofont icofont-envelope"></i>
+                                                    </label>
+                                                    <input type="email" id="email" name="email" placeholder="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end name email -->
+                                        <!-- start password -->
+                                        <div class="j-row">
+                                            <div class="span6 unit">
+                                                <div class="input">
+                                                    <label class="icon-right" for="reg_password">
+                                                        <i class="icofont icofont-lock"></i>
+                                                    </label>
+                                                    <input type="password" id="reg_password" name="password" placeholder="password">
+                                                </div>
+                                            </div>
+                                            <div class="span6 unit">
+                                                <div class="input">
+                                                    <label class="icon-right" for="confirm_password">
+                                                        <i class="icofont icofont-unlock"></i>
+                                                    </label>
+                                                    <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end confirm password -->
+                                        <div class="divider gap-bottom-25"></div>
+                                        <!-- start name -->
+                                        <div class="j-row">
+                                            <div class="span6 unit">
+                                                <div class="input">
+                                                    <input type="text" placeholder="first name" name="first_name">
+                                                </div>
+                                            </div>
+                                            <div class="span6 unit">
+                                                <div class="input">
+                                                    <input type="text" placeholder="last name" name="last_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end name -->
+                                        <!-- start gender -->
+                                        <div class="unit">
+                                            <label class="input select">
+                                                <select name="gender">
+                                                    <option value="none" selected disabled="">select gender...</option>
+                                                    <option value="male">male</option>
+                                                    <option value="female">female</option>
+                                                    <option value="other">other</option>
+                                                </select>
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <!-- end gender -->
+                                        <button type="submit" class="btn btn-primary m-b-20 f-right">Register</button>
+                                    </div>
+                                    <!-- end /.content -->
+                                </form>
+                            </div>
+                            <!-- end form #2 -->
+                            <!-- start form #3 -->
+                            <div id="tabs-section-3" class="j-tabs-section">
+                                <form action="#" method="post" class="j-forms" novalidate>
+                                    <div class="content">
+                                        <div class="divider-text gap-top-20 gap-bottom-45">
+                                            <span>Password recovery</span>
+                                        </div>
+                                        <!-- start widget button 130 -->
+                                        <div class="unit">
+                                            <div class="widget right-130">
+                                                <div class="input">
+                                                    <input type="email" placeholder="enter your email" name="email">
+                                                </div>
+                                                <button type="submit" class="addon-btn adn-130 adn-right">
+                                                    Recovery
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- end widget button 130 -->
+                                    </div>
+                                    <!-- end /.content -->
+                                </form>
+                            </div>
+                            <!-- end form #3 -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 login-half-bg d-flex flex-row">
+                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2020  All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+
+    <!--Custom JavaScript -->
+    <script src="~/Content/assets/dist/js/custom.min.js"></script>
+    <script src="~/JS/scripts/login.js"></script>
+    <a href="~/Areas/Account/Views/Account/Index.cshtml"> </a>
+</body>
+
+</html>

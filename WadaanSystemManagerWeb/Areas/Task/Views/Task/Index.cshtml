@@ -1,0 +1,180 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Task </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" id="active-tasks"> <a class="nav-link active" data-bs-toggle="tab" href="#activetasks" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Tasks</span></a> </li>
+                <li class="nav-item" id="in-active-tasks"> <a class="nav-link" data-bs-toggle="tab" href="#InActivetasks" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">In Active Tasks</span></a> </li>
+                <li class="nav-item" id="all-tasks"> <a class="nav-link" data-bs-toggle="tab" href="#Alltasks" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">All Tasks</span></a> </li>
+
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="activetasks" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header"> <h5>Task(S)</h5> <span>Active Tasks Record List</span> </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    
+                                                    <button type="button"  style="margin-left:20px; color:white" class="btn btn-success" onclick="window.location.href='/Task/Task/Save'">  Add Task</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                                        SEARCH BY :   <select id="ddl-record" class=" select2 form-control">
+
+                                                            <option selected value="0">Select</option>
+                                                            <option value="Architect">Architect</option>
+                                                            <option value="Presentation">Presentation</option>
+                                                            <option value="Drawing">Drawing</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-lg-9 col-md-9 col-sm-9">  </div>
+                                                </div>
+                                                <div id="task-grid"> </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane  p-20" id="InActivetasks" role="tabpanel">
+
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"> <h5>Task(S)</h5> <span>In Active Tasks Record List</span> </div>
+                                            <br />
+                                            <div class="card-body">
+
+                                                <div id="task-grid-in-active-tasks"> </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane p-20" id="Alltasks" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"> <h5>Task(S)</h5> <span>All Tasks Record List</span> </div>
+                                            <br />
+
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                                    <label style="margin-left:10px">Select Task on Status Base</label>
+                                                    <select class="form-control select2" onchange="LoadStatusWiseTasks()" name="ddl-task-status" style="width:200px; margin-left:30px" id="ddl-task-status">
+                                                        <option value="0">Select Task Status</option>
+                                                        <option value="NotStartedYet">Not Started Yet</option>
+                                                        <option value="InProgress">In Progress</option>
+                                                        <option value="Completed">Completed</option>
+                                                        <option value="Pause">Pause</option>
+                                                        <option value="Underreview">Under review</option>
+                                                        <option value="Approved">Approved</option>
+                                                        <option value="Rejected">Rejected</option>
+                                                        <option value="Accepted">Accepted</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <div class="box">
+                                                        <div id="all-tasks-grid"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+<script src="~/Scripts/FunctionalityJs/TaskArea/Task/task-list.js?wadaanv=5.1.8"></script>

@@ -1,0 +1,94 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_ClientLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/CLIENTAREA/ClientArea/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Task </li>
+                            <li class="breadcrumb-item active" aria-current="page"> List</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        @*<button type="button" class="btn btn-success" onclick="window.location.href='/Task/Task/Save'" style="float:right; color:white;">  Add Task</button>*@
+
+                        <h5>Task(S)</h5> <span>All Tasks Record List</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div id="task-list-client-projects-grid"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="comment-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Comments</h5>
+            </div>
+            <div class="modal-body">
+
+
+                <form class="md-float-material" id="frmAddUpdateTaskProgress" name="frmAddUpdateTaskProgress" action="/services/Xtreme/multipart" method="post">
+                    <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                    <input type="hidden" name="TaskID" id="TaskID" value="00000000-0000-0000-0000-000000000000">
+                    <input type="hidden" name="type" id="type" value="Task_TaskStatusAndChecklist_Save">
+                    <div class="row">
+                        @Html.Partial("~/Areas/Comment/Views/PartialViews/_LoadComment.cshtml")
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="btnSaveAttachmentAndList" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+                <button type="button" class="btn btn-danger waves-effect text-white " id="btn-close-modal">Close</button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/FunctionalityJs/ClientLoginArea/client-login-area-task-list.js?wadaanv=5.1.8"></script>

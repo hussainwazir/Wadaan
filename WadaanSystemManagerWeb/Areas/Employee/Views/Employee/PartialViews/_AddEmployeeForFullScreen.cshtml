@@ -1,0 +1,357 @@
+﻿<style>
+    .modal-lg {
+        max-width: 110em;
+    }
+
+    .md-modal {
+        width: 103em !important;
+    }
+</style>
+
+<form class="md-float-material" id="frmAddemployee" name="frmAddemployee" action="/services/Xtreme/multipart" method="post">
+    <input type="hidden" name="EmployeeID" id="EmployeeID" value="00000000-0000-0000-0000-000000000000" />
+    <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000" />
+     <input type="hidden" name="type" id="type" value="addEmployee" />
+
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Employee No:</label>
+                <input type="text" class="form-control pname" name="EmployeeNumber" id="EmployeeNumber" required value="" tabindex="1">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Employee Name:</label>
+                <input type="text" class="form-control pname" name="NameofEmployee" id="NameofEmployee" required value="" tabindex="2">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Father Name:</label>
+                <input type="text" class="form-control pname" name="FathersName" id="FathersName" required value="" tabindex="3">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Contact No UAE:</label>
+                <input type="text" class="form-control pname" name="ContactNumberUAE" id="ContactNumberUAE" required value="" tabindex="4">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Emergency Contact UAE:</label>
+                <input type="text" class="form-control pname" name="EmergencyContactUAE" id="EmergencyContactUAE" required value="" tabindex="5">
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Home Country Contact No:</label>
+                <input type="text" class="form-control pname" name="HomecountryContactNumber" id="HomecountryContactNumber" required value="" tabindex="6">
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Home country relative No:</label>
+                <input type="text" class="form-control pname" name="HomecountryrelativeNumber" id="HomecountryrelativeNumber" required value="" tabindex="7">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+               
+                <input type="text" class="form-control pname" name="PassportNumber" id="PassportNumber" required value="" tabindex="8">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+            <input type="text" style="display:none !important" class="form-control pname" name="EmployeeDesignation" id="EmployeeDesignation" value="">
+            <div>
+
+                <label class="form-control-label">Emirates ID No:</label>
+                <input type="text" class="form-control pname" name="EmiratesIDNumber" id="EmiratesIDNumber" required value="" tabindex="9">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Employee Department:</label>
+                <select class="form-control select2" id="DepartmentID" name="DepartmentID" tabindex="10" onchange="fnLoadDesignationByID(this.value);" required></select>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <label class="form-control-label">Employee Type:</label>
+                <select class="form-control" id="EmployeeType" name="EmployeeType" tabindex="11" onchange="fnSelectDesignationByCondition(this.value);" required>
+                    <option value="" selected>Select Employee </option>
+                    <option value="Office Staff">Office Staff</option>
+                    <option value="Labour">Labour</option>
+                </select>
+                @*<select class="form-control" id="EmployeeType" name="EmployeeType" required tabindex="11"></select>*@
+            </div>
+        </div>
+        <div class="col-sm-4 showhideDesignation">
+            <div>
+                <label class="form-control-label">Employee Designation:</label>
+                <select class="form-control select2" id="DesignationID" name="DesignationID"  tabindex="12"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+       
+        <div class="col-sm-4">
+            <div>
+
+                <label class="form-control-label">Basic Salary:</label>
+                <input type="number" min="0" class="form-control pname" name="BasicSalary" id="BasicSalary" required value="0"  tabindex="13">
+            </div>
+        </div>
+        <div class="col-sm-4">                         </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="form-control-label">Passport Issue Date:</label>
+            <div>
+                <input type="text" class="form-control pname" name="PassportIssueDate" id="PassportIssueDate" required value="" tabindex="14">
+
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <label class="form-control-label">Passport Expiry Date:</label>
+            <div>
+                <input type="text" class="form-control pname" name="PassportExpiryDate" id="PassportExpiryDate" required value="" tabindex="15">
+
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label class="form-control-label">Visa Issue Date:</label>
+            <div>
+
+                <input type="text" class="form-control pname" name="VisaIssueDate" id="VisaIssueDate" required value="" tabindex="16">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label class="form-control-label">Visa Expiry Date:</label>
+            <div>
+                <input type="text" class="form-control pname" name="VisaExpiryDate" id="VisaExpiryDate" required value="" tabindex="17">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-3">
+            <label class="form-control-label">Emirates ID Issue Date:</label>
+            <div>
+                <input type="text" class="form-control pname" name="EmiratesIDIssueDate" id="EmiratesIDIssueDate" required value="" tabindex="18">
+
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label class="form-control-label">Emirates ID Expiry Date:</label>
+            <div>
+                <input type="text" class="form-control pname" name="EmiratesIDExpiryDate" id="EmiratesIDExpiryDate" required value="" tabindex="19">
+
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label class="form-control-label">DOJ:</label>
+            <div>
+                <input type="text" class="form-control pname" name="DateofJoining" id="DateofJoining" required value="" tabindex="20">
+
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label class="form-control-label">DOB:</label>
+            <div>
+                <input type="text" class="form-control pname" name="DateofBirth" id="DateofBirth" required value="" tabindex="21">
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="ImagePreviewArea" style="display:none;">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="form-control-label">Passport Preview:</label>
+                <div>
+                    <img src="" style=" width: 80%;" class="form-control showPassportPreview" alt="Passport Preview" />
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label class="form-control-label">Visa Preview:</label>
+                <div>
+                    <img src="" style="width: 80%;" class="form-control showVisaPreview" alt="Visa Preview" />
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label class="form-control-label">Emirates ID Preview:</label>
+                <div>
+                    <img src="" style="width: 80%;" class="form-control showEmirateIDPreview" alt="Visa Preview" />
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="ImagesArea" style="display:none;">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label class="form-control-label">Passport Attachment:</label>
+                <div>
+                    <input type="file" name="Passportattachment" value="" class="form-control" tabindex="22" />
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="form-control-label">Visa Attachment:</label>
+                <div>
+                    <input type="file" name="VisaAttachment" value="VisaAttachment" class="form-control" tabindex="23" />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ImagesArea" style="display:none;">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div>
+                    <label class="form-control-label">Emirates ID Attachment:</label>
+                    <input type="file" class="form-control pname" name="EmiratesIDAttachment" id="EmiratesIDAttachment" value="" tabindex="24">
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <label class="form-control-label">Employee Photo:</label>
+                    <input type="file" class="form-control pname" name="EmployeePhoto" id="EmployeePhoto" value="" tabindex="25">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start Address -->
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12">
+           
+            <div class="input-group">
+                <textarea rows="3" name="HomecountryAddress" id="HomecountryAddress" cols="5" required="" tabindex="26" class="form-control"></textarea>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="j-response"></div>
+
+    <div class="j-footer">
+
+        <div class="row">
+
+            <div class="col-md-12 left">
+                <div class="text-center">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end /.footer -->
+</form>
+
+<div class="modal-footer">
+
+
+    @*<button type="button" id="btnSave" class="btn btn-primary waves-effect m-r-20 f-w-600 d-inline-block save_btn" tabindex="27"><i class="fa fa-save"></i> @APFManager.Resources.LangText.Save</button>
+    <button type="reset" class="btn btn-danger waves-effect m-r-20 f-w-600 d-inline-block reset_btn" tabindex="28"><i class="fa fa-remove"></i> @APFManager.Resources.LangText.Reset</button>*@
+    @*<button type="button" class="btn btn-danger waves-effect m-r-20 f-w-600   d-inline-block btn_close" tabindex="28"><i class="fa fa-power-off"></i> @APFManager.Resources.LangText.Close</button>*@
+</div>
+
+
+
+
+
+@*============================================== CATEGORY MODAL==============================================================*@
+<div class="card-block">
+    @*<form class="md-float-material" id="frmAddDDLRecord" name="frmAddDDLRecord" action="/services/Xtreme/multipart" method="post">*@
+
+
+
+    <input type="hidden" name="DDLName" id="DDLName" value="" />
+    <input type="hidden" name="UserID" id="UserID" value="" />
+
+
+    <div class="modal fade" id="common-Modal" tabindex="-1" role="dialog" style="top:40%">
+        <div class="modal-dialog " role="document" style="max-width:600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title ddl-modal-title">Add Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Enter Record</h5>
+                    <input type="text" id="DropDownTitle" class="form-control" name="DropDownTitle" placeholder="Please enter record here..." value="" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-add-ddl-record" data-dismiss="modal" class="btn btn-primary">Save Record</button>
+                    <button type="button" class="btn btn-danger waves-effect btn-close" data-dismiss="modal"><i class="fa fa-power-off"></i> Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @*</form>*@
+</div>
+@*============================================== CATEGORY MODAL END================>>>>>>>>>>>>>>>>>>>>>>>>*@
+
+

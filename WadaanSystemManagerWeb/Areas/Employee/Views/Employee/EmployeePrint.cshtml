@@ -1,0 +1,511 @@
+﻿
+@{
+    Layout = null;
+
+}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords"
+      content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+<meta name="description"
+      content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+<meta name="robots" content="noindex,nofollow">
+<title>WADAAN</title>
+
+<!-- Favicon icon -->
+<link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/favicon.png">
+<!--icon font-->
+<link href="~/Content/Assets/icon/icofont/css/icofont.css" rel="stylesheet" />
+<!--Material Design font-->
+<link href="~/Content/Assets/icon/material-design/css/material-design-iconic-font.min.css" rel="stylesheet" />
+
+
+<!-- Custom CSS -->
+@*<link href="~/Content/Assets/css/style.css" rel="stylesheet" />*@
+<link href="~/Content/Assets/libs/select2/dist/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/libs/jquery-minicolors/jquery.minicolors.css" rel="stylesheet" />
+
+<link href="~/Content/Assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+<link href="~/Content/Assets/libs/quill/dist/quill.snow.css" rel="stylesheet" />
+
+<!-- Custom CSS -->
+<link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="~/Content/assets/dist/css/style.min.css" rel="stylesheet">
+
+<!--Kendo Css-->
+<link href="~/Content/Assets/kendo/kendo.default.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/kendo/kendo.common.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
+<!--Sweet Alert 2-->
+<script src="~/Content/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<!--jstree -->
+<link href="~/Content/Assets/jstree/dist/style.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/jstree/dist/treeview.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href="~/Content/Assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
+@*<link href="~/Content/Assets/css/fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/Assets/css/fullcalendar.print.css" rel="stylesheet" />*@
+
+<style>
+    .k-filter-row .k-dropdown-operator {
+        display: none;
+    }
+
+    .k-filtercell, .k-filtercell .k-widget, .k-filtercell > span {
+        width: 100% !important;
+    }
+
+    .error, .invalid {
+        border: 1px solid red;
+    }
+
+    * {
+        border: 0;
+        box-sizing: content-box;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        vertical-align: top;
+    }
+
+        /* content editable */
+
+        *[contenteditable] {
+            border-radius: 0.25em;
+            min-width: 1em;
+            outline: 0;
+        }
+
+        *[contenteditable] {
+            cursor: pointer;
+        }
+
+            *[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], img.hover {
+                background: #DEF;
+                box-shadow: 0 0 1em 0.5em #DEF;
+            }
+
+    span[contenteditable] {
+        display: inline-block;
+    }
+
+    /* heading */
+
+    h1 {
+        font: bold 100% sans-serif;
+        letter-spacing: 0.5em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    /* table */
+
+    table {
+        font-size: 75%;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 2px;
+    }
+
+    th, td {
+        border-width: 1px;
+        padding: 0.5em;
+        position: relative;
+        text-align: left;
+    }
+
+    th, td {
+        border-radius: 0.25em;
+        border-style: solid;
+    }
+
+    th {
+        background: #EEE;
+        border-color: #BBB;
+    }
+
+    td {
+        border-color: #DDD;
+    }
+
+    /* page */
+
+    html {
+        font: 16px/1 'Open Sans', sans-serif;
+        overflow: auto;
+        padding: 0.5in;
+    }
+
+    html {
+        background: #999;
+        cursor: default;
+    }
+
+    body {
+        box-sizing: border-box;
+        height: 11in;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0.5in;
+        width: 8.5in;
+    }
+
+    body {
+        background: #FFF;
+        border-radius: 1px;
+        box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+    }
+
+    /* header */
+
+    header {
+        margin: 0 0 3em;
+    }
+
+        header:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        header h1 {
+            /*background: #000;*/
+            border-radius: 0.25em;
+            color: #000;
+            margin: 0 0 1em;
+            padding: 0.5em 0;
+            font-weight:900;
+        }
+
+        header address {
+            float: right; /*font-size: 80%;*/
+            font-style: normal;
+            line-height: 1.25;
+            margin: 0 1em 1em 0;
+            font-family: sans-serif;
+        }
+            /*header address h2{ float: right; font-size: 80%; font-weight: bold; font-family: sans-serif; }
+    */
+            header address p {
+                font-weight: bold;
+                margin: 0 0 0.25em;
+            }
+
+            header address p {
+                margin: 0 0 0.25em;
+            }
+
+        header span, header img {
+            display: block;
+            float: right;
+        }
+
+        header span {
+            margin: 0 0 1em 1em;
+            max-height: 25%;
+            max-width: 60%;
+            position: relative;
+        }
+
+        header img {
+            max-height: 100%;
+            max-width: 100%;
+            margin-left:40%;
+        }
+
+        header input {
+            cursor: pointer;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+    /* article */
+
+    article, article address, table.meta, table.inventory {
+        margin: 0 0 3em;
+    }
+
+        article:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        article h1 {
+            clip: rect(0 0 0 0);
+            position: absolute;
+        }
+
+        article address {
+            float: left;
+            font-size: 125%;
+            font-weight: bold;
+        }
+
+    /* table meta & balance */
+
+    table.meta, table.balance {
+        float: right;
+        width: 36%;
+    }
+
+        table.meta:after, table.balance:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        /* table meta */
+
+        table.meta th {
+            width: 40%;
+        }
+
+        table.meta td {
+            width: 60%;
+        }
+
+    /* table items */
+
+    table.inventory {
+        clear: both;
+        width: 100%;
+    }
+
+        table.inventory th {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        table.inventory td:nth-child(1) {
+            width: 26%;
+        }
+
+        table.inventory td:nth-child(2) {
+            width: 38%;
+        }
+
+        table.inventory td:nth-child(3) {
+            text-align: right;
+            width: 12%;
+        }
+
+        table.inventory td:nth-child(4) {
+            text-align: right;
+            width: 12%;
+        }
+
+        table.inventory td:nth-child(5) {
+            text-align: right;
+            width: 12%;
+        }
+
+    /* table balance */
+
+    table.balance th, table.balance td {
+        width: 50%;
+    }
+
+    table.balance td {
+        text-align: right;
+    }
+
+    /* aside */
+
+    aside h1 {
+        border: none;
+        border-width: 0 0 1px;
+        margin: 0 0 1em;
+    }
+
+    aside h1 {
+        border-color: #999;
+        border-bottom-style: solid;
+    }
+
+    /* javascript */
+
+    .add, .cut {
+        border-width: 1px;
+        display: block;
+        font-size: .8rem;
+        padding: 0.25em 0.5em;
+        float: left;
+        text-align: center;
+        width: 0.6em;
+    }
+
+    .add, .cut {
+        background: #9AF;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        background-image: -moz-linear-gradient(#00ADEE 5%, #0078A5 100%);
+        background-image: -webkit-linear-gradient(#00ADEE 5%, #0078A5 100%);
+        border-radius: 0.5em;
+        border-color: #0076A3;
+        color: #FFF;
+        cursor: pointer;
+        font-weight: bold;
+        text-shadow: 0 -1px 2px rgba(0,0,0,0.333);
+    }
+
+    .add {
+        margin: -2.5em 0 0;
+    }
+
+        .add:hover {
+            background: #00ADEE;
+        }
+
+    .cut {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: -1.5em;
+    }
+
+    .cut {
+        -webkit-transition: opacity 100ms ease-in;
+    }
+
+    tr:hover .cut {
+        opacity: 1;
+    }
+</style>
+
+
+
+<body id="body-print-record" >
+
+
+
+
+    <header>
+
+        <img src="~/images/wadaan-logo.png" style="float: left; margin-top: -22px;     width: 20%;" />
+
+        <span><img alt="" src="http://www.jonathantneal.com/examples/invoice/logo.png"><input type="file" accept="image/*"></span>
+    </header>
+    <header><h1>Wadaan Consultancy Pvt. Ltd</h1></header>
+    <article>
+        <h1>Recipient</h1>
+
+
+        <div class="card" style="background-color: gray">
+            <div class="card-header"><h5>Employee </h5>  </div>
+            <div class="card-body">
+                <div id="employee-grid-print"></div>
+
+            </div>
+        </div>
+
+         
+
+    </article>
+    <aside>
+
+        <h1>@*<span contenteditable>Additional Notes</span>*@</h1>
+
+        <div contenteditable style="  margin: 20px;  float: left;">
+
+            <p> Director Signature: __________________ </p>
+
+        </div>
+
+        <div contenteditable style="margin: 20px; float: right;">
+
+            <p> Employee Signature: __________________ </p>
+
+        </div>
+
+
+    </aside>
+
+    <footer></footer>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/Assets/libs/jquery/dist/jquery-ui.min.js"></script>
+
+    <script src="~/Scripts/jquery.form.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Content/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/assets/dist/js/waves.js"></script>
+
+    <!--Menu sidebar -->
+    <script src="~/Content/assets/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Content/assets/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    @*<script src="~/Content/Assets/dist/js/pages/mask/mask.init.js"></script>*@
+    <script src="~/Content/Assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="~/Content/Assets/libs/select2/dist/js/select2.min.js"></script>
+
+
+    <script src="~/Content/assets/libs/flot/excanvas.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="~/Content/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Content/assets/dist/js/pages/chart/chart-page-init.js"></script>
+
+    <script src="~/Content/Assets/jstree/dist/jstree.min.js"></script>
+
+    <script src="~/Content/Assets/js/kendo/kendo.all.min.js"></script>
+    <script src="~/Scripts/FunctionalityJs/KendojqueryController.js?id=6"></script>
+    <script src="~/Content/Assets/js/kendo/jszip.min.js"></script>
+
+
+
+    @*<script src="~/Content/Assets/fullCalendar/moment/min/moment.min.js"></script>
+        <script src="~/Content/Assets/fullCalendar/fullcalendar.min.js"></script>
+        <script src="~/Content/Assets/fullCalendar/calendar.js"></script>*@
+
+
+    <script src="~/Content/Assets/libs/moment/min/moment.min.js"></script>
+
+
+    <script src="~/Content/Assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+
+</body>
+
+
+<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/employee-print.js?wadaanv=5.1.8"></script>
+

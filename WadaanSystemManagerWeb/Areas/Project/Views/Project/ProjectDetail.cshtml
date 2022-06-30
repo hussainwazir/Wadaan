@@ -1,0 +1,574 @@
+﻿
+
+@{
+
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<head>
+
+    <title>APF Employees Details</title>
+
+</head>
+<style>
+    .card {
+        border: 1px solid #ededed;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 30px;
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        color: #1f1f1f;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+
+
+    .personal-info li {
+        margin-bottom: 10px;
+    }
+
+    .edit-icon {
+        background-color: #eee;
+        border: 1px solid #e3e3e3;
+        border-radius: 24px;
+        color: #bbb;
+        float: right;
+        font-size: 12px;
+        line-height: 24px;
+        min-height: 26px;
+        text-align: center;
+        width: 26px;
+    }
+
+    .personal-info {
+        list-style: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+        .personal-info li {
+            margin-bottom: 10px;
+        }
+
+    .pro-overview .personal-info li .title {
+        width: 50%;
+    }
+
+    .personal-info li .title {
+        color: #4f4f4f;
+        float: left;
+        font-weight: 700;
+        margin-right: 30px;
+        width: 50%;
+    }
+
+    .personal-info li {
+        margin-bottom: 10px;
+    }
+
+    .experience-box {
+        position: relative;
+    }
+
+    .experience-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .before-circle {
+        background-color: #ddd;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+    }
+
+    .experience-list > li .experience-content {
+        background-color: #fff;
+        margin: 0 0 20px 40px;
+        padding: 0;
+        position: relative;
+    }
+
+        .experience-list > li .experience-content .timeline-content {
+            color: #9e9e9e;
+        }
+
+            .experience-list > li .experience-content .timeline-content a.name {
+                color: #616161;
+                font-weight: bold;
+            }
+
+    .centre {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+</style>
+<!-- Page header start -->
+
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Project </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Detail</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="">
+
+                    <div class="card-header"><h5>Project Detail</h5>  </div>
+                    <div class="card-body">
+
+                        <div class="row" style="display:none">
+                            <div class="col-sm-3">
+                                <div>
+                                    <label class="form-control-label">Project Status: </label><span style="color:red">*</span><br />
+                                    <select class="form-control select2" id="ProjectStatus" name="ProjectStatus">
+
+                                        <option value="0">Select Project Status</option>
+                                        <option value="InProgress">In Progress</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Rejected">Rejected</option>
+                                        <option value="Pause">Pause</option>
+                                        <option value="OverDue">OverDue</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div>
+                                    <label class="form-control-label"> Project Progress: </label><br />
+                                    <select class="form-control select2" id="ProjectProgress" name="ProjectProgress">
+
+                                        <option value="0">Select Project Progress</option>
+                                        <option value="1">10%</option>
+                                        <option value="2">20%</option>
+                                        <option value="3">30%</option>
+                                        <option value="4">40%</option>
+                                        <option value="5">50%</option>
+                                        <option value="6">60%</option>
+                                        <option value="7">70%</option>
+                                        <option value="8">80%</option>
+                                        <option value="9">90%</option>
+                                        <option value="10">100%</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div>
+                                    <button type="button" id="btn-update-status-and-progress" style="margin-top:33px ;margin-left:20px ; color:white" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Update</button>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card social-card-1">
+
+                                    <b> <span class="projectName"></span></b>
+                                    @* =================================== Slider For Project Details Screen =================================== *@
+                                    <div class="col-sm-12">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#home2" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Project Information</span></a> </li>
+                                            <li class="nav-item" hidden> <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Project Details</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#messages" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down"> Site information </span></a> </li>
+                                            <li class="nav-item" id="task-list"> <a class="nav-link" data-bs-toggle="tab" href="#TaskList" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Tasks</span></a> </li>
+                                            <li class="nav-item" id="overdue-tasks"> <a class="nav-link" data-bs-toggle="tab" href="#OverDueTasks" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">OverDue Tasks</span></a> </li>
+                                            @* <li class="nav-item" id="project-documents"> <a class="nav-link" data-bs-toggle="tab" href="#ProjectDocument" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Project Document</span></a> </li>*@
+                                            <li class="nav-item" onclick="fnHideotherTab(this);" id="project-documents"> <a class="nav-link" data-bs-toggle="tab" href="#ProjectDocument" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Drawings</span></a> </li>
+                                            <li class="nav-item" onclick="fnHideotherTab(this);" id="project-gallery"> <a class="nav-link" data-bs-toggle="tab" href="#ProjectGallery" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Project Gallery</span></a> </li>
+
+
+
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content tabcontent-border">
+                                            <div class="tab-pane active" id="home2" role="tabpanel">
+                                                <div class="p-20">
+                                                    <ul class="personal-info">
+
+
+                                                        <li>
+                                                            <div class="title"> Project Name:</div>
+                                                            <div class="text project"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> Project Priority:</div>
+                                                            <div class="text priority"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> Contract Type:</div>
+                                                            <div class="text contractType"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> Contractor Name:</div>
+                                                            <div class="text contractor"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">Plot House:</div>
+                                                            <div class="text houseNo"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">Street:</div>
+                                                            <div class="text street"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">Town / Sector:</div>
+                                                            <div class="text TownSector"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">Province Name:</div>
+                                                            <div class="text provinceID "></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">City Name:</div>
+                                                            <div class="text cityID"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">Contractor Name:</div>
+                                                            <div class="text contractorName"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">Contractor Phone:</div>
+                                                            <div class="text contractorPhone"></div>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane  p-20" id="profile" role="tabpanel">
+                                                <div class="p-20">
+
+                                                    <ul class="personal-info">
+                                                        <li>
+                                                            <div class="title"> Residential PlotSize:</div>
+                                                            <div class="text ResidentialPlotSize"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> Sub Structure:</div>
+                                                            <div class="text SubStructure"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> Super Structure:</div>
+                                                            <div class="text SuperStructure"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> Finishing:</div>
+                                                            <div class="text Finishing"></div>
+                                                        </li>
+                                                        <hr />
+                                                        @*<li>
+                                                                <div class="title">Sketch:</div>
+                                                                <div class="text Sketch"></div>
+                                                            </li>
+                                                            <hr />
+                                                            <li>
+                                                                <div class="title">Submission Drawing:</div>
+                                                                <div class="text SubmissionDrawing"></div>
+                                                            </li>
+                                                            <hr />
+                                                            <li>
+                                                                <div class="title">Architectural Drawing:</div>
+                                                                <div class="text ArchitecturalDrawing"></div>
+                                                            </li>
+                                                            <hr />
+                                                            <li>
+                                                                <div class="title">Structural Drawing</div>
+                                                                <div class="text StructuralDrawing "></div>
+                                                            </li>
+                                                            <hr />
+                                                            <li>
+                                                                <div class="title">Electrical Drawing</div>
+                                                                <div class="text ElectricalDrawing"></div>
+                                                            </li>
+                                                            <hr />
+                                                            <li>
+                                                                <div class="title">Plumbing Drawing:</div>
+                                                                <div class="text PlumbingDrawing"></div>
+                                                            </li>
+                                                            <hr />
+                                                            <li>
+                                                                <div class="title">Estimation</div>
+                                                                <div class="text Estimation "></div>
+                                                            </li>*@
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane p-20" id="messages" role="tabpanel">
+                                                <div class="p-20">
+                                                    <ul class="personal-info">
+
+                                                        <li>
+                                                            <div class="title">City Name</div>
+                                                            <div class="text cityID"></div>
+                                                        </li>
+                                                        <hr />
+
+                                                        <li>
+                                                            <div class="title">  East  </div>
+                                                            <div class="text east"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title">  West  </div>
+                                                            <div class="text west"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> North </div>
+                                                            <div class="text north"></div>
+                                                        </li>
+                                                        <hr />
+                                                        <li>
+                                                            <div class="title"> South </div>
+                                                            <div class="text south"></div>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane p-20" id="TaskList" role="tabpanel">
+                                                <div class="p-20">
+                                                    <ul class="personal-info">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="card">
+                                                                    <div class="card-header"><h5>Load Tasks By Status</h5>  </div>
+                                                                    <div class="card-body">
+                                                                        <div class="col-md-12 col-lg-12 col-xlg-3">
+                                                                            <div class="card">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                                                                        <label style="margin-left:10px">Select Task Status</label>
+                                                                                        <select class="form-control select2" onchange="LoadStatusWiseTasksAgainstProject()" name="task-status" style="width:200px; margin-left:30px" id="task-status">
+                                                                                            <option value="0">Select Task Status</option>
+                                                                                            <option value="NotStartedYet">Not Started Yet</option>
+                                                                                            <option value="InProgress">In Progress</option>
+                                                                                            <option value="Completed">Completed</option>
+                                                                                            <option value="Pause">Pause</option>
+                                                                                            <option value="OverDue">OverDue</option>
+                                                                                            <option value="Underreview">Under review</option>
+                                                                                            <option value="Approved">Approved</option>
+                                                                                            <option value="Rejected">Rejected</option>
+                                                                                            <option value="Accepted">Accepted</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-md-6 col-lg-6 col-sm-6"></div>
+                                                                                    <div class="col-md-2 col-lg-2 col-sm-2 pull-right">
+                                                                                        <div>
+                                                                                            <button type="button" id="btn-redirect-to-task" style="margin-top:0px ;margin-left:90px ; color:white" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Add New Task</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="card">
+                                                                                        <div class="box">
+                                                                                            <div id="load-status-wise-tasks"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane active" id="OverDueTasks" role="tabpanel">
+                                                <div class="p-20">
+
+                                                    <div id="overdue-tasks-of-project-grid"></div>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="ProjectDocument" role="tabpanel">
+                                                <div class="p-20">
+
+                                                    <div class="card" style="height:500px">
+                                                        <div class="card-header" style="background: #2c3e50;">
+                                                            <span style="color:white"> Attachments : </span>
+
+                                                        </div>
+
+                                                        <div class="card-body border">
+                                                            <div class="card-block project-attachment" style="overflow-x: auto;height: 500px;">
+                                                                <ul class="media-list appendAttachment"></ul>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="ProjectGallery" role="tabpanel">
+                                                <div class="p-20">
+                                                    <form class="md-float-material" id="frmProjectGallery" name="frmProjectGallery" action="/services/Xtreme/multipart" method="post">
+                                                        <input type="hidden" name="type" id="type" value="Project_UpdateImagesByID">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12">
+
+                                                                <table class="table  invoice-detail-table  dt-responsive  ">
+                                                                    <thead class="thead-default">
+                                                                        <tr class="">
+
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:2%">Preview</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:2%">Attachment</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:2%">Update Images</th>
+
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="tbl-items-tbody-project-gallery"></tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" id="btn-update-images" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block"> Save</button>
+
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                @*<div class="p-20">
+
+                                                        <div class="card" style="height:500px">
+                                                            <div class="card-header" style="background: #2c3e50;">
+                                                                <span style="color:white"> Gallery : </span>
+
+                                                            </div>
+
+                                                            <div class="card-body border">
+                                                                <div class="card-block project-attachment" style="overflow-x: auto;height: 500px;">
+                                                                    <ul class="media-list appendProjectGallery"></ul>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>*@
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- End Row wrapper  -->
+                        <!-- ============================================================== -->
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+</body>
+
+
+
+
+<script src="~/Scripts/FunctionalityJs/ProjectArea/Project/project-detail.js?wadaanv=5.1.8"></script>

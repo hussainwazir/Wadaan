@@ -1,0 +1,288 @@
+﻿
+@{
+    ViewBag.Title = "Save";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Supplier </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="card">
+
+                    <div class="card-header"><h5>Supplier Registration Form</h5>  </div>
+                    <div class="card-body">
+
+                        <form class="md-float-material" id="frmAddUpdateSupplier" name="frmAddUpdateSupplier" action="/services/Xtreme/multipart" method="post">
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="SupplierID" id="SupplierID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="Id" id="Id" value="0">
+                            <input type="hidden" name="type" id="type" value="Supplier_Save">
+
+                            @*======================= Strating Row ============================*@
+
+                            <div class="card">
+                                <div class="card-header"><h5>Focal Person Information</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        @*<div class="col-sm-3">
+                        <div>
+                            <label class="form-control-label">Prefix:</label>
+                            <input type="text" class="form-control pname" name="Prefix" id="Prefix" required value="">
+
+                        </div>
+                    </div>*@
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">First Name: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="FirstName" id="FirstName" value="" required onkeypress="return/[a-z]/i.test(event.key)">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Last Name: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="LastName" id="LastName" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Home Address: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="HomeAddress" id="HomeAddress" value="" required onkeypress="return/[a-z]/i.test(event.key)">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Mobile: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="MobileNo" id="MobileNo" value="" required>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Telephone: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="Telephone" id="Telephone" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Fax: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="Fax" id="Fax" value="" required ">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Email Address: </label> <span style="color:red"> *</span> <br />
+                                                <input type="email" class="form-control pname" name="Email" id="Email" value="" required>
+                                            </div>
+                                        </div>
+                                        @* ======================== Supplier Status DDL ======================== *@
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Supplier Type: </label><br />
+                                                <select class="form-control select2" id="SupplierType" name="SupplierType" required>
+                                                    <option value="0"> Select Supplier Status</option>
+                                                    <option value="WHOLESALERS"> WHOLESALERS</option>
+                                                    <option value="DISTRIBUTORS"> DISTRIBUTORS</option>
+                                                    <option value="IMPORTERS"> IMPORTERS </option>
+                                                    <option value="VENDORS"> VENDORS </option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Supplier Photo:</label> <span style="color:red"> *</span>
+                                                <input type="file" class="form-control pname"  name="ProfilePicture" id="ProfilePicture" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Bank Account Number: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="BankAccountNo" id="BankAccountNo" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Payment Type: </label><br />
+                                                <select class="form-control select2" id="PaymentMethod" name="PaymentMethod" onchange="ShowHideControls()" required>
+                                                    <option value="0"> Select Payment Method</option>
+                                                    <option value="1"> Cash</option>
+                                                    <option value="2"> Cheque</option>
+                                                    <option value="3"> Card</option>
+                                                    <option value="5"> Mobile Payment</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3" id="div-checkno" style="display:none">
+                                            <div>
+                                                <label class="form-control-label">Check No: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="CheckNo" id="CheckNo" value="">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Payment Term: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="PaymentTerm" id="PaymentTerm" value="" required>
+                                            </div>
+                                        </div>
+ 
+                                    </div>
+                                    <br />
+
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header"><h5>Emergency Contact</h5>  </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Contact Person Name:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="ContactPersonName" id="ContactPersonName" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Contact Person Number:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="ContactPersonMobileNumber" id="ContactPersonMobileNumber" value="" required>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                            <br />
+
+                            <div class="card"id="div-payment-type-card">
+                                <div class="card-header"><h5>Payment By Card</h5>  </div>
+                                <div class="card-body border">
+
+                                    <div class="row" >
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Card Number: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="CardNumber" id="CardNumber">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Card Holder Name: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="CardHolderName" id="CardHolderName">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Card Transactiono No: </label> <span style="color:red"> *</span> <br />
+                                                <input type="text" class="form-control pname" name="CardTransactionNo" id="CardTransactionNo">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Card Type: </label> <span style="color:red"> *</span> <br />
+                                                <select class="form-control select2" id="CardType" name="CardType" required>
+                                                    <option value="CreditCard"> Credit Card</option>
+                                                    <option value="DebitCard"> Debit Card</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                            <br />
+
+
+                        </form>
+                    </div>
+
+                    <div class="border-top">
+
+                        <div class="modal-footer">
+                            <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn">  Save</button>
+                            <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                            @*<button type="reset" class="btn btn-danger text-white">Reset</button>*@
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+
+
+    <script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+       
+
+    </script>
+</body>
+ 
+<script src="/../../Scripts/FunctionalityJs/SupplierArea/Supplier/supplier-save.js?wadaanv=5.1.8"></script>

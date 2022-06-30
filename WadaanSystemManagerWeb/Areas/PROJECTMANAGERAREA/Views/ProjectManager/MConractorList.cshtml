@@ -1,0 +1,138 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_ProjectManagerLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/PROJECTMANAGERAREA/ProjectManager/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Contractor </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" id="active-contractor"> <a class="nav-link active" data-bs-toggle="tab" href="#activeContractor" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Contractors</span></a> </li>
+                <li class="nav-item" id="in-active-contractor"> <a class="nav-link" data-bs-toggle="tab" href="#InActiveContractor" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">In Active Contractors</span></a> </li>
+                <li class="nav-item" id="all-contractors"> <a class="nav-link" data-bs-toggle="tab" href="#AllContractors" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">All Contractors</span></a> </li>
+                
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="activeContractor" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"><h5>CONTRACTOR(S)</h5> <span>All Active Contrator's Record List</span> </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    <button type="button" id="btn-add-contractor" class="btn btn-success" style="margin-left:20px; color:white" onclick="window.location.href='/PROJECTMANAGERAREA/ProjectManager/MContractorSave'">  Add Contractor</button><br />
+
+                                                </div>
+                                            </div>
+                                           
+                                             
+                                            <div class="card-body">
+                                                <div id="contractor-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane  p-20" id="InActiveContractor" role="tabpanel">
+                   
+                        <div class="">
+                            <div class="col-sm-12">
+                                <div class=" ">
+                                    <div class="card-body">
+
+                                        <div class="col-md-12">
+
+                                            <div class="card">
+                                                <div class="card-header"><h5>CONTRACTOR(S)</h5> <span>All InActive Contrator's Record List</span> </div>
+                                                <br />
+                                                @*<div class="col-md-2">
+                                                    <button type="button" id="btn-add-contractor" class="btn btn-success" style="margin-left:20px; color:white" onclick="window.location.href='/Contractor/Contractor/Save'">  Add Contractor</button><br />
+                                                </div>*@
+
+                                                <div class="card-body">
+
+                                                    <div id="in-active-contractor-grid"> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                    </div>
+                </div>
+                <div class="tab-pane p-20" id="AllContractors" role="tabpanel">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card">
+                                            <div class="card-header"><h5>CONTRACTOR(S)</h5> <span>All Contrator's Record List</span> </div>
+                                            <br />
+                                   
+
+                                            <div class="card-body">
+
+                                                <div id="all-contractor-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+ 
+<script src="~/Scripts/FunctionalityJs/ManagerArea/ManagerArea/contractor-list.js?wadaanv=5.1.8"></script>

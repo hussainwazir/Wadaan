@@ -1,0 +1,333 @@
+﻿
+
+@{
+
+    Layout = "~/Areas/Shared/_ProjectManagerLayout.cshtml";
+}
+
+<head>
+
+    <title>Supplier Details</title>
+
+</head>
+<style>
+    .card {
+        border: 1px solid #ededed;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 30px;
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        color: #1f1f1f;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+
+
+    .personal-info li {
+        margin-bottom: 10px;
+    }
+
+    .edit-icon {
+        background-color: #eee;
+        border: 1px solid #e3e3e3;
+        border-radius: 24px;
+        color: #bbb;
+        float: right;
+        font-size: 12px;
+        line-height: 24px;
+        min-height: 26px;
+        text-align: center;
+        width: 26px;
+    }
+
+    .personal-info {
+        list-style: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+        .personal-info li {
+            margin-bottom: 10px;
+        }
+
+    .pro-overview .personal-info li .title {
+        width: 50%;
+    }
+
+    .personal-info li .title {
+        color: #4f4f4f;
+        float: left;
+        font-weight: 700;
+        margin-right: 30px;
+        width: 50%;
+    }
+
+    .personal-info li {
+        margin-bottom: 10px;
+    }
+
+    .experience-box {
+        position: relative;
+    }
+
+    .experience-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .before-circle {
+        background-color: #ddd;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+    }
+
+    .experience-list > li .experience-content {
+        background-color: #fff;
+        margin: 0 0 20px 40px;
+        padding: 0;
+        position: relative;
+    }
+
+        .experience-list > li .experience-content .timeline-content {
+            color: #9e9e9e;
+        }
+
+            .experience-list > li .experience-content .timeline-content a.name {
+                color: #616161;
+                font-weight: bold;
+            }
+
+    .centre {
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<!-- Page header start -->
+
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/S/Supplier/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Supplier </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Detail</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class=" ">
+
+                    <div class="card-header"><h5>Supplier Detail</h5>  </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+
+                            <div class="col-sm-4">
+                                <div class="card social-card-1">
+
+                                    <div class="card-block">
+                                        <div class="">
+
+                                            <img class="img-fluid img-circle centre SupplierImage" src="~/images/avatar-1.png" style="width: 30%;" alt="round-img">
+                                            <div class="img-overlay">
+                                                @*<span>
+                                                        <a href="#" class="btn btn-sm btn-primary" data-popup="lightbox"><i class="icofont icofont-plus"></i></a>
+                                                        <a href="#" class="btn btn-sm btn-primary"><i class="icofont icofont-link-alt"></i></a>
+                                                    </span>*@
+                                            </div>
+                                        </div>
+                                        <div class="user-content">
+                                            <b><span class="firstName" style="font-weight: bold; font-family: sans-serif; font-size: 20px; display: block; width: 60%; margin-left: auto; "></span></b>
+
+                                        </div>
+                                        <ul class="icons-list mt-15" style="list-style-type: none;">
+                                            <li><a href="#" data-popup="tooltip" data-original-title="Google Drive"><i class="icon-google-drive"></i></a></li>
+                                            <li><a href="#" data-popup="tooltip" data-original-title="Twitter"><i class="icon-twitter"></i></a></li>
+                                            <li><a href="#" data-popup="tooltip" data-original-title="Github"><i class="icon-github"></i></a></li>
+                                        </ul> <br />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-8">
+                                <div class="card ">
+                                    <div class="card-body" style="padding: 3.25rem;">
+
+                                        <ul class="personal-info">
+                                            <li>
+                                                <div class="title">First Name:</div>
+                                                <div class="text firstName"></div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="title">Last Name:</div>
+                                                <div class="text lastName"></div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="title">Telephone:</div>
+                                                <div class="text telephone"></div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="title">Mobile:</div>
+                                                <div class="text mobile"></div>
+                                            </li>
+                                            <hr />
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ============================================================== -->
+                            <!-- Regular Menu Tabs Start-->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <div>
+                                <!-- Nav tabs -->
+                                <!-- Tab panes -->
+                                @*<div class="tab-content tabcontent-border">*@
+
+                                <div class="card">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#home1" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Personal Information</span></a> </li>
+                                        <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Relative Information</span></a> </li>
+                                        @* <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#messages" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Tab3</span></a> </li>*@
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content tabcontent-border">
+                                        <div class="tab-pane active" id="home1" role="tabpanel">
+                                            <div class="p-20">
+
+                                                <ul class="personal-info">
+                                                    <li>
+                                                        <div class="title">Fax:</div>
+                                                        <div class="text fax"></div>
+                                                    </li>
+                                                    <hr />
+                                                    <li>
+                                                        <div class="title">Email Address:</div>
+                                                        <div class="text emailAddress"></div>
+                                                    </li>
+                                                    <hr />
+                                                    <li>
+                                                        <div class="title">Supplier Type:</div>
+                                                        <div class="text supplierType"></div>
+                                                    </li>
+                                                    <hr />
+                                                    <li>
+                                                        <div class="title">Bank Account Number:</div>
+                                                        <div class="text bankAccountNumber"></div>
+                                                    </li>
+                                                    <hr />
+                                                    <li>
+                                                        <div class="title">Payment Term:</div>
+                                                        <div class="text paymentTerm"></div>
+                                                    </li>
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane  p-20" id="profile" role="tabpanel">
+                                            <div class="p-20">
+                                                <ul class="personal-info">
+                                                    <li>
+                                                        <div class="title">Contact Person Name:</div>
+                                                        <div class="text contactPersonName"></div>
+                                                    </li>
+                                                    <hr />
+                                                    <li>
+                                                        <div class="title">Contact Person Number:</div>
+                                                        <div class="text contactPersonMobileNumber"></div>
+                                                    </li>
+
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            @* ================================= EMERGENCY CONTACT ================================= *@
+
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- End Menu Tab  -->
+                        <!-- ============================================================== -->
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    </div>
+
+</body>
+
+
+<script src="~/Scripts/FunctionalityJs/ManagerArea/ManagerArea/supplier-detail.js?wadaanv=5.1.8"></script>

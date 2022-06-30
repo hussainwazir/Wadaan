@@ -1,0 +1,696 @@
+﻿
+@{
+    ViewBag.Title = "Save";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_ProjectManagerLayout.cshtml";
+}
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Employee </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="card">
+
+                    <div class="card-header"><h5 style="font-family: sans-serif; font-weight: bold; font-size: 15px;">EMPLOYEE</h5> </div>
+                    <div class="card-body">
+
+                        <form class="md-float-material" id="frmAddUpdateEmployee" name="frmAddUpdateEmployee" action="/services/Xtreme/multipart" method="post">
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="EmployeeID" id="EmployeeID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="Id" id="Id" value="0">
+                            <input type="hidden" name="type" id="type" value="Employee_Save">
+
+
+                            <div class="card">
+                                <div class="card-header"><h5>Username & Password</h5>  </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">User Name: <span style="color: red">*</span></label>
+                                                <input type="text" class="form-control pname" name="UserName" id="UserName" required value="" onkeypress="return AvoidSpace(event)">
+
+                                                <script>
+                                                    function AvoidSpace(event) {
+                                                        var k = event ? event.which : window.event.keyCode;
+                                                        if (k == 32) return false;
+                                                    }
+
+                                                </script>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Password:<span style="color:red">*</span></label><br />
+                                                <input type="password" class="form-control pname" name="Password" id="Password" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Role:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="Role" name="Role"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Employee Type:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="EmployeeTypeID" name="EmployeeTypeID"></select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+
+
+
+                            @*=========================== PERSONAL INFORMATION ROW START ===========================*@
+
+                            <div class="card">
+                                <div class="card-header"><h5>Personal Information</h5>  </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Prefix:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="Prefix" id="Prefix" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">First Name:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="FirstName" id="FirstName" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Last Name:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="LastName" id="LastName" value="" required="" onkeypress="return/[a-z]/i.text(event.key)">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Given Name:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="GivenName" id="GivenName" value="" required="" onkeypress="return/[a-z]/i.text(event.key)">
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <br />
+
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Mobile Phone:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="MobilePhone" id="MobilePhone" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">WhatsApp:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="WhatsApp" id="WhatsApp" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Email Address:<span style="color:red">*</span></label><br />
+                                                <input type="email" class="form-control pname" name="EmailAddress" id="EmailAddress" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Employee Photo:</label>
+                                                <input type="file" class="form-control pname" name="ProfilePicture" id="ProfilePicture" value="">
+                                            </div>
+                                        </div>
+
+
+                                    </div>  <br />
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">CV Attachment:</label>
+                                                <input type="file" class="form-control pname" name="CVAttachment" id="CVAttachment" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Designation:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="DesignationID" name="DesignationID"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="form-control-label">Appointment Start Date:<span style="color:red">*</span></label><br />
+                                            <input type="text" class="form-control pname" name="DateOfAppointmentFrom" id="DateOfAppointmentFrom" value="">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="form-control-label">Appointment End Date:<span style="color:red">*</span></label><br />
+                                            <input type="text" class="form-control pname" name="DateOfAppointmentTo" id="DateOfAppointmentTo" value="">
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+
+
+
+                            @*====================== Current Address Start =============================*@
+
+
+                            <div class="card">
+                                <div class="card-header"> <h5> Current Address </h5> </div>
+                                <div class="card-body border">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Current House No:<span style="color:red"></span></label><br />
+                                                <input type="text" class="form-control pname" name="CurHouseNo" id="CurHouseNo" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Current Street No:<span style="color:red"></span></label><br />
+                                                <input type="text" class="form-control pname" name="CurStreetNo" id="CurStreetNo" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Current Town Sector:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="CurTownSector" id="CurTownSector" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Current City:</label><br />
+                                                <select class="form-control select2" id="CurCityID" name="CurCityID" required> </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Current Province:</label><br />
+                                                <select class="form-control select2" id="CurProvinceID" name="CurProvinceID" required></select>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Current Postal Address:</label>
+                                                <input type="text" class="form-control pname" name="CurPostalAddress" id="CurPostalAddress" required value="">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*======================= Current Address END ========================*@
+
+
+
+
+                            <div class="card">
+                                <div class="card-header"><h5>Permanent Information</h5>  </div>
+                                <div class="card-body border">
+
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Permanent House No:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="PerHouseNo" id="perHouseNo" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Permanent Street No:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="PerStreetNo" id="perStreetNo" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Permanent Town Sector:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="PerTownSector" id="perTownSector" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Permanent City:<span style="color:red">*</span></label><br />
+                                                <select class="form-control select2" id="PerCityID" name="PerCityID" required="required"></select>
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">Permanent Province:<span style="color:red">*</span></label><br />
+                                                @*<input type="text" class="form-control select2" name="PerProvince" id="perProvince" value="" required="" onkeypress="return /[a-z]/i.test(event.key)">*@
+                                                <select class="form-control select2" id="PerProvinceID" name="PerProvinceID" required></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header"><h5>Professional Information</h5>  </div>
+                                <div class="card-body border">
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">PEC/PCATP Registration Number :<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="PECPCATPNo" id="PECPCATPNo" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div>
+                                                <label class="form-control-label">Registration Date:<span style="color:red">*</span></label><br />
+
+                                                <input type="text" class="form-control pname" name="PIRegistrationDate" id="PIRegistrationDate" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <div>
+                                                <label class="form-control-label">Expiry Date:<span style="color:red">*</span></label><br />
+
+                                                <input type="text" class="form-control pname" name="PIExpiryDate" id="PIExpiryDate" value="">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div>
+                                                <label class="form-control-label">PEC / PCATP  Attachment:</label>
+                                                <input type="file" class="form-control pname" name="PECPCATPNoAttachment" id="PECPCATPNoAttachment" value="">
+                                            </div>
+                                        </div>
+                                        <br />
+
+
+                                    </div>
+                                </div>
+
+                                @*=========================== PERSONAL INFORMATION ROW END ===========================*@
+
+
+                                @*====================== EMPLOYEE EDUCATION START ======================*@
+
+                                <div class="card">
+                                    <div class="card-header"><h5>Employee Education</h5>  </div>
+                                    <div class="card-body border">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label class="form-control-label">Level:<span style="color:red">*</span></label><br />
+                                                    @*<select class="form-control select2" id="Level" name="Level"></select>*@
+                                                    <select class="form-control select2" id="EducationLevel">
+                                                        <option value="Matric">Matric</option>
+                                                        <option value="Intermediate">Intermediate</option>
+                                                        <option value="Bachelor">Bachelor</option>
+                                                        <option value="Master">Master</option>
+                                                        <option value="MPhil">M. Phil</option>
+                                                        <option value="Phd">PhD</option>
+                                                        <option value="Others">Others</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <div>
+                                                    <label class="form-control-label">Degree Title:<span style="color:red">*</span></label><br />
+                                                    <input type="text" class="form-control pname" id="DegreeTitle" value="" @*required=""*@>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <div>
+                                                    <label class="form-control-label">Institute Name:<span style="color:red">*</span></label><br />
+                                                    <input type="text" class="form-control pname" id="InstituteName" value="" @*required=""*@>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <div>
+                                                    <label class="form-control-label">Obtained Marks / Total Marks:<span style="color:red">*</span></label><br />
+                                                    <input type="text" class="form-control pname" id="ObtainedTotalMarks" value="" onkeypress="return/[a-z]/i.test(key.event);">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-2 ddlParent">
+                                                <div>
+                                                    <label class="form-control-label">Year of Passing:<span style="color:red">*</span></label><br />
+                                                    @*   <input type="text" class="form-control pname" name="YearPassing" id="YearPassing" value="" required="">*@
+                                                    @*<script>
+                                                            $("#YearPassing").kendoDatePicker({
+
+                                                                value = new Date(),
+                                                                format: { "yyyy"},
+                                                                parseformat['YYYY']
+
+                                                            });
+                                                        </script>*@
+                                                    <select class="form-control select2 PassingYear" id="YearPassing">
+                                                        <option selected value="0">Select Year</option>
+                                                        <option value="1980">1980</option>
+                                                        <option value="1981">1981</option>
+                                                        <option value="1982">1982</option>
+                                                        <option value="1983">1983</option>
+                                                        <option value="1984">1984</option>
+                                                        <option value="1985">1985</option>
+                                                        <option value="1986">1986</option>
+                                                        <option value="1987">1987</option>
+                                                        <option value="1988">1988</option>
+                                                        <option value="1989">1989</option>
+                                                        <option value="1989">1989</option>
+                                                        <option value="1990">1990</option>
+                                                        <option value="1991">1991</option>
+                                                        <option value="1992">1992</option>
+                                                        <option value="1993">1993</option>
+                                                        <option value="1994">1994</option>
+                                                        <option value="1995">1995</option>
+                                                        <option value="1996">1996</option>
+                                                        <option value="1997">1997</option>
+                                                        <option value="1998">1998</option>
+                                                        <option value="1999">1999</option>
+                                                        <option value="2000">2000</option>
+                                                        <option value="2001">2001</option>
+                                                        <option value="2002">2002</option>
+                                                        <option value="2003">2003</option>
+                                                        <option value="2004">2004</option>
+                                                        <option value="2005">2005</option>
+                                                        <option value="2006">2006</option>
+                                                        <option value="2007">2007</option>
+                                                        <option value="2008">2008</option>
+                                                        <option value="2009">2009</option>
+                                                        <option value="2010">2010</option>
+                                                        <option value="2011">2011</option>
+                                                        <option value="2012">2012</option>
+                                                        <option value="2013">2013</option>
+                                                        <option value="2014">2014</option>
+                                                        <option value="2015">2015</option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2017">2017</option>
+                                                        <option value="2018">2018</option>
+                                                        <option value="2019">2019</option>
+                                                        <option value="2020">2020</option>
+                                                        <option value="2021">2021</option>
+                                                        <option value="2022">2022</option>
+                                                        <option value="2023">2023</option>
+                                                        <option value="2024">2024</option>
+                                                        <option value="2025">2025</option>
+                                                        <option value="2026">2026</option>
+                                                        <option value="2027">2027</option>
+                                                        <option value="2028">2028</option>
+                                                        <option value="2029">2029</option>
+                                                        <option value="2030">2030</option>
+                                                        <option value="2031">2031</option>
+                                                        <option value="2032">2032</option>
+                                                        <option value="2033">2033</option>
+                                                        <option value="2034">2034</option>
+                                                        <option value="2035">2035</option>
+                                                        <option value="2036">2036</option>
+                                                        <option value="2037">2037</option>
+                                                        <option value="2038">2038</option>
+                                                        <option value="2039">2039</option>
+                                                        <option value="2040">2040</option>
+                                                        <option value="2041">2041</option>
+                                                        <option value="2042">2042</option>
+                                                        <option value="2043">2043</option>
+                                                        <option value="2044">2044</option>
+                                                        <option value="2045">2045</option>
+                                                        <option value="2046">2046</option>
+                                                        <option value="2047">2047</option>
+                                                        <option value="2048">2048</option>
+                                                        <option value="2049">2049</option>
+                                                        <option value="2050">2050</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-1" style="margin-top: 2%;">
+                                                <button type="button" id="btn-add-row-to-employee-education" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block btn-add-row"> ADD </button>
+                                            </div>
+
+
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="task-list">
+                                                <div class="table-responsive">
+                                                    <div id="simpletable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12">
+
+                                                                <table class="table table-responsive table-striped">
+                                                                    <thead class="thead-default">
+                                                                        <tr class="">
+
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Level</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Degree Title</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Institute Name</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Obtained Marks / Total Marks</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Year of Passing</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Action</th>
+
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="tbl-employee-qualification-detail"> </tbody>
+
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+
+                                @*====================== EMPLOYEE EDUCATION END ======================*@
+
+
+                                @*====================== EMPLOYEE Experience ==========================*@
+
+                                <div class="card">
+                                    <div class="card-header"><h5>Employee Experience</h5>  </div>
+                                    <div class="card-body border">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <label class="form-control-label">Job Title:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="JobTitle" id="JobTitle" value="" @*required=""*@>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="form-control-label">From Date:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="FromDate" id="FromDate" value="" @*required=""*@>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="form-control-label">To Date:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="ToDate" id="ToDate" value="" @*required=""*@>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="form-control-label">Employer Name:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="EmployerName" id="EmployerName" value="" @*required=""*@>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label class="form-control-label">Employer Address:<span style="color:red">*</span></label><br />
+                                                <input type="text" class="form-control pname" name="EmployerAddress" id="EmployerAddress" value="" @*required=""*@>
+                                            </div>
+                                            <div class="col-sm-1" style="margin-top: 2%;">
+                                                <button type="button" id="btn-add-row-to-employee-experience" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block btn-add-row"> ADD </button>
+                                            </div>
+                                        </div>
+
+                                        <br />
+                                        <div class="row">
+                                            <div class="task-list">
+                                                <div class="table-responsive">
+                                                    <div id="simpletable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12">
+                                                                <table class="table  table-responsive">
+                                                                    <thead class="thead-default">
+                                                                        <tr class="">
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Job Title</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">From Date</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">To Date</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Employer Name </th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Employer Address</th>
+                                                                            <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Action</th>
+
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody id="tbl-employee-experience-detail"> </tbody>
+
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+
+                                @*====================== EMPLOYEE Experience END ======================*@
+
+
+                                <div class="border-top">
+
+                                    <div class="modal-footer">
+                                        <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+                                        <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                        @*<button type="reset" class="btn btn-danger text-white">Reset</button>*@
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <br />
+                        </form>
+                        @*====================== PERNMENT INFORMATION END ======================*@
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+
+
+        <script>
+            //***********************************//
+            // For select 2
+            //***********************************//
+            $(".select2").select2();
+
+            /*colorpicker*/
+            $('.demo').each(function () {
+                //
+                // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                //
+                //  $(selector).minicolors();
+                //
+                // The way I've done it below is just for the demo, so don't get confused
+                // by it. Also, data- attributes aren't supported at this time...they're
+                // only used for this demo.
+                //
+                $(this).minicolors({
+                    control: $(this).attr('data-control') || 'hue',
+                    position: $(this).attr('data-position') || 'bottom left',
+
+                    change: function (value, opacity) {
+                        if (!value) return;
+                        if (opacity) value += ', ' + opacity;
+                        if (typeof console === 'object') {
+
+                        }
+                    },
+                    theme: 'bootstrap'
+                });
+
+            });
+            /*datwpicker*/
+            jQuery('.mydatepicker').datepicker();
+            jQuery('#datepicker-autoclose').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            });
+            var quill = new Quill('#editor', {
+                theme: 'snow'
+            });
+
+        </script>
+</body>
+
+
+ 
+<script src="~/Scripts/FunctionalityJs/ManagerArea/ManagerArea/employee-save.js?wadaanv=5.1.8"></script>
+

@@ -3,3 +3,11 @@
 ################################################################################
 
 /.vs
+/packages
+/WadaanSystemManagerCommand/bin
+/WadaanSystemManagerCommand/obj
+/WadaanSystemManagerWeb/bin
+/WadaanSystemManagerWeb/logs
+/WadaanSystemManagerWeb/obj
+/WadaanSystemManagerWeb/Properties/PublishProfiles
+/WadaanSystemManagerWeb/_logs

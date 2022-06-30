@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "ProjectList";
+    Layout = "~/Areas/Shared/_ClientLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/CLIENTAREA/ClientArea/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Project </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">
+                        @*<button type="button" class="btn btn-success" onclick="window.location.href='/Project/Project/Save'" style="float:right; color:white;">  Add Project</button>*@
+                        <h5>PROJECT(S)</h5> <span>All Poject Record List of Client</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div id="project-of-client-grid"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<script src="~/Scripts/FunctionalityJs/ClientLoginArea/client-project-list.js?wadaanv=5.1.8"></script>

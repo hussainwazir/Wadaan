@@ -1,0 +1,63 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Milestone </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-header">
+
+                        <button type="button" class="btn btn-success" onclick="window.location.href='/MileStone/MileStone/Save'" style="float:right; color:white;">  Add MileStone</button>
+
+                        <h5>MILESTONE(S)</h5>   <span>All MileStone Record List</span>
+
+                    </div>
+
+                    @*<div class="col-md-1">
+
+                        </div>*@
+
+
+                    <div class="card-body">
+                        <div id="milestone-grid"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="~/Scripts/FunctionalityJs/MileStoneArea/MileStone/milestone-list.js?wadaanv=5.1.8"></script>

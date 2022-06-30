@@ -1,0 +1,409 @@
+﻿
+@{
+    ViewBag.Title = "SuperAdminDashboard";
+    // Layout = "~/Views/Shared/_Layout_SuperAdmin.cshtml";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    //Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_CEOLayout.cshtml";
+}
+
+
+<style>
+    body {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    }
+
+    .emp-profile {
+        padding: 3%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        border-radius: 0.5rem;
+        background: #fff;
+    }
+
+    .profile-img {
+        text-align: center;
+    }
+
+        .profile-img img {
+            width: 70%;
+            height: 100%;
+        }
+
+        .profile-img .file {
+            position: relative;
+            overflow: hidden;
+            margin-top: -20%;
+            width: 70%;
+            border: none;
+            border-radius: 0;
+            font-size: 15px;
+            background: #212529b8;
+        }
+
+            .profile-img .file input {
+                position: absolute;
+                opacity: 0;
+                right: 0;
+                top: 0;
+            }
+
+    .profile-head h5 {
+        color: #333;
+    }
+
+    .profile-head h6 {
+        color: #0062cc;
+    }
+
+    .profile-edit-btn {
+        border: none;
+        border-radius: 1.5rem;
+        width: 50%;
+        padding: 2%;
+        font-weight: 600;
+        color: #6c757d;
+        cursor: pointer;
+        margin-right: -2px;
+    }
+
+    .proile-rating {
+        font-size: 12px;
+        color: #818182;
+        margin-top: 5%;
+    }
+
+        .proile-rating span {
+            color: #495057;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+    .profile-head .nav-tabs {
+        margin-bottom: 5%;
+    }
+
+        .profile-head .nav-tabs .nav-link {
+            font-weight: 600;
+            border: none;
+        }
+
+            .profile-head .nav-tabs .nav-link.active {
+                border: none;
+                border-bottom: 2px solid #0062cc;
+            }
+
+    .profile-work {
+        padding: 14%;
+        margin-top: -15%;
+    }
+
+        .profile-work p {
+            font-size: 12px;
+            color: #818182;
+            font-weight: 600;
+            margin-top: 10%;
+        }
+
+        .profile-work a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .profile-work ul {
+            list-style: none;
+        }
+
+    .profile-tab label {
+        font-weight: 600;
+    }
+
+    .profile-tab p {
+        font-weight: 600;
+        color: #0062cc;
+    }
+</style>
+
+
+<div class="container emp-profile">
+    <form method="post">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="">
+
+                    @*<input type="button" class="profile-edit-btn btn-primary"  id="btn-open-image-modal" style="color:white" value="Upload Image">*@
+                    <img class="img-fluid img-thumbnail img-circle  ProfileImage2" src="~/images/Employee1.jpg" style="width:300px;height:250px" alt="Profile-user">
+
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h1 id="fullName"></h1>
+                    <h5 id="designation"></h5>
+                    @*<p class="proile-rating">RANKINGS : <span>8/10</span></p>*@
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input type="button" class="profile-edit-btn btn-primary" name="btnAddMore" id="btn-update-profile" style="color:white " value="Edit Profile" />
+
+                <a href="/Employee/Employee/Dashboard" <input type="button" class="profile-edit-btn btn-primary" name="btnAddMore" id="btn-update-profile" style="color:white " value="Dashboard" /> Dashboard </a>
+
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary" id="btn-open-image-modal" style="width:300px;"> Upload Image </button>
+                <div class="profile-work">
+                    <br />
+
+
+                    <p>PROFESSIONAL EXPERIENCES</p>
+                    <div class="head">
+                        <div class="header" style="font-family: sans-serif; font-size: 25px; font-weight: bold;"> </div>
+                        <div class="card-body border " style="margin-left: -54px;">
+
+                            <div class="col-lg-12 col-xl-12">
+
+
+
+                                <table class="table m-0 table table-striped">
+                                   
+                                    <tbody >
+                                        <tr>
+                                            <th scope="row">PEC PCATP Number</th>
+                                            <td class="txt-PECPCATPNo"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Starting Date</th>
+                                            <td class="txt-fromDate"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">End Date</th>
+                                            <td class="txt-toDate"> </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content" id="myTabContent">
+
+                    <div class="tab-pane fade show active home-tab" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-5">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="head">
+                        <div class="header" style="font-family: sans-serif; font-size: 25px; font-weight: bold;"> About </div>
+                        <div class="card-body border ">
+
+                            <div class="col-lg-12 col-xl-12">
+                                <table class="table m-0 table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Full Name</th>
+                                            <td class="txt firstName"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Last Name</th>
+                                            <td class="txt lastName"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Phone Number</th>
+                                            <td class="txt phoneNo"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">What's App</th>
+                                            <td class="txt whatsApp"> </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="head">
+                    <div class="header" style="font-family: sans-serif; font-size: 25px; font-weight: bold;"> Profile </div>
+                    <div class="card-body border ">
+
+                        <div class="col-lg-12 col-xl-12">
+                            <table class="table m-0 table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Address</th>
+                                        <td class="txt Address"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Mobile Number</th>
+                                        <td class="mobileNumber"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">House Number</th>
+                                        <td class="txt houseNo"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Street Number</th>
+                                        <td class="txt streetNo"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </form>
+</div>
+
+
+
+
+<div class="modal fade" id="profile-update-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Update Profile</h4>
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>*@
+            </div>
+            <div class="modal-body">
+
+                <div class="card">
+                    <div class="card-header"><h5></h5>  </div>
+                    <div class="card-body border">
+                        <form class="md-float-material" id="frmAddUpdateProfile" name="frmAddUpdateProfile" action="/services/Xtreme/multipart" method="post">
+
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="EmployeeID" id="EmployeeID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="type" id="type" value="UpdateProfile_Save">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">First Name:<span style="color:red">*</span></label><br />
+                                        <input type="text" class="form-control pname" name="FirstName" id="FirstName" value="" required="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">Last Name:<span style="color:red">*</span></label><br />
+                                        <input type="text" class="form-control pname" name="LastName" id="LastName" value="" required="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">Mobile Phone:<span style="color:red">*</span></label><br />
+                                        <input type="text" class="form-control pname" name="MobilePhone" id="MobilePhone" value="" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">WhatsApp:<span style="color:red">*</span></label><br />
+                                        <input type="text" class="form-control pname" name="WhatsApp" id="WhatsApp" value="" required="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">Current House No:<span style="color:red"></span></label><br />
+                                        <input type="text" class="form-control pname" name="CurHouseNo" id="CurHouseNo" value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">Current Street No:<span style="color:red"></span></label><br />
+                                        <input type="text" class="form-control pname" name="CurStreetNo" id="CurStreetNo" value="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <h6>User Credentials</h6><hr />
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">User Name:<span style="color:red"></span></label><br />
+                                        <input type="text" class="form-control pname" name="UserName" id="UserName" readonly value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div>
+                                        <label class="form-control-label">Password:<span style="color:red"></span></label><br />
+                                        <input type="password" class="form-control pname" name="Password" id="Password" value="" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect " id="btn-close-modal">Close</button>
+                <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="small-Modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Upload Image</h4>
+
+            </div>
+            <div class="modal-body">
+                <form class="md-float-material" id="frmAddUpdateProfileImage" name="frmAddUpdateProfileImage" action="/services/Xtreme/multipart" method="post">
+                    <input type="hidden" name="FkGuidId" id="FkGuidId" value="00000000-0000-0000-0000-000000000000">
+                    <input type="hidden" name="type" id="type" value="UpdateProfileImage_Save">
+                    <label class="form-control-label">Client Photo:</label>
+                    <input type="file" class="form-control pname" name="ProfilePicture" id="ProfilePicture" value="">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" id="btn-close-image-modal" data-dismiss="modal">Close</button>
+                <button type="button" id="btnUploadImage" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/ProfileDetails/agent-details.js?wadaanv=5.1.8"></script>

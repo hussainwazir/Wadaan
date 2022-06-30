@@ -1,0 +1,112 @@
+﻿ 
+
+
+@*<div class="container-fluid">*@
+    <div class="card" style="height:460px; overflow:scroll">
+        <div class="card-header" style=""><h5>Comments</h5>  </div>
+        <div class="card-body">
+            <ul class="media-list" id="LoadAllCooments" >
+                <li class="media" style="list-style-type:none">
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <div class="">
+                                <a href="#">
+                                    <img class="media-object img-circle comment-img" src="~/images/avatar-1.png" style="width:50px" alt="Generic placeholder image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+
+                            <div class="media-body media-right">
+                                <h6 class="media-heading txt-primary"> <span class="f-12 text-muted m-l-5"></span></h6>
+                                <p></p>
+
+                                <hr>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+
+            </ul>
+            <form class="md-float-material" id="frmAddUpdateTask" name="frmAddUpdateTask" action="/services/Xtreme/multipart" method="post">
+
+                <div class="input-group input-group-button">
+                    <input type="hidden" name="CommentID" id="CommentID" value="00000000-0000-0000-0000-000000000000" />
+                    <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000" class="UserID" />
+                    <input type="hidden" name="type" id="type" value="Comment_Save" />
+                    <input type="hidden" name="Areatype" id="Areatype" value="" />
+                    <input type="hidden" name="FkTypeID" id="FkTypeID" value="FkTypeID" />
+                    <input type="text" class="form-control" name="CommentDescription" required id="CommentDescription" placeholder="Add Comment">
+                    <span class="input-group-addon" id="btn-save-comment">
+                        <button class="btn btn-primary" id=""><i class="icofont icofont-plus f-w-600"></i> Add Comment</button>
+                    </span>
+
+                </div>
+            </form>
+
+            <br />
+        </div>
+    </div>
+@*</div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="card comment-block">
+    <div class="card-header">
+        <h5 class="card-header-text"><i class="icofont icofont-comment m-r-5"></i> Comments</h5>
+        @*<button type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right">
+                <i class="icofont icofont-plus"></i>
+            </button>*@
+@*</div>
+        <div class="card-block">
+            <ul class="media-list" id="LoadAllCooments" style="overflow-x: auto;max-height: 500px;"></ul>
+            <form class="md-float-material" id="frmAddUpdateComment" name="frmAddUpdateComment" action="/services/Xtreme/multipart" method="post">
+                <div class="md-float-material d-flex">
+                    <div class="col-md-12 btn-add-task">
+                        <div class="input-group input-group-button">
+                            <input type="hidden" name="CommentID" id="CommentID" value="00000000-0000-0000-0000-000000000000" />
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000" class="UserID" />
+                            <input type="hidden" name="type" id="type" value="Comment_Save" />
+                            <input type="hidden" name="Areatype" id="Areatype" value="" />
+                            <input type="hidden" name="FkTypeID" id="FkTypeID" value="FkTypeID" />
+
+                            <input type="text" class="form-control" name="CommentDescription" required id="CommentDescription" placeholder="Add Comment">
+                            <span class="input-group-addon" id="btn-save-comment">
+                                <button class="btn btn-primary" id=""><i class="icofont icofont-plus f-w-600"></i> Add Comment</button>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>*@
+<script src="~/Scripts/FunctionalityJs/Comment/Comment.js?wadaanv=5.1.8"></script>

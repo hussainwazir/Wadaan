@@ -1,0 +1,273 @@
+﻿
+@{
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<style>
+
+    .page-template .header {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        border-bottom: 1px solid #888;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .page-template .footer {
+        position: absolute;
+        bottom: 30px;
+        /*left: 30px;*/
+        right: 30px;
+        font-size: 12px !important;
+    }
+</style>
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Service </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Type</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            @*<ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" id="active-employee"> <a class="nav-link active" data-bs-toggle="tab" href="#activeEmployee" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Employee</span></a> </li>
+
+                </ul>*@
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="" role="tabpanel">
+                    <div class="">
+                        <div class="col-md-12">
+
+
+
+                            <div class=" ">
+                                <div class="card-body">
+
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header"><h5>SERVICE(S) TYPE</h5></div>
+                                            <br />
+                                            @*<div class="row">
+                                                    <div class="col-lg-8 col-md-8 col-sm-8">
+                                                        <button type="button" class="btn btn-success" id="btn-add-employee" onclick="window.location.href='/Employee/Employee/Save'" style="margin-left:20px; color:white">  Add Employee</button>
+                                                        <button type="button" class="btn btn-danger" id="btn-add-employee" onclick="window.location.href='/Employee/Employee/EmployeePrint'" style="margin-left:20px; color:white">  Print </button>
+                                                        <button type="button" class="btn btn-primary" id="btn-send-email" style="margin-left:20px; color:white">  Send Email</button>
+                                                    </div>
+                                                </div>*@
+                                            <div class="card-body">
+                                                <div class="card">
+                                                    <div class="card-header"> <h5> Contract Type </h5> </div>
+                                                    <div class="card-body border">
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <div>
+                                                                    <label class="form-control-label">Contract Type:<span style="color:red">*</span></label><br />
+                                                                    <select class="form-control select2" id="ContractType" required name="ContractType"></select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <div>
+                                                                    <label class="form-control-label">Project Category:<span style="color:red">*</span></label><br />
+                                                                    <select class="form-control select2" id="ProjectCategory" required name="ProjectCategory" onchange="ShowHideControls()"></select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2" id="div-residential">
+                                                                <div>
+                                                                    <label class="form-control-label"> Plot Size:<span style="color:red">*</span></label><br />
+                                                                    <select class="form-control select2" style="width:250px" onchange="GetProjectTimelineEstimationResidential()" id="ResidentialPlotSize" name="ResidentialPlotSize"></select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-2" id="div-commercial">
+                                                                <div>
+                                                                    <label class="form-control-label"> Plot Size:<span style="color:red">*</span></label><br />
+                                                                    <select class="form-control select2" id="CommercialPlotSize" onchange="GetProjectTimelineEstimationCommercial()" required style="width:250px" name="CommercialPlotSize"></select>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-sm-2" style="margin-top:17px;font-weight:bold;text-align: center;">
+                                                                <div>
+                                                                    <label class="form-control-label"> Total Duration: </label><br />
+                                                                    <span id="lbl-project-time-line-estimation" style="color:red"></span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-sm-2" id="">
+                                                                <div>
+                                                                    <label class="form-control-label"> Draft Type:<span style="color:red"></span></label><br />
+                                                                    <select class="form-control select2" style="width:250px" id="DraftType">
+                                                                        <option selected value="Draft1">Draft1</option>
+                                                                        <option value="Draft2">Draft2</option>
+                                                                        <option value="Draft3">Draft3</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="col-sm-2" style="margin-top:17px;font-weight:bold;">
+                                                                <div>
+                                                                    <label class="form-control-label">  </label><br />
+                                                                    <button type="button" class="btn btn-success  " id="" onclick="fnLoadSearchData(this);" style="margin-left:20px; color:white">  Search</button>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div id="services-type-grid"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+         
+    </div>
+
+</div>
+<div class="modal fade" id="update-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Update Contract Type</h4>
+
+            </div>
+            <div class="modal-body">
+
+                <div class="card">
+
+                    <div class="card-body border">
+                        <form class="md-float-material" id="frmAddUpdateModel" name="frmAddUpdateModel" action="/services/Xtreme/multipart" method="post">
+
+
+                            <input type="hidden" name="ContractTypee" id="ContractTypee" value="">
+                            <input type="hidden" name="type" id="type" value="ServicesType_SaveByID">
+                            <div class="row">
+                                @*<div class="col-sm-6">
+                                        <div>
+                                            <label class="form-control-label">Contract Type:<span style="color:red">*</span></label><br />
+                                            <select class="form-control select2 col-sm-6" id="ContractTypee" required name="ContractType" style="width:250px"></select>
+                                            <input  class="form-control" type="text" readonly   id="ContractTypee" value="">
+
+                                        </div>
+                                    </div>*@
+                                <div class="col-sm-6">
+                                    <div>
+                                        <label class="form-control-label">Project Category:<span style="color:red">*</span></label><br />
+                                        @*<select class="form-control select2" id="ProjectCategoryy" required name="ProjectCategory" onchange="ShowHideControls()" style="width:250px"></select>*@
+                                        <input class="form-control" type="text" readonly id="ProjectCategoryy" value="">
+                                    </div>
+                                </div>  <div class="col-sm-6" id="">
+                                    <div>
+                                        <label class="form-control-label"> Draft Type:<span style="color:red"></span></label><br />
+                                        <input class="form-control" type="text" readonly id="DraftTypee" value="">
+                                        @*<select class="form-control select2" style="width:250px" name="DraftType" id="DraftTypee">
+                                                <option selected value="Draft1">Draft1</option>
+                                                <option value="Draft2">Draft2</option>
+                                                <option value="Draft3">Draft3</option>
+                                            </select>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" id="div-residential">
+                                    <div>
+                                        <label class="form-control-label"> Plot Size:<span style="color:red">*</span></label><br />
+                                        @*<select class="form-control select2" style="width:250px" onchange="GetProjectTimelineEstimationResidential()" id="ResidentialPlotSizee" name="ResidentialPlotSize"></select>*@
+                                        <input class="form-control" type="text" readonly id="ResidentialPlotSizee" value="">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6" id="div-commercial">
+                                    <div>
+                                        <label class="form-control-label"> Plot Size:<span style="color:red">*</span></label><br />
+                                        @*<select class="form-control select2" name="CommercialPlotSize" id="CommercialPlotSizee" onchange="GetProjectTimelineEstimationCommercial()" required style="width:250px" name="CommercialPlotSize"></select>*@
+                                        <input class="form-control" type="text" readonly id="CommercialPlotSizee" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-sm-6" style="margin-top:17px;font-weight:bold;text-align: right;">
+                                    <div>
+                                        <label class="form-control-label"> Total Duration: </label><br />                                    
+                                    </div>
+
+                                </div>
+                                    <div class="col-sm-6" style="margin-top:17px;font-weight:bold;text-align: center;">
+                                    <div>
+                                        <input class="form-control" type="text" name="WorkingDays"   id="WorkingDays" value="">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            @*<div class="row">
+
+                                    <div class="col-sm-10"></div>
+                                    <div class="col-sm-2" style="margin-top:17px;font-weight:bold;">
+                                        <div>
+                                            <label class="form-control-label">  </label><br />
+                                            <button type="button" class="btn btn-success  " id="" onclick="fnLoadSearchData(this);" style="margin-left:20px; color:white">  Search</button>
+                                        </div>
+
+                                    </div>
+                                </div>*@
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect " id="btn-close-modal" onclick="fnCloseModel()">Close</button>
+                <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/FunctionalityJs/ServiceType/service-type.js"></script>

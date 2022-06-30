@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "CATaskDetail";
+    Layout = "~/Areas/Shared/_ClientLayout.cshtml";
+}
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/CLIENTAREA/ClientArea/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Task </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Detail</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-sm-8">
+
+
+                        <div class="card">
+                            <div class="card-header" style="background: #2c3e50;">
+                                @*<span style="color:white"> Project Name : </span>
+                                    <span style="color:white; font-weight:bold;font-size:15px" class="label label-danger project">   </span>*@
+                                <span style="color:white;padding-left:20px"> Task Name : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-success taskName">  </span>
+                                <span style="color:white;padding-left:20px"> Assign To : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-warning assign">  </span>
+                                <span style="color:white;padding-left:20px"> Task Status : </span>
+                                <span style="color:white; font-weight:bold;font-size:15px" class="label label-danger taskstatus">  </span>
+                                <span style="color:white;padding-left:20px">      </span>
+                                <span style="color:white; padding-left:20px; font-weight:bold;font-size:20px" id="remmTime" class="label label-danger ">    </span>
+                            </div>
+
+                            <div class="card-body border">
+                                <div class="row">
+                                    <div style="height:200px">
+                                        <label class="form-control-label">Task Description </label><hr />
+                                        <div class="" id="task-description"></div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-8"></div>
+
+                                        <div class="col-sm-4">
+
+                                            <label class="form-control-label">Reported Date: </label>
+                                            <span style="color:white; font-weight:bold;font-size:13px" class="label label-danger reportedDate">    </span>
+                                            <label class="form-control-label">Priority: </label>
+                                            <span style="color:white; font-weight:bold;font-size:13px; " class="label label-danger priority">   </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                        </div>
+                        <div class="row">
+                            @Html.Partial("~/Areas/Comment/Views/PartialViews/_LoadComment.cshtml")
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-sm-4">
+                        <div class="card" style="height:500px">
+                            <div class="card-header" style="background: #2c3e50;">
+                                <span style="color:white"> Attachments : </span>
+
+                            </div>
+
+                            <div class="card-body border">
+                                <div class="card-block task-attachment" style="overflow-x: auto;height: 500px;">
+                                    <ul class="media-list appendAttachment"></ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            $("#Areatype").val("TaskDetail");
+        </script>
+
+
+
+
+</body>
+
+<script src="~/Scripts/FunctionalityJs/ClientLoginArea/client-area-task-detail.js?wadaanv=5.1.8"></script>

@@ -1,0 +1,46 @@
+﻿
+.container {
+    background-color: #fff;
+    padding: 0 2rem;
+    border: 1px solid black;
+}
+
+body {
+    margin: 2rem;
+    font-style: italic;
+}
+
+.line {
+    height: 2px;
+    background: #fff;
+}
+
+.title,
+.address,
+.tell,
+.donor-copy,
+.donation-body {
+    font-style: normal;
+}
+
+.d-reciept {
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.underline {
+    border-bottom: 1px solid #000;
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .d-reciept {
+        font-size: 24px;
+    }
+}
+
+ 
