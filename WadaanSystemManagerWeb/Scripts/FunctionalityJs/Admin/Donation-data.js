@@ -30,6 +30,7 @@ MemberShipID = url_array[url_array.length - 1];
    
     function validatemember() {
 
+
         $('input,select').removeClass('error');
         var isFalse = false;
         if ($("#Reason").val() == '') {
