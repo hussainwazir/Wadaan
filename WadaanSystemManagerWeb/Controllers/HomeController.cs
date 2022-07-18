@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace WadaanSystemManager.Controllers
-{
+{ 
     public class HomeController : Controller
     {
 
