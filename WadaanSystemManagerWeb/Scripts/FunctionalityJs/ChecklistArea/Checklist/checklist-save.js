@@ -12,7 +12,7 @@ $(document).ready(function () {
  
     //---------------------------------  USER SESSION RECORD END ----------------------------------------------------------------------------   
     $("#UserID").val(userId);
-    LoadChecklistDetailsByID();
+   // LoadChecklistDetailsByID();
    
   
     $('#btnSave').on('click', function (e) {
@@ -40,7 +40,8 @@ $(document).ready(function () {
                         timer: 1500
                     });
                     //  LoadEmployeesKendo();
-                    window.location.href = '/ChecklistsArea/Checklists/Index';
+                    location.reload();
+//  window.location.href = '/ChecklistsArea/Checklists/Index';
                 },
                 error: function (xhr, status, error) {
                     var errmsg = xhr.status + ':' + xhr.responseText + ':' + error;

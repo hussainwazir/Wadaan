@@ -329,7 +329,7 @@
     CheckList_Delete,
     CheckList_Save,
     CheckList_SelectById,
-    CheckList_Select,
+    CheckList_Select, ViewChecklist_Select,
 
     #endregion
 

@@ -4136,6 +4136,7 @@
     <Content Include="Scripts\FunctionalityJs\Charts\morris.js" />
     <Content Include="Scripts\FunctionalityJs\Charts\raphael.min.js" />
     <Content Include="Scripts\FunctionalityJs\ChecklistArea\Checklist\checklist-detail.js" />
+    <Content Include="Scripts\FunctionalityJs\ChecklistArea\Checklist\checklist-list-sublist.js" />
     <Content Include="Scripts\FunctionalityJs\ChecklistArea\Checklist\checklist-list.js" />
     <Content Include="Scripts\FunctionalityJs\ChecklistArea\Checklist\checklist-save.js" />
     <Content Include="Scripts\FunctionalityJs\EmployeeArea\Employee\Chart.bundle.min.js" />
@@ -4648,6 +4649,7 @@
     <Content Include="Areas\ChecklistsArea\Views\web.config" />
     <Content Include="Areas\Employee\Views\AboutUs\AboutUs.cshtml" />
     <Content Include="Areas\Employee\Views\ServiceType\ServiceType.cshtml" />
+    <Content Include="Areas\ChecklistsArea\Views\Checklist\ViewChecklist.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Controller.js" />

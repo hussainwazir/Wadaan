@@ -14,14 +14,18 @@ namespace WadaanSystemManager.Areas.ChecklistsArea
         {
             return View("~/Areas/ChecklistsArea/Views/Checklist/Index.cshtml");
         }
-
+        public ActionResult ViewChecklist()
+        {
+            return View("~/Areas/ChecklistsArea/Views/Checklist/ViewChecklist.cshtml");
+        }
         //    return View("~/Areas/ChecklistsArea/Views/Checklist/Save.cshtml");
-       
-       public ActionResult Save()
+
+        public ActionResult Save()
        {
             return View("~/Areas/ChecklistsArea/Views/Save.cshtml");
        }
-        
+         
+
 
 
         #endregion
