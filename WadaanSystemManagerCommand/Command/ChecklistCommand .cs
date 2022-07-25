@@ -121,6 +121,7 @@ namespace WadaanSystemManagerCommand.Command
                 TaskName = string.Empty,
                 TaskStatus = string.Empty,
                 Description = string.Empty,
+                ChecklistType = string.Empty,
                 UserID = Guid.Empty
 
                 //UploadedFiles = new List<FileUploadModel>()

@@ -65,6 +65,7 @@ var KendoGrid = function (_data) {
        
         { field: "taskName", title: "Task Name", width: 150, filterable: true },
         { field: "taskStatus", title: "Task Status", width: 150, filterable: true },
+        { field: "checklistType", title: "Check list Type", width: 150, filterable: true },
         { field: "description", title: "Description", width: 170, filterable: true, },
 
         { field: "createdDate", title: "CreatedDate", width: 170, filterable: true, hidden: true },
@@ -99,7 +100,7 @@ function EditDetail(e) {
     var grid = $("#" + $grid).data("kendoGrid");
     var dataItem = grid.dataItem(row);
     console.log(dataItem.taskName);
-    $("#TaskName").val(dataItem.taskName).attr("selected", "selected");
+    $("#TaskName").val(dataItem.taskName).attr("selected", "selected"); $("#ChecklistType").val(dataItem.checklistType).attr("selected", "selected");
     $("#TaskStatus").val(dataItem.taskStatus).attr("selected", "selected");
     $("#Description").text(dataItem.description);
     $("#CheckListID").val(dataItem.checkListID);

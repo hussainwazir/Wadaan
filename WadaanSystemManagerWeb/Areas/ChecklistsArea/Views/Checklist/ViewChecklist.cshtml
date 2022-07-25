@@ -108,10 +108,10 @@
 
                                     <div class="row">
 
-                                        <div class="col-sm-6"   >
+                                        <div class="col-sm-4">
                                             <div>
                                                 <label class="form-control-label ">Task: </label><span style="color:red">*</span><br />
-                                                <select type="text" class="form-control pname @*select2*@  col-lg-8" name="TaskName"   id="TaskName" value="" style="width: 250px" @*onchange="taskStatus(this)"*@>
+                                                <select type="text" class="form-control pname @*select2*@  col-lg-8" name="TaskName" id="TaskName" value="" style="width: 250px" @*onchange="taskStatus(this)" *@>
                                                     <option value="0"> Select Task</option>
                                                     <option value="Concept Design"> Concept Design</option>
                                                     <option value="Sketch"> Sketch </option>
@@ -125,16 +125,30 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-6" >
+                                        <div class="col-sm-4">
+                                            <div>
+                                                <label class="form-control-label"> Status: </label><span style="color:red">*</span><br />
+                                                <select type="text" class="form-control pname  col-lg-8" name="ChecklistType" id="ChecklistType" value="" style="width: 250px">
+                                                    <option value="1"> Select Type</option>
+                                                   
+                                                    <option value="Submitter"> Submitter</option>
+                                                    <option value="Checker">Checker</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
                                             <div>
                                                 <label class="form-control-label"> Status: </label><span style="color:red">*</span><br />
                                                 <select type="text" class="form-control pname  col-lg-8" name="TaskStatus" id="TaskStatus" value="" style="width: 250px">
                                                     <option value="1"> Select Status</option>
-                                                    @*<option value="Not Started Yet"> Not Started Yet</option>*@
-                                                    @*<option value="Inprogress"> Inprogress </option>*@
+                                                    @*
+                                                    <option value="Not Started Yet"> Not Started Yet</option>*@
+                                                    @*
+                                                    <option value="Inprogress"> Inprogress </option>*@
                                                     <option value="Completed"> Completed </option>
                                                     <option value="Rejected"> Rejectd </option>
-                                                    @*<option value="Paused"> Paused </option>
+                                                    @*
+                                                    <option value="Paused"> Paused </option>
                                                     <option value="Overdue"> Overdue </option>*@
                                                 </select>
                                             </div>

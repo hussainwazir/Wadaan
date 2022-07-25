@@ -95,6 +95,7 @@ function LoadChecklistDetailsByID() {
 
             $("#CheckListID").val(JSON.parse(d.Value)[0].checkListID);
             $("#TaskName").val(JSON.parse(d.Value)[0].taskName).trigger('change');
+            $("#ChecklistType").val(JSON.parse(d.Value)[0].checklistType).trigger('change');
             $("#TaskStatus").val(JSON.parse(d.Value)[0].taskStatus).trigger('change');
             $("#Description").val(JSON.parse(d.Value)[0].description);
 

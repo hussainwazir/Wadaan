@@ -78,18 +78,19 @@ var KendoGrid = function (_data) {
         { field: "modifyDate", title: "ModifyDate", width: 170, filterable: true, hidden: true },
         { field: "modifyBy", title: "ModifyBy", width: 170, filterable: true, hidden: true },
         { field: "isActive", title: "IsActive", width: 170, filterable: true, hidden: true },
-        {
-            field: "", width: 120,
-            title: "Action",
+        //{
+        //    field: "", width: 120,
+        //    title: "Action",
 
 
-            //  template: " <a style='font-size:20px;color:red;cursor: pointer;' onClick= OpenMembershipPrint(this) title='Print' ><span class='fa fa-print'></span></a>  <a style='font-size:20px;' onClick= EditDetail(this) title='Edit member' ><span class='icofont icofont-ui-edit'></span></a>  <a style='font-size:20px;' onClick= deleteRecordByID('#=employeeID#')  title='Delete Agent'><span class='icofont icofont-ui-delete'></span></a>"
-            //            template: "<a style='cursor:pointer; font-size:20px;' onClick= EditDetail(this) title='Edit Employee' ><span class='icofont icofont-ui-edit'></span></a>  <a style='cursor:pointer;font-size:20px;' onClick= deleteRecordByID('#=employeeID#')  title='Delete Employee'><span class='icofont icofont-ui-delete'></span></a><a href=javascript:('##') style='font-size:20px;color:black;' onClick= LoadRecordByID(this)   title='View Details'><i class='icofont icofont-eye-alt' > </i ></a>" 
-            template: "   <a style='font-size:20px;cursor:pointer;' onClick= EditDetail(this) title='Edit Checklist' ><span class='fa fa-edit'></span></a>  <a style='font-size:20px;cursor:pointer;' onClick= deleteRecordByID('#=taskName#')  title='Delete Checklist'><span class='fa fa-trash'></span></a>"
-           // template: "# if (IsUpdatedContractor == 'true') { #  <a style='font-size:20px;cursor:pointer;' onClick= EditDetail(this) title='Edit Contractor' <span class='fa fa-edit'></span></a>  # } else if (IsDeleteContractor == 'true'){# <a style='font-size:20px;cursor:pointer;' onClick= deleteRecordByID('#=contractorID#')  title='Delete Contractor'<span class='fa fa-trash'</span></a> #}   #",
+        //    //  template: " <a style='font-size:20px;color:red;cursor: pointer;' onClick= OpenMembershipPrint(this) title='Print' ><span class='fa fa-print'></span></a>  <a style='font-size:20px;' onClick= EditDetail(this) title='Edit member' ><span class='icofont icofont-ui-edit'></span></a>  <a style='font-size:20px;' onClick= deleteRecordByID('#=employeeID#')  title='Delete Agent'><span class='icofont icofont-ui-delete'></span></a>"
+        //    //            template: "<a style='cursor:pointer; font-size:20px;' onClick= EditDetail(this) title='Edit Employee' ><span class='icofont icofont-ui-edit'></span></a>  <a style='cursor:pointer;font-size:20px;' onClick= deleteRecordByID('#=employeeID#')  title='Delete Employee'><span class='icofont icofont-ui-delete'></span></a><a href=javascript:('##') style='font-size:20px;color:black;' onClick= LoadRecordByID(this)   title='View Details'><i class='icofont icofont-eye-alt' > </i ></a>" 
+        //    template: "   <a style='font-size:20px;cursor:pointer;' onClick= EditDetail(this) title='Edit Checklist' ><span class='fa fa-edit'></span></a>  <a style='font-size:20px;cursor:pointer;' onClick= deleteRecordByID('#=taskName#')  title='Delete Checklist'><span class='fa fa-trash'></span></a>"
+        //   // template: "# if (IsUpdatedContractor == 'true') { #  <a style='font-size:20px;cursor:pointer;' onClick= EditDetail(this) title='Edit Contractor' <span class='fa fa-edit'></span></a>  # } else if (IsDeleteContractor == 'true'){# <a style='font-size:20px;cursor:pointer;' onClick= deleteRecordByID('#=contractorID#')  title='Delete Contractor'<span class='fa fa-trash'</span></a> #}   #",
 
 
-        }];
+        //}
+    ];
 
     BindkendoGrid($grid, 50, colModel, _data);
 };
