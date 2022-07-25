@@ -276,7 +276,7 @@
     Comments_ShowAllOnClientProjectTask,
     UserLogin_Name,
     Task_SelectOfCurrentDay,
-    Permissions_SelectRoleBase,
+    Permissions_SelectRoleBase, Task_ProjectProgressforClient,
 
     #endregion
 

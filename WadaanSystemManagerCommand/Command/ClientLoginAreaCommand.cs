@@ -115,7 +115,29 @@ namespace WadaanSystemManagerCommand.Command
             return result;
         }
     }
+    [Command(Name = "Task_ProjectProgressforClient")]
+    public class Task_ProjectProgressforClientCommand : CamelCommandBase
+    {
+        protected override object DoAction(object v)
+        {
+            object result = new { status = false, returnUrl = "#" };
+            var model = base.MappedModel(new { UserID = Guid.Empty }, v);
 
+            try
+            {
+                var repository = Ioc.Resolve<IRepository>();
+                IDictionary<string, object> values = new Dictionary<string, object>();
+                CommandParameters _params = new CommandParameters();
+                values = _params.Get(model);
+                return repository.GetMultiple<dynamic>(StoreProcedure.Task_ProjectProgressforClient.ToString(), values, XtremeFactory._factory, XtremeFactory.connectionString);
+            }
+            catch (Exception ex)
+            {
+                result = new { status = false, message = ex.Message };
+            }
+            return result;
+        }
+    }
 
 
     [Command(Name = "Project_SelectAllAgainstClient")]
