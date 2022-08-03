@@ -260,6 +260,7 @@ function getUserName() {
     KendoGlobalAjax({ commandName: 'UserLogin_Name', values: { UserID: userId }, CallBack: fngetUserName });
 }
 var fngetUserName = function (d) {
+   
     $('#login-user-name').text(' Welcome back ! ' + ' ' + JSON.parse(d.Value)[0].name);
 }
 function LoadTaskOfCurrentDay() {
@@ -291,7 +292,10 @@ var KendoGrid = function (_data) {
         { field: "createdDate", title: "Date", filterable: false },
     ];
     BindkendoGrid($grid, 50, colModel, _data);
+
+
 };
+
 function LoadRecordByProjectID(e) {
 
     var row = $(e).closest('tr');

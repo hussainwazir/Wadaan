@@ -208,6 +208,7 @@
                                     <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Project Details</span></a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#messages" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Cordinates</span></a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#taskdetail" role="tab" onclick="testing()"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Task Details of Project</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#ProjectGallery" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Project Gallary</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content tabcontent-border">
@@ -353,9 +354,6 @@
                                                     <div class="title"> South </div>
                                                     <div class="text south"></div>
                                                 </li>
-
-
-
                                             </ul>
 
                                         </div>
@@ -371,8 +369,42 @@
 
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+
+                                    <div class="tab-pane" id="ProjectGallery" role="tabpanel">
+                                        <div class="p-20">
+                                            <form class="md-float-material" id="frmProjectGallery" name="frmProjectGallery" action="/services/Xtreme/multipart" method="post">
+                                                <input type="hidden" name="type" id="type" value="Project_UpdateImagesByID">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12">
+
+                                                        <table class="table  invoice-detail-table  dt-responsive  ">
+                                                            <thead class="thead-default">
+                                                                <tr class="">
+
+                                                                    <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:2%">Preview</th>
+                                                                    <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:2%">Attachment</th>
+                                                                    <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:2%">Update Images</th>
+
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tbl-items-tbody-project-gallery"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="btn-update-images" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block"> Save</button>
+
+
+                                                </div>
+                                            </form>
+                                        </div>
+                       
+                                    </div>
+
+                                </div>                       
+                                                       
+                           </div>
 
 
 
@@ -380,6 +412,8 @@
 
                         </div>
                     </div>
+                    
+
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <div class="card" style="height:520px">
                             <div class="card-header" style="background: #2c3e50;">
@@ -394,6 +428,9 @@
                         </div>
 
                     </div>
+
+
+
                 </div>
 
 

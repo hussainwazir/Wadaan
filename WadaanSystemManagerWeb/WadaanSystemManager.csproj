@@ -4649,7 +4649,11 @@
     <Content Include="Areas\ChecklistsArea\Views\web.config" />
     <Content Include="Areas\Employee\Views\AboutUs\AboutUs.cshtml" />
     <Content Include="Areas\Employee\Views\ServiceType\ServiceType.cshtml" />
+<<<<<<< Updated upstream
     <Content Include="Areas\ChecklistsArea\Views\Checklist\ViewChecklist.cshtml" />
+=======
+    <Content Include="Areas\EmployeeArea\Views\EmployeeArea\EAPersonalDetail.cshtml" />
+>>>>>>> Stashed changes
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Controller.js" />

@@ -36,6 +36,10 @@ namespace WadaanSystemManager.Areas.EmployeeArea
         {
             return View();
         }
+        public ActionResult EAPersonalDetail()
+        {
+            return View();
+        }
 
         #endregion
 
