@@ -4650,6 +4650,7 @@
     <Content Include="Areas\Employee\Views\AboutUs\AboutUs.cshtml" />
     <Content Include="Areas\Employee\Views\ServiceType\ServiceType.cshtml" />
     <Content Include="Areas\ChecklistsArea\Views\Checklist\ViewChecklist.cshtml" />
+    <Content Include="Areas\CLIENTAREA\Views\ClientArea\ProjectProgressList.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Controller.js" />
