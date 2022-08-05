@@ -133,4 +133,71 @@ function fnloadRefferenceAttahcmentsImageInModal(e) {
     $('.load-image-by-click').attr('src', '../../Temp/' + imagePath);
 
 }
+//update Image of Profile model Hide & Show
+$('#btn-update-profile').click(function () {
+
+    loadProfileData();
+});
+
+$('#btn-close-modal').click(function () {
+    $('#profile-update-modal').modal('hide');
+});
+
+
+
+
+
+//update Image of Profile
+$('#btnUploadImage').click(function () {
+
+    if (customvalidateForm('frmAddUpdateProfileImage')) {
+
+        $("#frmAddUpdateProfileImage").ajaxForm();
+
+        //ButtonLoader
+        var btn = document.getElementById('btnSave');
+        // btn.disabled = true;
+        // btn.innerHTML = '<i class = "fa fa-spinner fa-spin"></i> Please wait...';
+
+        var options = {
+            success: function (response, statusText, jqXHR) {
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Record saved successfully...',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                $('#profile-update-modal').modal('hide');
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                var errmsg = xhr.status + ':' + xhr.responseText + ':' + error;
+                alert(errmsg);
+            }
+        };
+        $("#frmAddUpdateProfileImage").ajaxSubmit(options);
+
+    }
+    else {
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class = "fa fa - save fa - save"> </i> Save...';
+        return false;
+    }
+
+});
+
+$('#btn-close-image-modal').click(function () {
+    $('#small-Modal').modal('hide');
+});
+$('#btn-open-image-modal').click(function () {
+    fnLoadImageModal();
+});
+function fnLoadImageModal() {
+
+    $('#small-Modal').modal('show');
+    //$('#small-Modal').addClass('md-close').removeClass('md-show');
+
+}
  

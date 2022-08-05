@@ -616,7 +616,7 @@ progress {
 }
 
 .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 1320px
+    max-width: 1200px
 }
 
 .row {
