@@ -24,6 +24,36 @@ namespace WadaanSystemManagerCommand.Command
             return Ioc.Resolve<IRepository>().GetMultiple<dynamic>(StoreProcedure.Designation_SelectDDL.ToString(), null, XtremeFactory._factory, XtremeFactory.connectionString);
         }
     }
+
+    [Command(Name = "Designation_SelectList")]
+    public class Designation_SelectListCommand : CamelCommandBase
+    {
+        protected override object DoAction(object v)
+        {
+            object result = new { status = false, returnUrl = "#" };
+            var model = base.MappedModel(new { Status = string.Empty }, v);
+
+            try
+            {
+                var repository = Ioc.Resolve<IRepository>();
+                IDictionary<string, object> values = new Dictionary<string, object>();
+                CommandParameters _params = new CommandParameters();
+
+                values = _params.Get(model);
+                return repository.GetMultiple<dynamic>(StoreProcedure.Designation_SelectList.ToString(), values, XtremeFactory._factory, XtremeFactory.connectionString);
+
+            }
+            catch (Exception ex)
+            {
+                result = new { status = false, message = ex.Message };
+            }
+            return result;
+        }
+        //protected override object DoAction(object v)
+        //{
+        //    return Ioc.Resolve<IRepository>().GetMultiple<dynamic>(StoreProcedure.Designation_SelectList.ToString(), null, XtremeFactory._factory, XtremeFactory.connectionString);
+        //}
+    }
     #endregion
 
 

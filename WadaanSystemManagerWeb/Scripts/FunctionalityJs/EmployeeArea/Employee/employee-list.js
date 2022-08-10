@@ -63,6 +63,8 @@ var KendoGrid = function (_data) {
 
         { title: "S/N", width: 40, template: "#= renderNumber() #" },
         { field: "employeeID", title: "EmployeeID", hidden: true, width: 200 },
+        { field: "empID", title: "EmployeeID", width: 200 },
+     
 
         {
             field: "userName", width: 140, title: "User Name",

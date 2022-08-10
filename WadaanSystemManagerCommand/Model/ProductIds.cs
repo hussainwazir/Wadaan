@@ -110,5 +110,19 @@ namespace WadaanSystemManagerCommand.Model
        
 
     }
+
+    public class BulkDesignationDetail
+    {
+
+
+        public BulkDesignationDetail() { }
+
+        public Guid DesignationID { get; set; }
+        public string DesignationName { get; set; }
+        public Guid UserId { get; set; }
+        public bool IsActive { get; set; }
+
+
+    }
 }
  

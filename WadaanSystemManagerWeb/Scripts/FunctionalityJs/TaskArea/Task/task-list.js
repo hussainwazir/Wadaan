@@ -49,7 +49,7 @@ var KendoGridActiveTasks = function (_data) {
     var record = 0;
 
     var colModel = [
-
+        { title: "S/N", width: 40, template: "#= renderNumber() #" },
         { field: "taskId", title: "TaskId", hidden: true, width: 200 },
 
         {
@@ -110,7 +110,7 @@ var KendoGridInActiveTasks = function (_data) {
     var record = 0;
 
     var colModel = [
-
+        { title: "S/N", width: 40, template: "#= renderNumber() #" },
         { field: "taskId", title: "TaskId", hidden: true, width: 200 },
 
         {
@@ -215,7 +215,7 @@ var KendoGridAllTasks = function (_data) {
     var record = 0;
 
     var colModel = [
-
+        { title: "S/N", width: 40, template: "#= renderNumber() #" },
         { field: "taskId", title: "TaskId", hidden: true, width: 200 },
 
         {

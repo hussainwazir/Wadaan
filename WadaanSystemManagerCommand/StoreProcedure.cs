@@ -14,6 +14,7 @@
     CategoryType_SelectDDL,
     TaxRate_SelectDDL,
     Designation_SelectDDL,
+    Designation_SelectList,
     EmployeeType_SelectDDL,
     Contractor_SelectDDL,
     Client_SelectDDL,
@@ -248,6 +249,7 @@
 
     #region =============================== Bulk Employee Enteries ========================
     EmployeeEducationMultipleDetails_Save_New,
+
     EmployeeExperienceMultipleDetails_Save_New,
     EmployeeEducationDetail_SelectByEmployeeID,
     EmployeeExperiencesDetails_SelectByEmployeeID,

@@ -1,0 +1,693 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+
+}
+
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            @*<div class="page-breadcrumb">
+                    <div class="row">
+                        <div class="col-12 d-flex no-block align-items-center">
+
+                            <div class="ms-auto text-end">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><span><i class="fas fa-home"></i> - Dashboard </span></li>
+
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+
+
+
+
+
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-md-12 col-lg-12 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info">
+                                <h2 class="text-white" id="login-user-name">  </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                @* Dashboard Upper Arear Start *@
+                <!-- ============================================================== -->
+
+
+                <div class="row">
+                    <!-- Column -->
+
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan text-center">
+                                <h1 class="font-light text-white"><i class="fa fa-user"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-employees">Employee</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-success text-center">
+                                <h1 class="font-light text-white"><i class="fa fa-user"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-clients">Clients</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-warning text-center">
+                                <h1 class="font-light text-white"><i class="fa fa-user"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-contractor">Contractor</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-success text-center">
+                                <h1 class="font-light text-white"><i class="fas fa-list"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-projects">Total Projects</h4>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan text-center">
+                                <h1 class="font-light text-white"><i class="far fa-handshake"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-meetings">Meetings</h4>
+                            </div>
+                        </div>
+                    </div>*@
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info text-center">
+                                <h1 class="font-light text-white"><i class="fa fa-user"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-supplier">Supplier</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <!-- Column -->
+
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan text-center">
+                                <h1 class="font-light text-white"><i class="fas fa-clipboard-list"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-tasks">Tasks</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    @*<div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-pending-tasks">Pending Tasks</h4>
+                            </div>
+                        </div>
+                    </div>*@
+                    <!-- Column -->
+                    @*<div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-danger text-center">
+                                <h1 class="font-light text-white"><i class="fa fa-check"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-completed-tasks">completed</h4>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-danger text-center">
+                                <h1 class="font-light text-white"><i class="me-2 mdi mdi-pause"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-pause-tasks">Paused</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
+                                <h4 class="text-white" style=" padding-top:10px" id="total-no-of-not-started-tasks">Buttons</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <!-- Column -->
+                </div>
+
+
+                <!-- ============================================================== -->
+                @* Dashboard Upper Arear End *@
+                <!-- ============================================================== -->
+
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-2 col-xlg-3 ">
+                        <div>
+                            <label class="form-control-label">Search By Project Wise:</label>
+                            <select class="form-control select2" id="ProjectID" onchange="fnLoadDataByProjectID(this);" name="ProjectID"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3 ">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <div class="card">
+                            <div class="card-header"><h4><strong>Project Tasks Detail</strong></h4>  </div>
+                            <div class="card-body">
+                                <div id="grid-testing"  style="display: block; width: 700px; height: 180px;"></div>
+                                @*<div class="chartjs-size-monitor chartline-dashboard-chart" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                        <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                            <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                        </div>
+                                    </div>*@
+                                @*<canvas id="chart-line" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>*@
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-6 ">
+                            <div class="card">
+                                <div class="card-header"><h4><strong>Projects Detail Per Year</strong></h4></div>
+                                <div class="card-body">
+                                    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                        <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                            <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                        </div>
+                                    </div> <canvas id="chart-bar" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+                                </div>
+
+                            </div>
+                        </div>*@
+
+
+
+                    <!-- ============================================================== -->
+                    @* Project Detail Status Wise Start *@
+                    <!-- ============================================================== -->
+
+                    @*<div class="col-md-6 ">
+
+                        <div class="card" style="height: 600px;">
+                            <div class="card-header">
+                                <h5>Project Detail Status Wise</h5>
+                            </div>
+                            <div class="card-block" style="padding-top:60px;    ">
+                                <div id="dashboard-donut-chart"></div>
+                            </div>
+                        </div>
+
+
+                    </div>*@
+
+                    <!-- ============================================================== -->
+                    @* Project Detail Status Wise End *@
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    @* Project Detail Status Wise Start *@
+                    <!-- ============================================================== -->
+
+                    @*<div class="col-md-12 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <h5>Project Timeline Status</h5>
+                                </div>
+
+                                <div class="dx-viewport demo-container">
+                                    <div id="chart"></div>
+                                </div>
+
+                                <div id="example3.1" class="timeline" style="min-height: 400px; overflow-y: hidden;"></div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>*@
+
+                    <!-- ============================================================== -->
+                    @* Project Detail Status Wise Start *@
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    @* Gantt Chart Start *@
+                    <!-- ============================================================== -->
+
+                    @*<div class="col-md-6 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <h5>Gantt Chart</h5>
+                                </div>
+
+                                <div id="chart_div"></div>
+
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+
+                <!-- ============================================================== -->
+                @* Gantt Chart END *@
+                <!-- ============================================================== -->
+
+
+
+
+
+
+                @*<div class="col-md-12 ">
+                    <div class="card ">
+                        <div class="card-body">
+
+                            <div class="card">
+                                <div class="card-body" style="height:430px">
+                                    <h4 class="card-title mb-0"><strong>Over All Task Progress Detail</strong> </h4>
+                                    <div class="mt-3">
+                                        <div class="d-flex no-block align-items-center">
+                                            <span id="progress-chart-task-completed"></span>
+                                            <div class="ms-auto">
+                                                <span id="chart-progress-task-total1"></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress divCompleted">
+                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 81%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex no-block align-items-center mt-4">
+                                            <span id="progress-chart-task-InProgress"></span>
+                                            <div class="ms-auto">
+                                                <span id="chart-progress-task-total2"></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress divInProgress">
+                                            <div id="div-testing" class="progress-bar progress-bar-striped bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex no-block align-items-center mt-4">
+                                            <span id="progress-chart-task-Pause"></span>
+                                            <div class="ms-auto">
+                                                <span id="chart-progress-task-total3"></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress divPause">
+                                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 53%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex no-block align-items-center mt-4">
+                                            <span id="progress-chart-task-Rejected"></span>
+                                            <div class="ms-auto">
+                                                <span id="chart-progress-task-total4"></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress divRejected">
+                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex no-block align-items-center mt-4">
+                                            <span id="progress-chart-task-Queue"></span>
+                                            <div class="ms-auto">
+                                                <span id="chart-progress-task-total5"></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress divQueue">
+                                            <div class="progress-bar progress-bar-striped bg-side" role="progressbar" style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex no-block align-items-center mt-4">
+                                            <span id="progress-chart-task-OverDue"></span>
+                                            <div class="ms-auto">
+                                                <span id="chart-progress-task-total6"></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress divOverDue">
+                                            <div class="progress-bar progress-bar-striped bg-cyan" role="progressbar" style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-body">
+                                                                    
+                                    <button type="button" class="btn btn-secondary btn-lg btnradius" style="width: 8%;" onclick="window.location.href='/Client/Client/Save'">Add Client</button>
+                                    <button type="button" class="btn btn-success btn-lg text-white btnradius" style="width: 12%;" onclick="window.location.href='/Contractor/Contractor/Save'">Add Contractor</button>
+                                    <button type="button" class="btn btn-danger btn-lg text-white btnradius" style="width: 10%;" onclick="window.location.href='/Project/Project/Save'">Add Project</button>
+                                    <button type="button" class="btn btn-warning btn-lg btnradius" style="width: 10%;" onclick="window.location.href='/Meeting/Meeting/Save'">Add Meeting</button>
+                                    <button type="button" class="btn btn-info btn-lg btnradius" style="width: 8%;" onclick="window.location.href='/Task/Task/Save'">Add Task</button>
+                                    <button type="button" class="btn btn-warning btn-lg btnradius" style="width: 10%;" onclick="window.location.href='/S/Supplier/Save'">Add Supplier</button>
+                                    <button type="button" class="btn btn-dark btn-lg btnradius" onclick="window.location.href='/Calender/Calender/Save'">Add Calender</button>
+                                    <button type="button" class="btn btn-secondary btn-lg btnradius" onclick="window.location.href='/AccessControl/AccessControl/save'">Access Controls</button>
+                                    <button type="button" class="btn btn-success btn-lg text-white btnradius" onclick="window.location.href='/PROJECTMANAGERAREA/ProjectManager/AssignEmployee'">Assign Employee to Manager</button>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <div class="card-header">
+                                        <h5>Project Status Wise </h5>
+                                    </div>
+                                    <table class="table table-lg table-hover">
+                                        <thead>
+                                            <tr style="background: #ffb848;font-weight: bold;">
+                                                <th style="font-weight: bold;">Project</th>
+                                                <th style="font-weight: bold;" class="Color">Category</th>
+                                                <th style="font-weight: bold;">Status</th>
+                                                <th style="font-weight: bold;" class="DamageItemCount">Created Date  </th>
+                                                <th style="font-weight: bold;" class="UnitPrice">Over-Due</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="project-Dashboard-Record-List"> </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <div class="card-header">
+                                        <h5>Task Status Wise </h5>
+                                    </div>
+                                    <table class="table table-lg table-hover">
+                                        <thead>
+
+                                            <tr style="background: #ffb848;font-weight: bold;">
+
+                                                <th style="font-weight: bold;">Task Name</th>
+                                                <th style="font-weight: bold;">Assigne </th>
+                                                <th style="font-weight: bold;" class="reportedDate">Reported Date</th>
+                                                <th style="font-weight: bold;" class="dueDate">Estimated Time</th>
+                                                <th style="font-weight: bold;">Task Status</th>-->
+                                                @* <th style="font-weight: bold; " class="totalEstimation">Estimate Date</th>*@
+
+                                            <!--</tr>
+                                        </thead>
+                                        <tbody id="Today-Customer-Order-List"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+                @Html.Partial("~/Areas/Employee/Views/Employee/PartialViews/_CalenderForDashbaord.cshtml")
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- Sales chart -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Sales chart -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Recent comment and chats -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Recent comment and chats -->
+            <!-- ============================================================== -->
+
+
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="card">
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <style>
+
+                body {
+                    background-color: #f9f9fa
+                }
+
+                .flex {
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1 1 auto;
+                    flex: 1 1 auto
+                }
+
+                .btnradius {
+                    border-radius: 20px;
+                }
+
+                .padding {
+                    padding: 5rem
+                }
+
+                .card {
+                    background: #fff;
+                    border-width: 0;
+                    border-radius: .25rem;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+                    margin-bottom: 1.5rem
+                }
+
+                .card {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    background-color: #fff;
+                    background-clip: border-box;
+                    border: 1px solid rgba(19, 24, 44, .125);
+                    border-radius: .25rem
+                }
+
+                .card-header {
+                    padding: .75rem 1.25rem;
+                    margin-bottom: 0;
+                    background-color: rgba(19, 24, 44, .03);
+                    border-bottom: 1px solid rgba(19, 24, 44, .125)
+                }
+
+                    .card-header:first-child {
+                        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+                    }
+
+                card-footer,
+                .card-header {
+                    background-color: transparent;
+                    border-color: rgba(160, 175, 185, .15);
+                    background-clip: padding-box
+                }
+            </style>
+
+            @*<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/Chart.bundle.min.js"></script>*@
+
+
+            <style>
+
+                body {
+                    background-color: #f9f9fa
+                }
+
+                .flex {
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1 1 auto;
+                    flex: 1 1 auto
+                }
+
+                .padding {
+                    padding: 5rem
+                }
+
+                .card {
+                    background: #fff;
+                    border-width: 0;
+                    border-radius: .25rem;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+                    margin-bottom: 1.5rem
+                }
+
+                .card {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    background-color: #fff;
+                    background-clip: border-box;
+                    border: 1px solid rgba(19, 24, 44, .125);
+                    border-radius: .25rem
+                }
+
+                .card-header {
+                    padding: .75rem 1.25rem;
+                    margin-bottom: 0;
+                    background-color: rgba(19, 24, 44, .03);
+                    border-bottom: 1px solid rgba(19, 24, 44, .125)
+                }
+
+                    .card-header:first-child {
+                        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+                    }
+
+                card-footer,
+                .card-header {
+                    background-color: transparent;
+                    border-color: rgba(160, 175, 185, .15);
+                    background-clip: padding-box
+                }
+
+                blink {
+                    -webkit-animation: 1s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+                    animation: 1s linear infinite condemned_blink_effect;
+                }
+
+                /* for Safari 4.0 - 8.0 */
+                @@-webkit-keyframes condemned_blink_effect {
+                    0% {
+                        visibility: hidden;
+                    }
+
+                    50% {
+                        visibility: hidden;
+                    }
+
+                    100% {
+                        visibility: visible;
+                    }
+                }
+
+                @@keyframes condemned_blink_effect {
+                    0% {
+                        visibility: hidden;
+                    }
+
+                    50% {
+                        visibility: hidden;
+                    }
+
+                    100% {
+                        visibility: visible;
+                    }
+                }
+            </style>
+
+
+
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+
+
+</body>
+<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/main-dashboard-.js?v=2.2"></script>
+<script src="~/Scripts/FunctionalityJs/Charts/Chart.js"></script>
+<script src="~/Scripts/FunctionalityJs/Charts/morris.js"></script>
+<script src="~/Scripts/FunctionalityJs/Charts/raphael.min.js"></script>
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ var KendoGlobalAjax = function (options) {
             }
         },
         success: function (data) {
-
+            console.log(data);
             if (options.CallBack !== '') {
                 options.CallBack(data);
                 $('#loading').fadeOut(500);

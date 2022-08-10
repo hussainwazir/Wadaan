@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "Save";
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Desigantion </li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Save</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="card">
+
+                    <div class="card-header"><h5 style="font-family: sans-serif; font-weight: bold; font-size: 15px;">Designation</h5> </div>
+                    <div class="card-body">
+
+                        <form class="md-float-material" id="frmAddUpdateDesignation" name="frmAddUpdateDesignation" action="/services/Xtreme/multipart" method="post">
+                            <input type="hidden" name="UserID" id="UserID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="EmployeeID" id="EmployeeID" value="00000000-0000-0000-0000-000000000000">
+                            <input type="hidden" name="Id" id="Id" value="0">
+                            @*<input type="hidden" name="type" id="type" value="Employee_Save">*@
+                            <input type="hidden" name="DesignationMultipleDetails_Save_New" id="DesignationMultipleDetails_Save_New" />
+
+
+                             
+                            <br />
+
+
+
+
+                            @*=========================== PERSONAL INFORMATION ROW START ===========================*@
+
+                             
+
+
+
+
+                            @*====================== Current Address Start =============================*@
+                        <div class="card">
+                            <div class="card-header"><h5>Designation Form</h5>  </div>
+                            <div class="card-body border">
+
+
+                                <div class="row">
+
+
+
+                                    @*======================= Current Address END ========================*@
+
+                                    <div class="card">
+                                        <div class="card-header"><h5>Designation</h5>  </div>
+                                        <div class="card-body border">
+                                            <div class="row">
+
+
+                                                <div class="col-sm-2">
+                                                    <div>
+                                                        <label class="form-control-label">Designation Title:</label><br />
+                                                        <input type="text" class="form-control pname" id="Designation" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div>
+                                                        <label class="form-control-label">Active:</label><br />
+
+                                                        <input class="form-check-input pname" type="checkbox" value="" id="status" name="status" />
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                                <div class="col-sm-1" style="margin-top: 2%;">
+                                                    <button type="button" id="btn-add-row-to-designation" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block btn-add-row"> ADD </button>
+                                                </div>
+
+
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="task-list">
+                                                    <div class="table-responsive">
+                                                        <div id="simpletable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+
+                                                            <div class="row">
+                                                                <div class="col-xs-12 col-sm-12">
+
+                                                                    <table class="table table-responsive table-striped">
+                                                                        <thead class="thead-default">
+                                                                            <tr class="">
+
+                                                                                <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Designation</th>
+                                                                                <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Status</th>
+
+                                                                                <th style="  background: #2c3e50;color: #9f9f9f;     text-align: left;width:20%">Action</th>
+
+
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody id="tbl-designation-qualification-detail"> </tbody>
+
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <br />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="border-top">
+
+                                <div class="modal-footer">
+                                    <button type="button" id="btnSave" class="btn btn-success text-white   waves-effect  f-w-600 d-inline-block save_btn"> Save</button>
+                                    <button type="reset" id="btnReset" class="btn btn-danger text-white   waves-effect  f-w-600 d-inline-block reset_btn"> Reset</button>
+                                    @*<button type="reset" class="btn btn-danger text-white">Reset</button>*@
+
+                                </div>
+                            </div>
+                        </div>
+                             
+                            <br />
+                        </form>
+                        @*====================== PERNMENT INFORMATION END ======================*@
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+
+
+        <script>
+            //***********************************//
+            // For select 2
+            //***********************************//
+
+           
+
+
+
+           
+
+        </script>
+</body>
+
+
+<script src="~/Scripts/FunctionalityJs/Designation/designation-save.js"></script>
+
+

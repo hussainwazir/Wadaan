@@ -99,7 +99,7 @@ function EditDetail(e) {
     var row = $(e).closest("tr");
     var grid = $("#" + $grid).data("kendoGrid");
     var dataItem = grid.dataItem(row);
-    console.log(dataItem.taskName);
+   
     $("#TaskName").val(dataItem.taskName).attr("selected", "selected"); $("#ChecklistType").val(dataItem.checklistType).attr("selected", "selected");
     $("#TaskStatus").val(dataItem.taskStatus).attr("selected", "selected");
     $("#Description").text(dataItem.description);

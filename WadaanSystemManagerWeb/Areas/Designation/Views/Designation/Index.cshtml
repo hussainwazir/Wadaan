@@ -1,0 +1,158 @@
+﻿
+@{
+    //Layout = "~/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml";
+    Layout = "~/Areas/Shared/_EmployeeLayout.cshtml";
+}
+
+<style>
+
+    .page-template .header {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        border-bottom: 1px solid #888;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .page-template .footer {
+        position: absolute;
+        bottom: 30px;
+        /*left: 30px;*/
+        right: 30px;
+        font-size: 12px !important;
+    }
+</style>
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Employee/Employee/Dashboard"> Dashboard </a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Designation </li>
+                            <li class="breadcrumb-item active" aria-current="page"> Index</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" id="active-desgnation"> <a class="nav-link active" data-bs-toggle="tab" href="#activeDesignation" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Active Designation</span></a> </li>
+                <li class="nav-item" id="in-active-desgnation"> <a class="nav-link" data-bs-toggle="tab" href="#InActiveDesignation" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">In Active Designation</span></a> </li>
+                <li class="nav-item" id="all-desgnation"> <a class="nav-link" data-bs-toggle="tab" href="#AllDesignation" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">All Designation</span></a> </li>
+
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="activeDesignation" role="tabpanel">
+                    <div class="">
+                        <div class="col-md-12">
+                            <div class=" ">
+                                <div class="card-body">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header"><h5>Designation(S)</h5> <span>Active Designation's Record List</span></div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                                    <button type="button" class="btn btn-success" id="btn-add-employee" onclick="window.location.href='/Designation/Designation/Save'" style="margin-left:20px; color:white">  Add Designation Form</button>
+                                                    @*<button type="button" class="btn btn-danger" id="btn-add-employee" onclick="window.location.href='/Employee/Employee/EmployeePrint'" style="margin-left:20px; color:white">  Print </button>*@
+                                                    @*<button type="button" class="btn btn-primary" id="btn-send-email" style="margin-left:20px; color:white">  Send Email</button>*@
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="designation-grid"> </div>
+                                                @*<div id="designation-grid-all-for-email" hidden> </div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+            <div class="tab-pane  p-20" id="InActiveDesignation" role="tabpanel">
+                <div class="">
+                    <div class="col-sm-12">
+                        <div class=" ">
+                            <div class="card-body">
+
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header"><h5>Designation(S)</h5>   <span> In Active Designation's Record List</span></div>
+                                        <br />
+                                        <div class="card-body">
+                                            <div id="designation-grid-in-active"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane p-20" id="AllDesignation" role="tabpanel">
+                <div class="">
+                    <div class="col-sm-12">
+                        <div class=" ">
+                            <div class="card-body">
+
+                                <div class="col-md-12">
+
+                                    <div class="card">
+                                        <div class="card-header"><h5>Designation(S)</h5>   <span>All Designation's Record List</span></div>
+                                        <br />
+
+
+                                        <div class="card-body">
+
+                                            <div id="designation-grid-all"> </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+         <div class="col-md-12">
+             @*@Html.Partial("~/Areas/Employee/Views/Employee/PartialViews/_employeePrintPartialView.cshtml")*@
+
+             <div id="designation-grid-all-for-email" hidden> </div>
+         </div>
+
+    </div> 
+
+
+</div>
+
+</div>
+
+<script src="~/Scripts/FunctionalityJs/Designation/designation-list.js?wadaanv=5.1.8"></script>
+
+<script src="~/Scripts/FunctionalityJs/EmployeeArea/Employee/sharing.js"></script>
