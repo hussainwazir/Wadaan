@@ -69,19 +69,19 @@ var fnTaskProjectProgressforClient = function (d) {
        //     + + '  <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li>
                                                                  
 
-         //   + + '  </ol></nav >'
+         //   + + '  </ol></nav >'  
         if (JSON.parse(d.Value)[i].sketch == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #564f4f;"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].sketch == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].sketch == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"  style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].sketch == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].sketch == "Approved") {
@@ -92,83 +92,83 @@ var fnTaskProjectProgressforClient = function (d) {
 
 
         if (JSON.parse(d.Value)[i].submissionDrawing == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #564f4f;"></span></span><span class="k-step-label" style="background-color:#7d8087;"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].submissionDrawing == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].submissionDrawing == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].submissionDrawing == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].submissionDrawing == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Submission Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Submission Drawing</span> </span></a></li> ';
         }
 
 
 
         if (JSON.parse(d.Value)[i].architecture == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label" style="background-color: #564f4f;"><span class="k-step-text">Architecture</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].architecture == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].architecture == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].architecture == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].architecture == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Architecture" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Architecture</span> </span></a></li> ';
         }
 
 
 
 
         if (JSON.parse(d.Value)[i].structuralDrawing == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #564f4f;"> </span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].structuralDrawing == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].structuralDrawing == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].structuralDrawing == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].structuralDrawing == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Structural Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Structural Drawing</span> </span></a></li> ';
         }
 
 
 
 
         if (JSON.parse(d.Value)[i].elecricalDrawing == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #564f4f;"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].elecricalDrawing == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].elecricalDrawing == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
         } else if (JSON.parse(d.Value)[i].elecricalDrawing == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label" ><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].elecricalDrawing == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Elecrical Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Elecrical Drawing</span> </span></a></li> ';
         }
 
 
@@ -177,63 +177,63 @@ var fnTaskProjectProgressforClient = function (d) {
 
 
         if (JSON.parse(d.Value)[i].plumbingDrawing == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Plumbing Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#7d8087;"></span></span><span class="k-step-label" style="background-color: #564f4f;"><span class="k-step-text">Plumbing Drawing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].plumbingDrawing == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Plumbing Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Plumbing Drawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].plumbingDrawing == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Plumbing Drawing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Plumbing Drawing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].plumbingDrawing == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">plumbingDrawing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].plumbingDrawing == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Plumbing Drawing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">plumbingDrawing</span> </span></a></li> ';
         }
 
 
 
         if (JSON.parse(d.Value)[i].conceptDesign == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].conceptDesign == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].conceptDesign == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].conceptDesign == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].conceptDesign == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Concept Design" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:green;"></span></span><span class="k-step-label"><span class="k-step-text">Concept Design</span> </span></a></li> ';
         }
 
 
 
         if (JSON.parse(d.Value)[i].dModeling == "NotStartedYet") {
-            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #564f4f;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #564f4f;"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
         }
         else if (JSON.parse(d.Value)[i].dModeling == "Completed") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: green;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: green;"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].dModeling == "Disable") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color: #bdbbbb;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color: #bdbbbb;"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].dModeling == "InProgress") {
-            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-first k-step-done k-step-success" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true" style="background-color:#19346c;"><span class="k-step-indicator-icon k-icon k-i-check" style="background-color:#19346c;"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
         }
 
         else if (JSON.parse(d.Value)[i].dModeling == "Approved") {
-            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="Sketch" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">Sketch</span> </span></a></li> ';
+            htmstringli += ' <li class="k-step k-step-last" style="max-width: 12.5%;"><a href="#" class="k-step-link" title="3D modleing" tabindex="-1"><span class="k-step-indicator" aria-hidden="true"><span class="k-step-indicator-icon k-icon k-i-check"></span></span><span class="k-step-label"><span class="k-step-text">3D modleing</span> </span></a></li> ';
         }
 
        
